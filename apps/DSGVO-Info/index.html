@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSGVO Kompakt-Seminar - Interaktives Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.worker.mjs" type="module"></script>
+</head>
+<body>
+<!-- Mobile Menu Toggle -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+
+<!-- Mobile Menu Button -->
+<label for="sidebar-toggle" class="mobile-menu-btn">
+    <i class="fas fa-bars"></i>
+</label>
+
+<!-- Sidebar Navigation -->
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h2>DSGVO Tool</h2>
+        <span class="subtitle">IHK Akademie Schwaben</span>
+        <small>CloudCommand 24-6</small>
+    </div>
+
+    <!-- Hauptnavigation -->
+    <ul class="sidebar-nav">
+        <li>
+            <a href="#" data-view="pdf-viewer" class="nav-link active">
+                <i class="fas fa-file-pdf"></i>
+                <span>PDF Präsentation</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-view="chapters" class="nav-link">
+                <i class="fas fa-list"></i>
+                <span>Kapitelübersicht</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-view="essentials" class="nav-link">
+                <i class="fas fa-star"></i>
+                <span>DSGVO Essentials</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-view="search" class="nav-link">
+                <i class="fas fa-search"></i>
+                <span>PDF Suche</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-view="links" class="nav-link">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Rechtliche Links</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- PDF Outline Navigation -->
+    <div class="pdf-outline" id="pdf-outline">
+        <h3>PDF Inhaltsverzeichnis</h3>
+        <div id="outline-list" class="outline-list">
+            <!-- Wird per JavaScript gefüllt -->
+        </div>
+    </div>
+
+    <!-- Kapitel Navigation -->
+    <div class="chapter-navigation">
+        <h3>Schnellzugriff</h3>
+        <ul id="chapter-nav-list">
+            <!-- Wird per JavaScript gefüllt -->
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+    <!-- Header mit Suche und PDF-Kontrollen -->
+    <header class="content-header">
+        <div class="pdf-controls">
+            <button id="prev-page" class="control-btn" title="Vorherige Seite">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="page-info">
+                <span id="current-page">1</span> / <span id="total-pages">-</span>
+            </div>
+            <button id="next-page" class="control-btn" title="Nächste Seite">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="zoom-controls">
+                <button id="zoom-out" class="control-btn" title="Verkleinern">
+                    <i class="fas fa-search-minus"></i>
+                </button>
+                <span id="zoom-level">100%</span>
+                <button id="zoom-in" class="control-btn" title="Vergrößern">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="global-search" placeholder="Suche im PDF...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+            <button id="search-prev" class="search-nav-btn" title="Vorheriger Treffer">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <button id="search-next" class="search-nav-btn" title="Nächster Treffer">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- PDF Viewer Ansicht -->
+    <section id="pdf-viewer-view" class="view active">
+        <div class="pdf-container">
+            <canvas id="pdf-canvas"></canvas>
+            <div id="text-layer" class="text-layer"></div>
+            <div id="annotation-layer" class="annotation-layer"></div>
+        </div>
+
+        <!-- PDF Loading Indicator -->
+        <div id="pdf-loading" class="pdf-loading">
+            <div class="loading-spinner"></div>
+            <p>PDF wird geladen...</p>
+        </div>
+    </section>
+
+    <!-- Kapitelübersicht -->
+    <section id="chapters-view" class="view">
+        <h2>Kapitelübersicht</h2>
+        <p class="view-description">Strukturierte Übersicht aller DSGVO-Kapitel aus dem Seminar</p>
+        <div class="chapters-grid" id="chapters-container">
+            <!-- Wird per JavaScript gefüllt -->
+        </div>
+    </section>
+
+    <!-- DSGVO Essentials -->
+    <section id="essentials-view" class="view">
+        <h2>DSGVO Essentials</h2>
+        <p class="view-description">Die wichtigsten Kernpunkte der DSGVO im Überblick</p>
+
+        <div class="essentials-filter">
+            <label for="category-filter">Filtern nach Kategorie:</label>
+            <select id="category-filter">
+                <option value="">Alle Kategorien</option>
+            </select>
+        </div>
+
+        <div class="essentials-grid" id="essentials-container">
+            <!-- Wird per JavaScript gefüllt -->
+        </div>
+    </section>
+
+    <!-- PDF Suchansicht -->
+    <section id="search-view" class="view">
+        <h2>Erweiterte PDF-Suche</h2>
+        <p class="view-description">Durchsuchen Sie das komplette PDF-Dokument nach spezifischen Begriffen</p>
+
+        <div class="advanced-search-form">
+            <div class="search-options">
+                <input type="text" id="advanced-search-input" placeholder="Suchbegriff eingeben...">
+                <div class="search-settings">
+                    <label>
+                        <input type="checkbox" id="case-sensitive"> Groß-/Kleinschreibung beachten
+                    </label>
+                    <label>
+                        <input type="checkbox" id="whole-word"> Ganzes Wort
+                    </label>
+                </div>
+                <button id="advanced-search-btn" class="primary-btn">Suchen</button>
+            </div>
+        </div>
+
+        <div id="search-results" class="search-results">
+            <!-- Suchergebnisse werden hier angezeigt -->
+        </div>
+    </section>
+
+    <!-- Rechtliche Links -->
+    <section id="links-view" class="view">
+        <h2>Rechtliche Referenzen und Links</h2>
+        <p class="view-description">Wichtige Gesetzestexte, Aufsichtsbehörden und weiterführende Ressourcen</p>
+
+        <div id="links-container" class="links-categories">
+            <!-- Wird per JavaScript gefüllt -->
+        </div>
+    </section>
+</main>
+
+<!-- Loading Screen -->
+<div id="app-loading" class="app-loading">
+    <div class="loading-content">
+        <h2>DSGVO Tool wird initialisiert...</h2>
+        <div class="loading-spinner"></div>
+        <p id="loading-status">Lade Komponenten...</p>
+    </div>
+</div>
+
+<!-- Notification Toast -->
+<div id="notification-toast" class="notification-toast">
+    <div class="toast-content">
+        <span id="toast-message"></span>
+        <button id="toast-close"><i class="fas fa-times"></i></button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

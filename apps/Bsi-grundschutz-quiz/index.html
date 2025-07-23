@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSI-Grundschutz Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blackboard">
+  <div class="chalk-dust"></div>
+
+  <!-- Startbildschirm -->
+  <div id="start-screen">
+    <h1 class="chalk-title">BSI-Grundschutz Quiz</h1>
+    <p class="chalk-text">Teste dein Wissen zum BSI-Grundschutz</p>
+    <button id="start-btn" class="chalk-btn">Quiz starten</button>
+  </div>
+
+  <!-- Kategorieauswahl -->
+  <div id="category-screen" class="hidden">
+    <h2 class="chalk-subtitle">Wähle eine Kategorie:</h2>
+    <div id="categories-container" class="categories-list"></div>
+    <button id="random-category-btn" class="chalk-btn">Zufällige Fragen</button>
+  </div>
+
+  <!-- Quiz-Bildschirm -->
+  <div id="quiz-screen" class="hidden">
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+    <h3 id="category-display" class="chalk-subtitle"></h3>
+    <div id="question-container" class="chalk-question"></div>
+    <div id="answers-container" class="chalk-answers">
+      <div class="answer-option" data-option="A">
+        <span class="option-letter">A</span>
+        <span class="option-text"></span>
+      </div>
+      <div class="answer-option" data-option="B">
+        <span class="option-letter">B</span>
+        <span class="option-text"></span>
+      </div>
+      <div class="answer-option" data-option="C">
+        <span class="option-letter">C</span>
+        <span class="option-text"></span>
+      </div>
+      <div class="answer-option" data-option="D">
+        <span class="option-letter">D</span>
+        <span class="option-text"></span>
+      </div>
+    </div>
+    <div id="feedback-container" class="hidden">
+      <p id="feedback-message" class="chalk-feedback"></p>
+      <p id="correct-answers" class="chalk-correct"></p>
+    </div>
+    <div id="submit-container">
+      <button id="submit-btn" class="chalk-btn">Antwort prüfen</button>
+      <button id="next-btn" class="chalk-btn hidden">Nächste Frage</button>
+    </div>
+  </div>
+
+  <!-- Ergebnisbildschirm -->
+  <div id="results-screen" class="hidden">
+    <h2 class="chalk-subtitle">Quiz beendet!</h2>
+    <p id="score-display" class="chalk-text"></p>
+    <p id="percentage-display" class="chalk-text"></p>
+    <button id="restart-btn" class="chalk-btn">Neu starten</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

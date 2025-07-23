@@ -1,0 +1,64 @@
+{
+  "Gesetzestexte": [
+    {
+      "titel": "EU-DSGVO Volltext",
+      "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679"
+    },
+    {
+      "titel": "BDSG 2023",
+      "url": "https://www.gesetze-im-internet.de/bdsg_2018/"
+    },
+    {
+      "titel": "EU KI-Verordnung",
+      "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32023R1689"
+    }
+  ],
+  "Aufsichtsbehörden": [
+    {
+      "titel": "Bundesbeauftragter für Datenschutz (BfDI)",
+      "url": "https://www.bfdi.bund.de/"
+    },
+    {
+      "titel": "Europäischer Datenschutzausschuss (EDPB)",
+      "url": "https://edpb.europa.eu/edpb_de"
+    },
+    {
+      "titel": "Bayerisches Landesamt für Datenschutzaufsicht",
+      "url": "https://www.lda.bayern.de"
+    }
+  ],
+  "Praktische Hilfen": [
+    {
+      "titel": "Muster-Verarbeitungsverzeichnis",
+      "url": "https://www.lda.bayern.de/media/muster_verarbeitungsverzeichnis.pdf"
+    },
+    {
+      "titel": "DSGVO-Compliance-Checkliste",
+      "url": "https://www.datenschutz-notizen.de/checkliste-dsgvo-umsetzung/"
+    },
+    {
+      "titel": "BSI IT-Grundschutz",
+      "url": "https://www.bsi.bund.de/DE/Themen/ITGrundschutz/itgrundschutz_node.html"
+    }
+  ],
+  "Rechtsprechung": [
+    {
+      "titel": "EuGH-Urteilsdatenbank",
+      "https://curia.europa.eu/jcms/jcms/j_6/de/"
+    },
+    {
+      "titel": "BVerfG-Datenschutzrechtsprechung",
+      "url": "https://www.bundesverfassungsgericht.de/SiteGlobals/Forms/Suche/Entscheidungensuche_Formular.html"
+    }
+  ],
+  "Fachpublikationen": [
+    {
+      "titel": "EDPB-Leitlinien",
+      "url": "https://edpb.europa.eu/our-work-tools/our-documents_de"
+    },
+    {
+      "titel": "Datenschutz Konferenz-Beschlüsse",
+      "url": "https://www.datenschutzkonferenz-online.de/beschluesse.html"
+    }
+  ]
+}

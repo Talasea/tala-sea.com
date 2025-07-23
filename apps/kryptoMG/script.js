@@ -1,0 +1,516 @@
+// --- WARTEN BIS DAS DOKUMENT GELADEN IST ---
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- GRUNDLEGENDE ELEMENTE ---
+    const cipherSelect = document.getElementById('cipher-select');
+    const settingsContainer = document.getElementById('settings-container');
+    const infoBox = document.getElementById('info-box');
+
+    const chatA = document.getElementById('chat-a');
+    const inputA = document.getElementById('input-a');
+    const sendA = document.getElementById('send-a');
+
+    const chatB = document.getElementById('chat-b');
+    const inputB = document.getElementById('input-b');
+    const sendB = document.getElementById('send-b');
+
+    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    // --- ENIGMA KONFIGURATION ---
+    const ENIGMA_CONFIG = {
+        rotors: {
+            'I':   { wiring: 'EKMFLGDQVZNTOWYHXUSPAIBRCJ', notch: 'Q' },
+            'II':  { wiring: 'AJDKSIRUXBLHWTMCQGZNPYFVOE', notch: 'E' },
+            'III': { wiring: 'BDFHJLCPRTXVZNYEIWGAKMUSQO', notch: 'V' }
+        },
+        reflector: {
+            'B': 'YRUHQSLDPXNGOKMIEBFZCWVJAT'
+        }
+    };
+
+    let messageCounter = 0;
+
+    // --- VERSCHLÜSSELUNGSFUNKTIONEN ---
+
+    function atbash(text) {
+        return text.toUpperCase().split('').map(char => {
+            const index = ALPHABET.indexOf(char);
+            if (index !== -1) {
+                return ALPHABET[ALPHABET.length - 1 - index];
+            }
+            return char;
+        }).join('');
+    }
+
+    function caesar(text, shift) {
+        return text.toUpperCase().split('').map(char => {
+            const index = ALPHABET.indexOf(char);
+            if (index !== -1) {
+                return ALPHABET[(index + shift + ALPHABET.length) % ALPHABET.length];
+            }
+            return char;
+        }).join('');
+    }
+
+    function vigenere(text, key, encrypt = true) {
+        const keyUpper = key.toUpperCase().replace(/[^A-Z]/g, '');
+        if (keyUpper.length === 0) return text;
+        let keyIndex = 0;
+        return text.toUpperCase().split('').map(char => {
+            const charIndex = ALPHABET.indexOf(char);
+            if (charIndex !== -1) {
+                const keyChar = keyUpper[keyIndex % keyUpper.length];
+                const keyShift = ALPHABET.indexOf(keyChar);
+                keyIndex++;
+                const shift = encrypt ? keyShift : -keyShift;
+                return ALPHABET[(charIndex + shift + ALPHABET.length) % ALPHABET.length];
+            }
+            return char;
+        }).join('');
+    }
+
+    function railFence(text, rails, encrypt = true) {
+        if (rails <= 1) return text;
+        const fence = Array.from({ length: rails }, () => []);
+        if (encrypt) {
+            let rail = 0;
+            let direction = 1;
+            for (const char of text) {
+                fence[rail].push(char);
+                rail += direction;
+                if (rail === 0 || rail === rails - 1) {
+                    direction *= -1;
+                }
+            }
+            return fence.flat().join('');
+        } else { // Decrypt
+            const len = text.length;
+            let rail = 0;
+            let direction = 1;
+            const fenceLengths = Array(rails).fill(0);
+            for (let i = 0; i < len; i++) {
+                fenceLengths[rail]++;
+                rail += direction;
+                if (rail === 0 || rail === rails - 1) {
+                    direction *= -1;
+                }
+            }
+
+            const textChars = text.split('');
+            for(let i=0; i<rails; i++) {
+                fence[i] = textChars.splice(0, fenceLengths[i]);
+            }
+
+            let result = '';
+            rail = 0;
+            direction = 1;
+            for (let i = 0; i < len; i++) {
+                result += fence[rail].shift();
+                rail += direction;
+                if (rail === 0 || rail === rails - 1) {
+                    direction *= -1;
+                }
+            }
+            return result;
+        }
+    }
+
+    function enigma(text, settings) {
+        let { rotorOrder, rotorPositions } = settings;
+        if (!rotorOrder || rotorOrder.length < 3 || rotorOrder.includes(null)) return text.toUpperCase();
+
+        let pos = [...rotorPositions];
+
+        function rotate() {
+            // Double-step anomaly is not implemented for simplicity
+            if (ALPHABET[pos[1]] === ENIGMA_CONFIG.rotors[rotorOrder[1]].notch) {
+                pos[0] = (pos[0] + 1) % 26;
+                pos[1] = (pos[1] + 1) % 26;
+            }
+            if (ALPHABET[pos[2]] === ENIGMA_CONFIG.rotors[rotorOrder[2]].notch) {
+                pos[1] = (pos[1] + 1) % 26;
+            }
+            pos[2] = (pos[2] + 1) % 26;
+        }
+
+        return text.toUpperCase().split('').map(char => {
+            if (ALPHABET.indexOf(char) === -1) return char;
+
+            rotate();
+
+            let signal = ALPHABET.indexOf(char);
+
+            // Forward pass
+            for (let i = 2; i >= 0; i--) {
+                const rotor = ENIGMA_CONFIG.rotors[rotorOrder[i]];
+                const entryIndex = (signal + pos[i]) % 26;
+                const exitChar = rotor.wiring[entryIndex];
+                signal = (ALPHABET.indexOf(exitChar) - pos[i] + 26) % 26;
+            }
+
+            // Reflector
+            signal = ALPHABET.indexOf(ENIGMA_CONFIG.reflector.B[signal]);
+
+            // Backward pass
+            for (let i = 0; i < 3; i++) {
+                const rotor = ENIGMA_CONFIG.rotors[rotorOrder[i]];
+                const entryIndex = (signal + pos[i]) % 26;
+                const exitIndex = rotor.wiring.indexOf(ALPHABET[entryIndex]);
+                signal = (exitIndex - pos[i] + 26) % 26;
+            }
+
+            return ALPHABET[signal];
+        }).join('');
+    }
+
+    // --- UI-UPDATE FUNKTIONEN ---
+
+    const settingsHTML = {
+        atbash: `<p class="text-gray-400">Atbash benötigt keine weiteren Einstellungen. Jeder Buchstabe wird einfach durch sein Gegenstück im Alphabet ersetzt (A↔Z, B↔Y...).</p>`,
+        caesar: `
+            <div class="flex items-center gap-4">
+                <label for="caesar-shift" class="text-sm font-bold text-gray-300">Verschiebung:</label>
+                <input type="range" id="caesar-shift" min="1" max="25" value="3" class="w-full">
+                <span id="caesar-shift-value" class="font-bold text-green-400 w-8 text-center">3</span>
+            </div>`,
+        vigenere: `
+            <div class="flex items-center gap-4">
+                <label for="vigenere-key" class="text-sm font-bold text-gray-300">Schlüsselwort:</label>
+                <input type="text" id="vigenere-key" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="GEHEIM">
+            </div>`,
+        railfence: `
+            <div class="flex items-center gap-4">
+                <label for="railfence-rails" class="text-sm font-bold text-gray-300">Schienen:</label>
+                <input type="range" id="railfence-rails" min="2" max="5" value="2" class="w-full">
+                <span id="railfence-rails-value" class="font-bold text-green-400 w-8 text-center">2</span>
+            </div>`,
+        enigma: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <p class="text-sm font-bold text-gray-300 mb-2">1. Walzenlage (Drag & Drop)</p>
+                    <div class="flex justify-around items-center bg-gray-900 p-2 rounded-lg">
+                        <div id="rotor-basket" class="flex gap-2 p-2 border-2 border-dashed border-gray-600 rounded-md">
+                            <!-- Walzen werden hier eingefügt -->
+                        </div>
+                        <div class="text-2xl text-gray-500 mx-4">→</div>
+                        <div id="rotor-slots" class="flex gap-2">
+                            <!-- Slots werden hier eingefügt -->
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-gray-300 mb-2">2. Grundstellung (Klicken zum Ändern)</p>
+                    <div id="rotor-positions" class="flex justify-around items-center bg-gray-900 p-2 rounded-lg h-full">
+                        <!-- Positionen werden hier eingefügt -->
+                    </div>
+                </div>
+            </div>`
+    };
+
+    const infoTexts = {
+        atbash: `
+            <h3 class="text-2xl font-display text-green-400 mb-2">Atbash-Chiffre</h3>
+            <p><b>Funktionsweise:</b> Dies ist eine der einfachsten Substitutionschiffren. Das Alphabet wird einfach "umgedreht". Der erste Buchstabe (A) wird zum letzten (Z), der zweite (B) zum vorletzten (Y) und so weiter.</p>
+            <p class="mt-2"><b>Schlüssel:</b> Es gibt keinen Schlüssel. Die Methode ist fest und kann von jedem, der sie kennt, sofort entschlüsselt werden.</p>
+            <p class="mt-2"><b>Schwäche:</b> Extrem unsicher. Da die Methode fest ist und Buchstaben immer auf die gleiche Weise ersetzt werden, kann sie durch eine einfache Häufigkeitsanalyse leicht geknackt werden.</p>`,
+        caesar: `
+            <h3 class="text-2xl font-display text-green-400 mb-2">Caesar-Chiffre</h3>
+            <p><b>Funktionsweise:</b> Jeder Buchstabe im Klartext wird um eine feste Anzahl von Positionen im Alphabet verschoben. Eine Verschiebung von 3 würde A zu D, B zu E usw. machen.</p>
+            <p class="mt-2"><b>Schlüssel:</b> Die Zahl, um die verschoben wird (1-25). Alice und Bob müssen beide dieselbe Zahl kennen.</p>
+            <p class="mt-2"><b>Schwäche:</b> Sehr unsicher. Da es nur 25 mögliche Schlüssel gibt, kann ein Angreifer einfach alle Möglichkeiten durchprobieren (Brute-Force-Angriff).</p>`,
+        vigenere: `
+            <h3 class="text-2xl font-display text-green-400 mb-2">Vigenère-Chiffre</h3>
+            <p><b>Funktionsweise:</b> Ähnlich wie Caesar, aber die Verschiebung ändert sich für jeden Buchstaben. Die Verschiebungen werden durch ein Schlüsselwort bestimmt. Ist das Schlüsselwort "AUTO", wird der 1. Buchstabe um 0 (A) verschoben, der 2. um 20 (U), der 3. um 19 (T), der 4. um 14 (O), der 5. wieder um 0 (A) usw.</p>
+            <p class="mt-2"><b>Schlüssel:</b> Das Schlüsselwort. Es sollte möglichst lang und schwer zu erraten sein.</p>
+            <p class="mt-2"><b>Schwäche:</b> Sicherer als Caesar, da die Häufigkeitsanalyse nicht direkt funktioniert. Wurde aber im 19. Jahrhundert geknackt, indem man die Länge des Schlüsselworts herausfand und dann für jeden Buchstaben eine separate Caesar-Analyse durchführte.</p>`,
+        railfence: `
+            <h3 class="text-2xl font-display text-green-400 mb-2">Zick-Zack-Chiffre (Rail Fence)</h3>
+            <p><b>Funktionsweise:</b> Eine Transpositionschiffre. Die Buchstaben werden nicht ersetzt, sondern nur umsortiert. Man schreibt den Text im Zick-Zack über eine bestimmte Anzahl von Zeilen ("Schienen") und liest dann die Zeilen nacheinander aus. "HALLO WELT" auf 2 Schienen wird zu "H L O E T A L W L".</p>
+            <p class="mt-2"><b>Schlüssel:</b> Die Anzahl der Schienen.</p>
+            <p class="mt-2"><b>Schwäche:</b> Relativ unsicher, besonders bei wenigen Schienen. Ein Angreifer kann die Originalnachricht durch Ausprobieren verschiedener Schienenanzahlen schnell wiederherstellen.</p>`,
+        enigma: `
+            <h3 class="text-2xl font-display text-green-400 mb-2">Enigma-Maschine</h3>
+            <p><b>Funktionsweise:</b> Eine elektromechanische Chiffriermaschine, die im 2. Weltkrieg eingesetzt wurde. Jeder Tastendruck dreht eine oder mehrere der Walzen (Rotoren), wodurch sich die Verschlüsselung für jeden einzelnen Buchstaben ändert. Der Strom fließt durch die Walzen, wird von einem Reflektor zurückgeschickt und geht einen anderen Weg zurück.</p>
+            <p class="mt-2"><b>Schlüssel:</b> Die gesamte Tageseinstellung: 1. Welche Walzen verwendet werden und in welcher Reihenfolge (Walzenlage). 2. Die Anfangsposition jeder Walze (Grundstellung). 3. (In der Realität) Das Steckerbrett, das Buchstabenpaare vertauscht.</p>
+            <p class="mt-2"><b>Schwäche:</b> Obwohl extrem komplex, wurde die Enigma von den Alliierten (u.a. durch Alan Turing) geknackt. Schwächen waren, dass ein Buchstabe nie zu sich selbst verschlüsselt werden konnte und menschliche Fehler bei der Bedienung gemacht wurden.</p>`
+    };
+
+    function updateUI() {
+        const selectedCipher = cipherSelect.value;
+        settingsContainer.innerHTML = settingsHTML[selectedCipher];
+        infoBox.innerHTML = infoTexts[selectedCipher];
+
+        // Event Listener für die neuen Elemente hinzufügen
+        if (selectedCipher === 'caesar') {
+            const slider = document.getElementById('caesar-shift');
+            const valueSpan = document.getElementById('caesar-shift-value');
+            slider.addEventListener('input', () => valueSpan.textContent = slider.value);
+        } else if (selectedCipher === 'railfence') {
+            const slider = document.getElementById('railfence-rails');
+            const valueSpan = document.getElementById('railfence-rails-value');
+            slider.addEventListener('input', () => valueSpan.textContent = slider.value);
+        } else if (selectedCipher === 'enigma') {
+            setupEnigmaUI();
+        }
+    }
+
+    // --- ENIGMA UI LOGIK ---
+    function setupEnigmaUI() {
+        const rotorBasket = document.getElementById('rotor-basket');
+        const rotorSlots = document.getElementById('rotor-slots');
+        const rotorPositions = document.getElementById('rotor-positions');
+
+        rotorBasket.innerHTML = '';
+        rotorSlots.innerHTML = '';
+        rotorPositions.innerHTML = '';
+
+        // Walzen im Korb erstellen
+        Object.keys(ENIGMA_CONFIG.rotors).forEach(rotorId => {
+            const rotorEl = document.createElement('div');
+            rotorEl.id = `rotor-${rotorId}`;
+            rotorEl.dataset.rotorId = rotorId;
+            rotorEl.className = 'rotor bg-gray-600 text-white w-12 h-12 flex items-center justify-center rounded-md font-bold text-xl border-2 border-gray-500';
+            rotorEl.textContent = rotorId;
+            rotorEl.draggable = true;
+            rotorBasket.appendChild(rotorEl);
+        });
+
+        // Slots und Positionsanzeigen erstellen
+        for (let i = 0; i < 3; i++) {
+            const slotEl = document.createElement('div');
+            slotEl.id = `slot-${i}`;
+            slotEl.dataset.slotIndex = i;
+            slotEl.className = 'rotor-slot bg-gray-700 w-12 h-12 rounded-md border-2 border-dashed border-gray-500 flex items-center justify-center';
+            rotorSlots.appendChild(slotEl);
+
+            const posEl = document.createElement('div');
+            posEl.id = `pos-${i}`;
+            posEl.dataset.posIndex = i;
+            posEl.className = 'rotor-position-char bg-gray-700 text-white w-12 h-12 flex items-center justify-center rounded-full font-bold text-2xl cursor-pointer';
+            posEl.textContent = 'A';
+            rotorPositions.appendChild(posEl);
+        }
+
+        addEnigmaEventListeners();
+    }
+
+    function addEnigmaEventListeners() {
+        const rotors = document.querySelectorAll('.rotor');
+        const slots = document.querySelectorAll('.rotor-slot');
+
+        rotors.forEach(rotor => {
+            rotor.addEventListener('dragstart', e => {
+                e.dataTransfer.setData('text/plain', e.target.id);
+                setTimeout(() => e.target.classList.add('invisible'), 0);
+            });
+            rotor.addEventListener('dragend', e => {
+                e.target.classList.remove('invisible');
+            });
+        });
+
+        slots.forEach(slot => {
+            slot.addEventListener('dragover', e => {
+                e.preventDefault();
+                slot.classList.add('drag-over');
+            });
+            slot.addEventListener('dragleave', () => {
+                slot.classList.remove('drag-over');
+            });
+            slot.addEventListener('drop', e => {
+                e.preventDefault();
+                slot.classList.remove('drag-over');
+                const rotorElementId = e.dataTransfer.getData('text/plain');
+                const rotorEl = document.getElementById(rotorElementId);
+
+                if (slot.firstChild) {
+                    document.getElementById('rotor-basket').appendChild(slot.firstChild);
+                }
+                slot.appendChild(rotorEl);
+            });
+        });
+
+        document.getElementById('rotor-basket').addEventListener('dragover', e => {
+            e.preventDefault();
+            e.target.classList.add('drag-over');
+        });
+        document.getElementById('rotor-basket').addEventListener('dragleave', e => {
+            e.target.classList.remove('drag-over');
+        });
+        document.getElementById('rotor-basket').addEventListener('drop', e => {
+            e.preventDefault();
+            e.target.classList.remove('drag-over');
+            const rotorElementId = e.dataTransfer.getData('text/plain');
+            const rotorEl = document.getElementById(rotorElementId);
+            e.target.appendChild(rotorEl);
+        });
+
+
+        document.querySelectorAll('.rotor-position-char').forEach(pos => {
+            pos.addEventListener('click', () => {
+                let currentIndex = ALPHABET.indexOf(pos.textContent);
+                currentIndex = (currentIndex + 1) % 26;
+                pos.textContent = ALPHABET[currentIndex];
+            });
+        });
+    }
+
+    // --- NACHRICHTEN LOGIK ---
+
+    function getSettings() {
+        const cipher = cipherSelect.value;
+        const settings = { cipher };
+
+        switch (cipher) {
+            case 'caesar':
+                const slider = document.getElementById('caesar-shift');
+                settings.shift = slider ? parseInt(slider.value) : 3;
+                break;
+            case 'vigenere':
+                const keyInput = document.getElementById('vigenere-key');
+                settings.key = keyInput ? keyInput.value.toUpperCase() : 'GEHEIM';
+                break;
+            case 'railfence':
+                const railsSlider = document.getElementById('railfence-rails');
+                settings.rails = railsSlider ? parseInt(railsSlider.value) : 2;
+                break;
+            case 'enigma':
+                const rotorOrder = [];
+                const rotorPositions = [];
+                document.querySelectorAll('#rotor-slots .rotor').forEach(r => rotorOrder.push(r.dataset.rotorId));
+                document.querySelectorAll('#rotor-positions .rotor-position-char').forEach(p => rotorPositions.push(ALPHABET.indexOf(p.textContent)));
+                settings.rotorOrder = rotorOrder;
+                settings.rotorPositions = rotorPositions;
+                break;
+        }
+        return settings;
+    }
+
+    function sendMessage(from, to, text) {
+        if (!text.trim()) return;
+
+        const settings = getSettings();
+        let encryptedText = text;
+
+        // Für Enigma muss eine Kopie der Einstellungen verwendet werden, da sich der Zustand ändert
+        const enigmaSettingsForEncryption = JSON.parse(JSON.stringify(settings));
+
+        switch (settings.cipher) {
+            case 'atbash':
+                encryptedText = atbash(text);
+                break;
+            case 'caesar':
+                encryptedText = caesar(text, settings.shift);
+                break;
+            case 'vigenere':
+                encryptedText = vigenere(text, settings.key, true);
+                break;
+            case 'railfence':
+                encryptedText = railFence(text, settings.rails, true);
+                break;
+            case 'enigma':
+                encryptedText = enigma(text, enigmaSettingsForEncryption);
+                break;
+        }
+
+        messageCounter++;
+        const messageId = `msg-${messageCounter}`;
+
+        const fromChat = from === 'a' ? chatA : chatB;
+        const fromBubble = document.createElement('div');
+        fromBubble.className = 'chat-bubble ml-auto max-w-xs md:max-w-md p-3 rounded-lg bg-cyan-800 text-white self-end';
+        fromBubble.textContent = text;
+        fromChat.appendChild(fromBubble);
+
+        const toChat = to === 'a' ? chatA : chatB;
+        const toBubble = document.createElement('div');
+        toBubble.className = 'chat-bubble mr-auto max-w-xs md:max-w-md p-3 rounded-lg bg-gray-600 text-white';
+        toBubble.innerHTML = `
+            <div id="${messageId}" class="chat-bubble-encrypted p-2 rounded-md">${encryptedText}</div>
+            <button data-message-id="${messageId}" data-original-text="${text}" class="decrypt-btn mt-2 text-xs bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded transition-colors">Entschlüsseln</button>
+        `;
+        toChat.appendChild(toBubble);
+
+        fromChat.scrollTop = fromChat.scrollHeight;
+        toChat.scrollTop = toChat.scrollHeight;
+    }
+
+    function decryptMessage(button) {
+        const messageId = button.dataset.messageId;
+        const originalText = button.dataset.originalText;
+        const encryptedText = document.getElementById(messageId).textContent;
+
+        const settings = getSettings();
+        let decryptedText = encryptedText;
+
+        // Für Enigma muss eine Kopie der Einstellungen verwendet werden
+        const enigmaSettingsForDecryption = JSON.parse(JSON.stringify(settings));
+
+        switch(settings.cipher) {
+            case 'atbash':
+                decryptedText = atbash(encryptedText);
+                break;
+            case 'caesar':
+                decryptedText = caesar(encryptedText, -settings.shift);
+                break;
+            case 'vigenere':
+                decryptedText = vigenere(encryptedText, settings.key, false);
+                break;
+            case 'railfence':
+                decryptedText = railFence(encryptedText, settings.rails, false);
+                break;
+            case 'enigma':
+                decryptedText = enigma(encryptedText, enigmaSettingsForDecryption);
+                break;
+        }
+
+        const messageDiv = document.getElementById(messageId);
+        messageDiv.textContent = decryptedText;
+        messageDiv.classList.remove('chat-bubble-encrypted');
+
+        if (decryptedText.toUpperCase() === originalText.toUpperCase()) {
+            messageDiv.style.backgroundColor = '#2a9d8f';
+            messageDiv.style.color = 'white';
+            messageDiv.style.border = '1px solid #2a9d8f';
+        } else {
+            messageDiv.style.backgroundColor = '#e76f51';
+            messageDiv.style.color = 'white';
+            messageDiv.style.border = '1px solid #e76f51';
+        }
+
+        button.remove();
+    }
+
+    // --- EVENT LISTENER INITIALISIERUNG ---
+    cipherSelect.addEventListener('change', updateUI);
+
+    sendA.addEventListener('click', () => {
+        sendMessage('a', 'b', inputA.value);
+        inputA.value = '';
+    });
+    inputA.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage('a', 'b', inputA.value);
+            inputA.value = '';
+        }
+    });
+
+    sendB.addEventListener('click', () => {
+        sendMessage('b', 'a', inputB.value);
+        inputB.value = '';
+    });
+    inputB.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage('b', 'a', inputB.value);
+            inputB.value = '';
+        }
+    });
+
+    document.body.addEventListener('click', (e) => {
+        if (e.target.classList.contains('decrypt-btn')) {
+            decryptMessage(e.target);
+        }
+    });
+
+    // --- INITIALER AUFRUF ---
+    updateUI();
+});

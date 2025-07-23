@@ -1,0 +1,16 @@
+Problem_Kategorie,Schweregrad,Häufigkeit,Aktueller_Status,Aufwand_Stunden,Betroffene_Plattformen,Beschreibung,Severity_Score,Frequency_Score,Status_Score,Priority_Score
+Ruby Version Conflicts,Kritisch,Sehr häufig,Teilweise dokumentiert,25,Alle,Inkompatibilität zwischen verschiedenen Ruby-Versionen (2.x vs 3.x),3,3,1,7
+PostgreSQL Connection Issues,Kritisch,Sehr häufig,Teilweise dokumentiert,30,Linux/macOS,"Datenbankverbindungsprobleme, Socket-Fehler, Permissions",3,3,1,7
+PATH Environment Variables,Hoch,Häufig,Fehlt komplett,15,Windows,msfconsole nicht im PATH verfügbar nach Installation,2,2,3,7
+Proxy/Firewall Configuration,Hoch,Häufig,Fehlt komplett,20,Alle,Installation hinter Corporate Proxy/Firewall schlägt fehl,2,2,3,7
+Bundler/Gem Dependencies,Kritisch,Sehr häufig,Teilweise dokumentiert,20,Alle,Bundler-Abhängigkeiten können nicht aufgelöst werden,3,3,1,7
+Troubleshooting Guides,Hoch,Häufig,Lückenhaft,40,Alle,Fehlende systematische Fehlerbehebungsanleitungen,2,2,2,6
+Antivirus Interference,Hoch,Häufig,Teilweise dokumentiert,10,Windows,Antivirus blockiert Installation oder löscht Dateien,2,2,1,5
+Container Architecture,Mittel,Mittel,Fehlt komplett,35,Alle,"Docker, ARM, Container-spezifische Installations-Probleme",1,1,3,5
+Package Manager Support,Mittel,Mittel,Fehlt komplett,25,Linux/macOS,"Chocolatey, Snap, Flatpak, Homebrew nicht dokumentiert",1,1,3,5
+Cloud Deployment,Mittel,Mittel,Fehlt komplett,50,Alle,"AWS, Azure, GCP Installationsanleitungen fehlen",1,1,3,5
+Database Alternatives,Mittel,Mittel,Fehlt komplett,35,Alle,"MySQL, SQLite, Redis als PostgreSQL-Alternativen",1,1,3,5
+Security Configuration,Mittel,Mittel,Fehlt komplett,25,Linux,"SELinux, AppArmor, Hardening-Konfiguration",1,1,3,5
+Mobile Platform Support,Niedrig,Selten,Fehlt komplett,30,Mobile,"Android, iOS native Installation unvollständig",0,0,3,3
+Automation Integration,Niedrig,Selten,Fehlt komplett,40,Alle,"Ansible, Terraform, CI/CD Pipeline Integration",0,0,3,3
+Performance Optimization,Niedrig,Selten,Fehlt komplett,20,Alle,"Multi-Core, Memory-Tuning, Performance-Optimierung",0,0,3,3

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset-Risiko-Matrix - Cybersicherheit Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Asset-Risiko-Matrix</h1>
+        <p>Cybersicherheit Asset Management Dashboard</p>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="dashboard">Dashboard</button>
+        <button class="nav-tab" data-tab="matrix">Risiko-Matrix</button>
+        <button class="nav-tab" data-tab="assets">Asset-Verwaltung</button>
+    </nav>
+
+    <!-- Dashboard Tab -->
+    <div id="dashboard" class="tab-content active">
+        <div class="dashboard-grid">
+            <div class="card dashboard-card">
+                <div class="card__header">
+                    <h3>Asset-Übersicht</h3>
+                </div>
+                <div class="card__body">
+                    <div class="metric">
+                        <span class="metric-value" id="totalAssets">5</span>
+                        <span class="metric-label">Gesamt Assets</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value" id="criticalAssets">2</span>
+                        <span class="metric-label">Kritische Assets</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value" id="highRiskAssets">1</span>
+                        <span class="metric-label">Hohe Risiken</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card dashboard-card">
+                <div class="card__header">
+                    <h3>Asset-Verteilung nach Typ</h3>
+                </div>
+                <div class="card__body">
+                    <canvas id="assetTypeChart" style="height: 200px;"></canvas>
+                </div>
+            </div>
+
+            <div class="card dashboard-card">
+                <div class="card__header">
+                    <h3>Risiko-Verteilung</h3>
+                </div>
+                <div class="card__body">
+                    <canvas id="riskChart" style="height: 200px;"></canvas>
+                </div>
+            </div>
+
+            <div class="card dashboard-card">
+                <div class="card__header">
+                    <h3>Top-Risiko-Assets</h3>
+                </div>
+                <div class="card__body">
+                    <div id="topRiskAssets" class="risk-list">
+                        <!-- Wird dynamisch gefüllt -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matrix Tab -->
+    <div id="matrix" class="tab-content">
+        <div class="matrix-container">
+            <div class="matrix-header">
+                <h2>Asset-Risiko-Matrix</h2>
+                <div class="matrix-legend">
+                    <div class="legend-item">
+                        <div class="legend-color risk-low"></div>
+                        <span>Niedrig</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color risk-medium"></div>
+                        <span>Mittel</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color risk-high"></div>
+                        <span>Hoch</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color risk-critical"></div>
+                        <span>Kritisch</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matrix-wrapper">
+                <div class="matrix-y-axis">
+                    <div class="axis-label">Kritikalität</div>
+                    <div class="axis-values">
+                        <div class="axis-value">Kritisch</div>
+                        <div class="axis-value">Hoch</div>
+                        <div class="axis-value">Mittel</div>
+                        <div class="axis-value">Niedrig</div>
+                    </div>
+                </div>
+
+                <div class="matrix-main">
+                    <div class="matrix-grid" id="riskMatrix">
+                        <!-- 4x4 Grid wird dynamisch generiert -->
+                    </div>
+                    <div class="matrix-x-axis">
+                        <div class="axis-values">
+                            <div class="axis-value">Niedrig</div>
+                            <div class="axis-value">Mittel</div>
+                            <div class="axis-value">Hoch</div>
+                            <div class="axis-value">Kritisch</div>
+                        </div>
+                        <div class="axis-label">Verwundbarkeit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assets Tab -->
+    <div id="assets" class="tab-content">
+        <div class="assets-header">
+            <h2>Asset-Verwaltung</h2>
+            <button class="btn btn--primary" id="addAssetBtn">Neues Asset hinzufügen</button>
+        </div>
+
+        <div class="assets-controls">
+            <div class="search-filter">
+                <input type="text" class="form-control" id="assetSearch" placeholder="Assets durchsuchen...">
+                <select class="form-control" id="typeFilter">
+                    <option value="">Alle Typen</option>
+                    <option value="Server">Server</option>
+                    <option value="Database">Database</option>
+                    <option value="Workstation">Workstation</option>
+                    <option value="Network Device">Network Device</option>
+                    <option value="Application">Application</option>
+                    <option value="Mobile Device">Mobile Device</option>
+                    <option value="IoT Device">IoT Device</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="assets-table-container">
+            <table class="assets-table" id="assetsTable">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Standort</th>
+                    <th>Geschäftswert</th>
+                    <th>Sicherheitslevel</th>
+                    <th>Risiko</th>
+                    <th>Aktionen</th>
+                </tr>
+                </thead>
+                <tbody id="assetsTableBody">
+                <!-- Wird dynamisch gefüllt -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Asset Modal -->
+<div id="assetModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Asset hinzufügen</h3>
+            <button class="modal-close" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="assetForm">
+                <div class="form-group">
+                    <label class="form-label" for="assetName">Asset-Name</label>
+                    <input type="text" class="form-control" id="assetName" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="assetType">Asset-Typ</label>
+                    <select class="form-control" id="assetType" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="Server">Server</option>
+                        <option value="Database">Database</option>
+                        <option value="Workstation">Workstation</option>
+                        <option value="Network Device">Network Device</option>
+                        <option value="Application">Application</option>
+                        <option value="Mobile Device">Mobile Device</option>
+                        <option value="IoT Device">IoT Device</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="assetLocation">Standort/Abteilung</label>
+                    <input type="text" class="form-control" id="assetLocation" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="businessValue">Geschäftswert</label>
+                        <select class="form-control" id="businessValue" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="Niedrig">Niedrig</option>
+                            <option value="Mittel">Mittel</option>
+                            <option value="Hoch">Hoch</option>
+                            <option value="Kritisch">Kritisch</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="securityLevel">Sicherheitslevel</label>
+                        <select class="form-control" id="securityLevel" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="Niedrig">Niedrig</option>
+                            <option value="Mittel">Mittel</option>
+                            <option value="Hoch">Hoch</option>
+                            <option value="Kritisch">Kritisch</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="assetDescription">Beschreibung</label>
+                    <textarea class="form-control" id="assetDescription" rows="3"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn--secondary" id="cancelModal">Abbrechen</button>
+            <button type="submit" class="btn btn--primary" id="saveAsset">Speichern</button>
+        </div>
+    </div>
+</div>
+
+<!-- Asset Detail Modal -->
+<div id="assetDetailModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="detailModalTitle">Asset Details</h3>
+            <button class="modal-close" id="closeDetailModal">&times;</button>
+        </div>
+        <div class="modal-body" id="assetDetailContent">
+            <!-- Wird dynamisch gefüllt -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn--secondary" id="editAssetBtn">Bearbeiten</button>
+            <button type="button" class="btn btn--outline" id="deleteAssetBtn">Löschen</button>
+            <button type="button" class="btn btn--primary" id="closeDetailBtn">Schließen</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

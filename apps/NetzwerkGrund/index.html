@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netzwerk-Lernplattform für Quereinsteiger</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-network-wired"></i> Netzwerk Lernen</h3>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Suchen..." class="form-control">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">0% abgeschlossen</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#overview" class="nav-link active">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Überblick</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="overview">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#routing" class="nav-link">
+                        <span class="nav-icon">🗺️</span>
+                        <span class="nav-text">Routing</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="routing">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#subnetting" class="nav-link">
+                        <span class="nav-icon">🔢</span>
+                        <span class="nav-text">Subnetting</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="subnetting">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#documentation" class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Netzdokumentation</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="documentation">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#network-tech" class="nav-link">
+                        <span class="nav-icon">🔧</span>
+                        <span class="nav-text">Netzwerktechnik</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="network-tech">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#transmission" class="nav-link">
+                        <span class="nav-icon">📡</span>
+                        <span class="nav-text">Übertragungstechniken</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="transmission">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#hardware" class="nav-link">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Hardware</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="hardware">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#transmission-types" class="nav-link">
+                        <span class="nav-icon">📶</span>
+                        <span class="nav-text">Sendearten</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="transmission-types">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#security" class="nav-link">
+                        <span class="nav-icon">🔒</span>
+                        <span class="nav-text">Sicherheit (LAN/WLAN)</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="security">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#protocols" class="nav-link">
+                        <span class="nav-icon">🌐</span>
+                        <span class="nav-text">Netzwerkprotokolle</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="protocols">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#osi-model" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">OSI-Modell</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="osi-model">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#attacks" class="nav-link">
+                        <span class="nav-icon">⚠️</span>
+                        <span class="nav-text">Angriffstechniken</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="attacks">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#exercises" class="nav-link">
+                        <span class="nav-icon">💻</span>
+                        <span class="nav-text">Praktische Übungen</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="exercises">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#careers" class="nav-link">
+                        <span class="nav-icon">🚀</span>
+                        <span class="nav-text">Karrierewege</span>
+                        <input type="checkbox" class="progress-checkbox" data-section="careers">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="container">
+                <!-- Overview Section -->
+                <section id="overview" class="content-section">
+                    <h1>Netzwerk-Lernplattform für Quereinsteiger</h1>
+                    <p class="lead">Willkommen zu Ihrem umfassenden Leitfaden für den Einstieg in die Netzwerktechnik. Diese Plattform bietet strukturierte Lerneinheiten von den Grundlagen bis zu fortgeschrittenen Themen.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Was Sie lernen werden
+                        </button>
+                        <div class="expandable-content">
+                            <ul>
+                                <li><strong>Grundlagen:</strong> Netzwerkkonzepte, Topologien und Protokolle</li>
+                                <li><strong>Routing:</strong> Statisches und dynamisches Routing</li>
+                                <li><strong>Subnetting:</strong> IP-Adressierung und Netzwerksegmentierung</li>
+                                <li><strong>Sicherheit:</strong> LAN/WLAN-Sicherheit und Angriffstechniken</li>
+                                <li><strong>Praxis:</strong> Hands-on Übungen und Konfigurationen</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Lernziele</h3>
+                        <p>Nach Abschluss dieser Lerneinheiten können Sie:</p>
+                        <ul>
+                            <li>Netzwerkgrundlagen verstehen und anwenden</li>
+                            <li>Routing-Protokolle konfigurieren</li>
+                            <li>Subnetting durchführen</li>
+                            <li>Netzwerksicherheit bewerten</li>
+                            <li>Praktische Netzwerkprobleme lösen</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Routing Section -->
+                <section id="routing" class="content-section">
+                    <h2>Routing</h2>
+                    <p>Routing ist der Prozess der Wegfindung in Netzwerken. Es bestimmt den optimalen Pfad für Datenpakete zwischen verschiedenen Netzwerken.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Statisches vs. Dynamisches Routing
+                        </button>
+                        <div class="expandable-content">
+                            <div class="comparison-table">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Aspekt</th>
+                                            <th>Statisches Routing</th>
+                                            <th>Dynamisches Routing</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Konfiguration</td>
+                                            <td>Manuell</td>
+                                            <td>Automatisch</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wartung</td>
+                                            <td>Hoch</td>
+                                            <td>Niedrig</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Flexibilität</td>
+                                            <td>Niedrig</td>
+                                            <td>Hoch</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ressourcenverbrauch</td>
+                                            <td>Niedrig</td>
+                                            <td>Hoch</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Routing-Protokolle
+                        </button>
+                        <div class="expandable-content">
+                            <div class="protocol-grid">
+                                <div class="protocol-card">
+                                    <h4>RIP (Routing Information Protocol)</h4>
+                                    <p><strong>Typ:</strong> Distance-Vector</p>
+                                    <p><strong>Metrik:</strong> Hop Count</p>
+                                    <p><strong>Max. Hops:</strong> 15</p>
+                                    <p><strong>Einsatz:</strong> Kleine Netzwerke</p>
+                                </div>
+                                <div class="protocol-card">
+                                    <h4>OSPF (Open Shortest Path First)</h4>
+                                    <p><strong>Typ:</strong> Link-State</p>
+                                    <p><strong>Metrik:</strong> Cost (Bandbreite)</p>
+                                    <p><strong>Max. Hops:</strong> Unbegrenzt</p>
+                                    <p><strong>Einsatz:</strong> Mittlere bis große Netzwerke</p>
+                                </div>
+                                <div class="protocol-card">
+                                    <h4>EIGRP (Enhanced Interior Gateway Routing Protocol)</h4>
+                                    <p><strong>Typ:</strong> Advanced Distance-Vector</p>
+                                    <p><strong>Metrik:</strong> Composite (Bandbreite, Verzögerung)</p>
+                                    <p><strong>Max. Hops:</strong> 224</p>
+                                    <p><strong>Einsatz:</strong> Cisco-Umgebungen</p>
+                                </div>
+                                <div class="protocol-card">
+                                    <h4>BGP (Border Gateway Protocol)</h4>
+                                    <p><strong>Typ:</strong> Path-Vector</p>
+                                    <p><strong>Metrik:</strong> Path Attributes</p>
+                                    <p><strong>Max. Hops:</strong> Unbegrenzt</p>
+                                    <p><strong>Einsatz:</strong> Internet-Routing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Routing-Tabellen und Metriken
+                        </button>
+                        <div class="expandable-content">
+                            <p>Routing-Tabellen enthalten Informationen über verfügbare Routen:</p>
+                            <ul>
+                                <li><strong>Ziel-Netzwerk:</strong> Wohin die Route führt</li>
+                                <li><strong>Subnetzmaske:</strong> Netzwerkgröße</li>
+                                <li><strong>Next-Hop:</strong> Nächster Router</li>
+                                <li><strong>Schnittstelle:</strong> Ausgehende Verbindung</li>
+                                <li><strong>Metrik:</strong> Routenqualität</li>
+                            </ul>
+                            <div class="code-example">
+                                <pre><code># Routing-Tabelle anzeigen
+show ip route
+
+# Statische Route hinzufügen
+ip route 192.168.2.0 255.255.255.0 192.168.1.1</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subnetting Section -->
+                <section id="subnetting" class="content-section">
+                    <h2>Subnetting</h2>
+                    <p>Subnetting ist die Aufteilung eines großen Netzwerks in kleinere, verwaltbare Teilnetzwerke.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            CIDR-Notation
+                        </button>
+                        <div class="expandable-content">
+                            <p>CIDR (Classless Inter-Domain Routing) nutzt die Slash-Notation zur Beschreibung von Netzwerken:</p>
+                            <div class="cidr-examples">
+                                <div class="cidr-example">
+                                    <strong>192.168.1.0/24</strong>
+                                    <p>24 Netzwerk-Bits, 8 Host-Bits = 254 Hosts</p>
+                                </div>
+                                <div class="cidr-example">
+                                    <strong>192.168.1.0/26</strong>
+                                    <p>26 Netzwerk-Bits, 6 Host-Bits = 62 Hosts</p>
+                                </div>
+                                <div class="cidr-example">
+                                    <strong>192.168.1.0/28</strong>
+                                    <p>28 Netzwerk-Bits, 4 Host-Bits = 14 Hosts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Subnetting-Berechnungen
+                        </button>
+                        <div class="expandable-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>CIDR</th>
+                                        <th>Subnetzmaske</th>
+                                        <th>Netzwerke</th>
+                                        <th>Hosts pro Netzwerk</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>/24</td>
+                                        <td>255.255.255.0</td>
+                                        <td>1</td>
+                                        <td>254</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/25</td>
+                                        <td>255.255.255.128</td>
+                                        <td>2</td>
+                                        <td>126</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/26</td>
+                                        <td>255.255.255.192</td>
+                                        <td>4</td>
+                                        <td>62</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/27</td>
+                                        <td>255.255.255.224</td>
+                                        <td>8</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/28</td>
+                                        <td>255.255.255.240</td>
+                                        <td>16</td>
+                                        <td>14</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            VLSM (Variable Length Subnet Masking)
+                        </button>
+                        <div class="expandable-content">
+                            <p>VLSM ermöglicht die Verwendung verschiedener Subnetzmasken innerhalb desselben Netzwerks:</p>
+                            <div class="vlsm-example">
+                                <h4>Beispiel für 192.168.1.0/24:</h4>
+                                <ul>
+                                    <li><strong>Subnetz 1:</strong> 192.168.1.0/26 (62 Hosts) - Benutzer</li>
+                                    <li><strong>Subnetz 2:</strong> 192.168.1.64/26 (62 Hosts) - Benutzer</li>
+                                    <li><strong>Subnetz 3:</strong> 192.168.1.128/27 (30 Hosts) - Server</li>
+                                    <li><strong>Subnetz 4:</strong> 192.168.1.160/30 (2 Hosts) - Point-to-Point</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Documentation Section -->
+                <section id="documentation" class="content-section">
+                    <h2>Netzdokumentation</h2>
+                    <p>Systematische Dokumentation ist entscheidend für effektives Netzwerkmanagement und Troubleshooting.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Topologie-Diagramme
+                        </button>
+                        <div class="expandable-content">
+                            <p>Netzwerktopologien visualisieren die physische und logische Struktur:</p>
+                            <ul>
+                                <li><strong>Physische Topologie:</strong> Tatsächliche Verkabelung</li>
+                                <li><strong>Logische Topologie:</strong> Datenfluss und Protokolle</li>
+                                <li><strong>Layer-3-Diagramme:</strong> IP-Adressen und Routing</li>
+                                <li><strong>VLAN-Diagramme:</strong> Virtuelle Netzwerksegmente</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            IP-Adressplanung
+                        </button>
+                        <div class="expandable-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Netzwerk</th>
+                                        <th>Beschreibung</th>
+                                        <th>VLAN</th>
+                                        <th>Gateway</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>192.168.1.0/24</td>
+                                        <td>Benutzer-LAN</td>
+                                        <td>10</td>
+                                        <td>192.168.1.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>192.168.2.0/24</td>
+                                        <td>Server-Netzwerk</td>
+                                        <td>20</td>
+                                        <td>192.168.2.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>192.168.3.0/24</td>
+                                        <td>Management</td>
+                                        <td>30</td>
+                                        <td>192.168.3.1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Dokumentationstools
+                        </button>
+                        <div class="expandable-content">
+                            <div class="tools-grid">
+                                <div class="tool-card">
+                                    <h4>Microsoft Visio</h4>
+                                    <p>Professionelle Netzwerkdiagramme</p>
+                                </div>
+                                <div class="tool-card">
+                                    <h4>NetBox</h4>
+                                    <p>Open-Source IP-Adressmanagement</p>
+                                </div>
+                                <div class="tool-card">
+                                    <h4>Confluence</h4>
+                                    <p>Kollaborative Dokumentation</p>
+                                </div>
+                                <div class="tool-card">
+                                    <h4>Git</h4>
+                                    <p>Versionskontrolle für Konfigurationen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Network Technology Section -->
+                <section id="network-tech" class="content-section">
+                    <h2>Netzwerktechnik</h2>
+                    <p>Grundlegende Netzwerktechnologien und -konzepte bilden das Fundament moderner Netzwerke.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Netzwerk-Topologien
+                        </button>
+                        <div class="expandable-content">
+                            <div class="topology-grid">
+                                <div class="topology-card">
+                                    <h4>Stern-Topologie</h4>
+                                    <p>Alle Geräte sind zentral mit einem Switch verbunden</p>
+                                    <p><strong>Vorteile:</strong> Ausfallsicher, einfach zu erweitern</p>
+                                    <p><strong>Nachteile:</strong> Zentraler Ausfallpunkt</p>
+                                </div>
+                                <div class="topology-card">
+                                    <h4>Bus-Topologie</h4>
+                                    <p>Alle Geräte an einem gemeinsamen Kabel</p>
+                                    <p><strong>Vorteile:</strong> Kostengünstig, einfach</p>
+                                    <p><strong>Nachteile:</strong> Kollisionen, schwer zu erweitern</p>
+                                </div>
+                                <div class="topology-card">
+                                    <h4>Ring-Topologie</h4>
+                                    <p>Geräte in einem geschlossenen Ring</p>
+                                    <p><strong>Vorteile:</strong> Gleichmäßige Datenübertragung</p>
+                                    <p><strong>Nachteile:</strong> Ein Ausfall stört das gesamte Netzwerk</p>
+                                </div>
+                                <div class="topology-card">
+                                    <h4>Mesh-Topologie</h4>
+                                    <p>Jedes Gerät mit mehreren anderen verbunden</p>
+                                    <p><strong>Vorteile:</strong> Hohe Redundanz</p>
+                                    <p><strong>Nachteile:</strong> Komplex, teuer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Koppelelemente
+                        </button>
+                        <div class="expandable-content">
+                            <div class="device-comparison">
+                                <h4>Hub vs. Switch vs. Router</h4>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Gerät</th>
+                                            <th>OSI-Layer</th>
+                                            <th>Funktion</th>
+                                            <th>Kollisionsdomäne</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Hub</td>
+                                            <td>Layer 1</td>
+                                            <td>Signalverstärkung</td>
+                                            <td>Eine große</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Switch</td>
+                                            <td>Layer 2</td>
+                                            <td>MAC-basierte Weiterleitung</td>
+                                            <td>Pro Port eine</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Router</td>
+                                            <td>Layer 3</td>
+                                            <td>IP-basiertes Routing</td>
+                                            <td>Pro Interface eine</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            VLANs und Trunking
+                        </button>
+                        <div class="expandable-content">
+                            <p>VLANs (Virtual LANs) ermöglichen die logische Segmentierung physischer Netzwerke:</p>
+                            <ul>
+                                <li><strong>Access-Ports:</strong> Gehören zu einem VLAN</li>
+                                <li><strong>Trunk-Ports:</strong> Tragen mehrere VLANs</li>
+                                <li><strong>802.1Q-Tagging:</strong> VLAN-Kennzeichnung</li>
+                                <li><strong>Native VLAN:</strong> Unmarkierter Verkehr</li>
+                            </ul>
+                            <div class="code-example">
+                                <pre><code># VLAN erstellen
+vlan 10
+name Users
+
+# Access-Port konfigurieren
+interface FastEthernet0/1
+switchport mode access
+switchport access vlan 10
+
+# Trunk-Port konfigurieren
+interface FastEthernet0/24
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transmission Section -->
+                <section id="transmission" class="content-section">
+                    <h2>Übertragungstechniken</h2>
+                    <p>Verschiedene Methoden der Datenübertragung in Netzwerken.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Übertragungsmodi
+                        </button>
+                        <div class="expandable-content">
+                            <div class="transmission-modes">
+                                <div class="mode-card">
+                                    <h4>Simplex</h4>
+                                    <p>Datenübertragung nur in eine Richtung</p>
+                                    <p><strong>Beispiel:</strong> Radio, Fernsehen</p>
+                                </div>
+                                <div class="mode-card">
+                                    <h4>Half-Duplex</h4>
+                                    <p>Bidirektional, aber nicht gleichzeitig</p>
+                                    <p><strong>Beispiel:</strong> Walkie-Talkie, Hub</p>
+                                </div>
+                                <div class="mode-card">
+                                    <h4>Full-Duplex</h4>
+                                    <p>Gleichzeitige bidirektionale Übertragung</p>
+                                    <p><strong>Beispiel:</strong> Telefon, Switch</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Ethernet-Standards
+                        </button>
+                        <div class="expandable-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Standard</th>
+                                        <th>Geschwindigkeit</th>
+                                        <th>Medium</th>
+                                        <th>Reichweite</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10BASE-T</td>
+                                        <td>10 Mbps</td>
+                                        <td>Cat3 UTP</td>
+                                        <td>100m</td>
+                                    </tr>
+                                    <tr>
+                                        <td>100BASE-TX</td>
+                                        <td>100 Mbps</td>
+                                        <td>Cat5 UTP</td>
+                                        <td>100m</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1000BASE-T</td>
+                                        <td>1 Gbps</td>
+                                        <td>Cat5e UTP</td>
+                                        <td>100m</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10GBASE-T</td>
+                                        <td>10 Gbps</td>
+                                        <td>Cat6a UTP</td>
+                                        <td>100m</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            QoS-Mechanismen
+                        </button>
+                        <div class="expandable-content">
+                            <p>Quality of Service (QoS) priorisiert Netzwerkverkehr:</p>
+                            <ul>
+                                <li><strong>Classification:</strong> Verkehr identifizieren</li>
+                                <li><strong>Marking:</strong> Pakete kennzeichnen</li>
+                                <li><strong>Queuing:</strong> Warteschlangen verwalten</li>
+                                <li><strong>Shaping:</strong> Datenrate begrenzen</li>
+                                <li><strong>Policing:</strong> Verkehr überwachen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hardware Section -->
+                <section id="hardware" class="content-section">
+                    <h2>Hardware</h2>
+                    <p>Netzwerkhardware und Übertragungsmedien bilden die physische Infrastruktur.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Switch-Typen
+                        </button>
+                        <div class="expandable-content">
+                            <div class="switch-types">
+                                <div class="switch-card">
+                                    <h4>Access Switch</h4>
+                                    <p>Verbindet Endgeräte mit dem Netzwerk</p>
+                                    <p><strong>Features:</strong> PoE, Port-Security, VLANs</p>
+                                </div>
+                                <div class="switch-card">
+                                    <h4>Distribution Switch</h4>
+                                    <p>Aggregiert Access-Switches</p>
+                                    <p><strong>Features:</strong> Layer-3-Routing, QoS</p>
+                                </div>
+                                <div class="switch-card">
+                                    <h4>Core Switch</h4>
+                                    <p>Hochgeschwindigkeits-Backbone</p>
+                                    <p><strong>Features:</strong> Redundanz, hoher Durchsatz</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Kabelkategorien
+                        </button>
+                        <div class="expandable-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Kategorie</th>
+                                        <th>Geschwindigkeit</th>
+                                        <th>Reichweite</th>
+                                        <th>Anwendung</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cat5e</td>
+                                        <td>1 Gbps</td>
+                                        <td>100m</td>
+                                        <td>Standard-Ethernet</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cat6</td>
+                                        <td>10 Gbps</td>
+                                        <td>55m</td>
+                                        <td>Hochgeschwindigkeits-LAN</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cat6a</td>
+                                        <td>10 Gbps</td>
+                                        <td>100m</td>
+                                        <td>Moderne Installationen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cat8</td>
+                                        <td>40 Gbps</td>
+                                        <td>30m</td>
+                                        <td>Rechenzentren</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Glasfaser-Technologie
+                        </button>
+                        <div class="expandable-content">
+                            <div class="fiber-comparison">
+                                <div class="fiber-card">
+                                    <h4>Singlemode (SM)</h4>
+                                    <p><strong>Kerndurchmesser:</strong> 9µm</p>
+                                    <p><strong>Reichweite:</strong> Bis 40km</p>
+                                    <p><strong>Anwendung:</strong> Lange Distanzen</p>
+                                </div>
+                                <div class="fiber-card">
+                                    <h4>Multimode (MM)</h4>
+                                    <p><strong>Kerndurchmesser:</strong> 50/62.5µm</p>
+                                    <p><strong>Reichweite:</strong> Bis 2km</p>
+                                    <p><strong>Anwendung:</strong> Kurze Distanzen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transmission Types Section -->
+                <section id="transmission-types" class="content-section">
+                    <h2>Sendearten</h2>
+                    <p>Verschiedene Arten der Datenübertragung und -verteilung in Netzwerken.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Ethernet Frame-Struktur
+                        </button>
+                        <div class="expandable-content">
+                            <div class="frame-structure">
+                                <div class="frame-field">Präambel (7 Bytes)</div>
+                                <div class="frame-field">SFD (1 Byte)</div>
+                                <div class="frame-field">Ziel-MAC (6 Bytes)</div>
+                                <div class="frame-field">Quell-MAC (6 Bytes)</div>
+                                <div class="frame-field">Typ/Länge (2 Bytes)</div>
+                                <div class="frame-field">Daten (46-1500 Bytes)</div>
+                                <div class="frame-field">FCS (4 Bytes)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            WLAN-Standards
+                        </button>
+                        <div class="expandable-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Standard</th>
+                                        <th>Frequenzband</th>
+                                        <th>Max. Geschwindigkeit</th>
+                                        <th>Besonderheiten</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>802.11n (Wi-Fi 4)</td>
+                                        <td>2.4/5 GHz</td>
+                                        <td>600 Mbps</td>
+                                        <td>MIMO</td>
+                                    </tr>
+                                    <tr>
+                                        <td>802.11ac (Wi-Fi 5)</td>
+                                        <td>5 GHz</td>
+                                        <td>6.9 Gbps</td>
+                                        <td>MU-MIMO</td>
+                                    </tr>
+                                    <tr>
+                                        <td>802.11ax (Wi-Fi 6)</td>
+                                        <td>2.4/5 GHz</td>
+                                        <td>9.6 Gbps</td>
+                                        <td>OFDMA, BSS-Coloring</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Übertragungsarten
+                        </button>
+                        <div class="expandable-content">
+                            <div class="transmission-types">
+                                <div class="type-card">
+                                    <h4>Unicast</h4>
+                                    <p>Punkt-zu-Punkt-Übertragung</p>
+                                    <p><strong>Beispiel:</strong> Webseiten-Abruf</p>
+                                </div>
+                                <div class="type-card">
+                                    <h4>Broadcast</h4>
+                                    <p>An alle Geräte im Netzwerk</p>
+                                    <p><strong>Beispiel:</strong> ARP-Request</p>
+                                </div>
+                                <div class="type-card">
+                                    <h4>Multicast</h4>
+                                    <p>An eine Gruppe von Geräten</p>
+                                    <p><strong>Beispiel:</strong> Video-Streaming</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security Section -->
+                <section id="security" class="content-section">
+                    <h2>Sicherheit (LAN/WLAN)</h2>
+                    <p>Netzwerksicherheit schützt vor Bedrohungen und unbefugtem Zugriff.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            LAN-Sicherheit
+                        </button>
+                        <div class="expandable-content">
+                            <div class="security-threats">
+                                <div class="threat-card">
+                                    <h4>ARP-Spoofing</h4>
+                                    <p>Manipulation der ARP-Tabelle</p>
+                                    <p><strong>Schutz:</strong> Dynamic ARP Inspection</p>
+                                </div>
+                                <div class="threat-card">
+                                    <h4>VLAN-Hopping</h4>
+                                    <p>Unbefugter Zugriff auf andere VLANs</p>
+                                    <p><strong>Schutz:</strong> Port-Security, Private VLANs</p>
+                                </div>
+                                <div class="threat-card">
+                                    <h4>MAC-Flooding</h4>
+                                    <p>Überlastung der MAC-Tabelle</p>
+                                    <p><strong>Schutz:</strong> Port-Security limits</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            WLAN-Sicherheit
+                        </button>
+                        <div class="expandable-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Standard</th>
+                                        <th>Verschlüsselung</th>
+                                        <th>Schlüssellänge</th>
+                                        <th>Sicherheitslevel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>WEP</td>
+                                        <td>RC4</td>
+                                        <td>64/128 Bit</td>
+                                        <td>Sehr niedrig</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WPA</td>
+                                        <td>TKIP</td>
+                                        <td>128 Bit</td>
+                                        <td>Niedrig</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WPA2</td>
+                                        <td>AES</td>
+                                        <td>256 Bit</td>
+                                        <td>Hoch</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WPA3</td>
+                                        <td>AES</td>
+                                        <td>256 Bit</td>
+                                        <td>Sehr hoch</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            802.1X Authentication
+                        </button>
+                        <div class="expandable-content">
+                            <p>802.1X bietet port-basierte Netzwerk-Authentifizierung:</p>
+                            <ul>
+                                <li><strong>Supplicant:</strong> Client-Gerät</li>
+                                <li><strong>Authenticator:</strong> Switch/Access Point</li>
+                                <li><strong>Authentication Server:</strong> RADIUS-Server</li>
+                            </ul>
+                            <div class="auth-flow">
+                                <div class="auth-step">1. Client verbindet sich</div>
+                                <div class="auth-step">2. Switch fordert Authentifizierung</div>
+                                <div class="auth-step">3. Client sendet Credentials</div>
+                                <div class="auth-step">4. RADIUS-Server validiert</div>
+                                <div class="auth-step">5. Zugriff gewährt/verweigert</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Protocols Section -->
+                <section id="protocols" class="content-section">
+                    <h2>Netzwerkprotokolle</h2>
+                    <p>Protokolle definieren die Regeln für die Kommunikation zwischen Netzwerkgeräten.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            TCP/IP Stack
+                        </button>
+                        <div class="expandable-content">
+                            <div class="protocol-stack">
+                                <div class="stack-layer">
+                                    <h4>Application Layer</h4>
+                                    <p>HTTP, HTTPS, FTP, SMTP, DNS</p>
+                                </div>
+                                <div class="stack-layer">
+                                    <h4>Transport Layer</h4>
+                                    <p>TCP, UDP</p>
+                                </div>
+                                <div class="stack-layer">
+                                    <h4>Internet Layer</h4>
+                                    <p>IP, ICMP, ARP</p>
+                                </div>
+                                <div class="stack-layer">
+                                    <h4>Network Access Layer</h4>
+                                    <p>Ethernet, Wi-Fi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Wichtige Protokolle
+                        </button>
+                        <div class="expandable-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Protokoll</th>
+                                        <th>Port</th>
+                                        <th>Zweck</th>
+                                        <th>Transport</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>HTTP</td>
+                                        <td>80</td>
+                                        <td>Webseiten übertragen</td>
+                                        <td>TCP</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HTTPS</td>
+                                        <td>443</td>
+                                        <td>Sichere Webseiten</td>
+                                        <td>TCP</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DNS</td>
+                                        <td>53</td>
+                                        <td>Namensauflösung</td>
+                                        <td>UDP/TCP</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DHCP</td>
+                                        <td>67/68</td>
+                                        <td>IP-Adressvergabe</td>
+                                        <td>UDP</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SNMP</td>
+                                        <td>161</td>
+                                        <td>Netzwerkmanagement</td>
+                                        <td>UDP</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Tunneling-Protokolle
+                        </button>
+                        <div class="expandable-content">
+                            <div class="tunneling-protocols">
+                                <div class="protocol-card">
+                                    <h4>GRE (Generic Routing Encapsulation)</h4>
+                                    <p>Einfaches Tunneling-Protokoll</p>
+                                    <p><strong>Einsatz:</strong> Site-to-Site VPN</p>
+                                </div>
+                                <div class="protocol-card">
+                                    <h4>IPSec</h4>
+                                    <p>Sicheres IP-Tunneling</p>
+                                    <p><strong>Einsatz:</strong> VPN-Verbindungen</p>
+                                </div>
+                                <div class="protocol-card">
+                                    <h4>L2TP</h4>
+                                    <p>Layer 2 Tunneling Protocol</p>
+                                    <p><strong>Einsatz:</strong> Remote Access VPN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OSI Model Section -->
+                <section id="osi-model" class="content-section">
+                    <h2>OSI-Modell</h2>
+                    <p>Das OSI-Modell (Open Systems Interconnection) ist ein Referenzmodell für Netzwerkprotokolle mit 7 Schichten.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Die 7 Schichten im Detail
+                        </button>
+                        <div class="expandable-content">
+                            <div class="osi-layers">
+                                <div class="osi-layer">
+                                    <h4>Layer 7 - Application</h4>
+                                    <p><strong>Funktion:</strong> Anwendungsschnittstellen</p>
+                                    <p><strong>Protokolle:</strong> HTTP, HTTPS, FTP, SMTP</p>
+                                </div>
+                                <div class="osi-layer">
+                                    <h4>Layer 6 - Presentation</h4>
+                                    <p><strong>Funktion:</strong> Datenverschlüsselung und -kompression</p>
+                                    <p><strong>Protokolle:</strong> SSL/TLS, JPEG, MPEG</p>
+                                </div>
+                                <div class="osi-layer">
+                                    <h4>Layer 5 - Session</h4>
+                                    <p><strong>Funktion:</strong> Sitzungsaufbau und -verwaltung</p>
+                                    <p><strong>Protokolle:</strong> NetBIOS, RPC, SQL</p>
+                                </div>
+                                <div class="osi-layer">
+                                    <h4>Layer 4 - Transport</h4>
+                                    <p><strong>Funktion:</strong> Zuverlässige Datenübertragung</p>
+                                    <p><strong>Protokolle:</strong> TCP, UDP</p>
+                                </div>
+                                <div class="osi-layer">
+                                    <h4>Layer 3 - Network</h4>
+                                    <p><strong>Funktion:</strong> Routing und logische Adressierung</p>
+                                    <p><strong>Protokolle:</strong> IP, ICMP, ARP</p>
+                                </div>
+                                <div class="osi-layer">
+                                    <h4>Layer 2 - Data Link</h4>
+                                    <p><strong>Funktion:</strong> Fehlerkorrektur und Zugriffskontrolle</p>
+                                    <p><strong>Protokolle:</strong> Ethernet, PPP, Frame Relay</p>
+                                </div>
+                                <div class="osi-layer">
+                                    <h4>Layer 1 - Physical</h4>
+                                    <p><strong>Funktion:</strong> Übertragung von Bits</p>
+                                    <p><strong>Protokolle:</strong> Ethernet, Wi-Fi, Bluetooth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Dateneinkapselung
+                        </button>
+                        <div class="expandable-content">
+                            <div class="encapsulation-process">
+                                <div class="encap-step">
+                                    <h4>Data → Segments</h4>
+                                    <p>Transport Layer fügt TCP/UDP-Header hinzu</p>
+                                </div>
+                                <div class="encap-step">
+                                    <h4>Segments → Packets</h4>
+                                    <p>Network Layer fügt IP-Header hinzu</p>
+                                </div>
+                                <div class="encap-step">
+                                    <h4>Packets → Frames</h4>
+                                    <p>Data Link Layer fügt Ethernet-Header hinzu</p>
+                                </div>
+                                <div class="encap-step">
+                                    <h4>Frames → Bits</h4>
+                                    <p>Physical Layer überträgt als elektrische Signale</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Troubleshooting mit OSI-Modell
+                        </button>
+                        <div class="expandable-content">
+                            <div class="troubleshooting-approach">
+                                <h4>Bottom-Up Ansatz:</h4>
+                                <ol>
+                                    <li><strong>Physical:</strong> Kabel, Verbindungen prüfen</li>
+                                    <li><strong>Data Link:</strong> Switch-Ports, MAC-Adressen</li>
+                                    <li><strong>Network:</strong> IP-Adressen, Routing</li>
+                                    <li><strong>Transport:</strong> Port-Erreichbarkeit</li>
+                                    <li><strong>Session:</strong> Verbindungsaufbau</li>
+                                    <li><strong>Presentation:</strong> Verschlüsselung</li>
+                                    <li><strong>Application:</strong> Anwendungsfehler</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Attacks Section -->
+                <section id="attacks" class="content-section">
+                    <h2>Angriffstechniken</h2>
+                    <p>Verständnis häufiger Netzwerkangriffe ist essentiell für effektive Sicherheitsmaßnahmen.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Man-in-the-Middle Angriffe
+                        </button>
+                        <div class="expandable-content">
+                            <div class="attack-details">
+                                <h4>Ablauf:</h4>
+                                <ol>
+                                    <li>Angreifer positioniert sich zwischen Kommunikationspartnern</li>
+                                    <li>Abfangen und Manipulation der Datenpakete</li>
+                                    <li>Weiterleitung an eigentliches Ziel</li>
+                                </ol>
+                                <h4>Schutzmaßnahmen:</h4>
+                                <ul>
+                                    <li>Verschlüsselung (TLS/SSL)</li>
+                                    <li>Zertifikatsvalidierung</li>
+                                    <li>VPN-Nutzung</li>
+                                    <li>Dynamic ARP Inspection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            DDoS-Attacken
+                        </button>
+                        <div class="expandable-content">
+                            <div class="ddos-types">
+                                <div class="ddos-card">
+                                    <h4>Volumetric Attacks</h4>
+                                    <p>Überlastung der Bandbreite</p>
+                                    <p><strong>Beispiel:</strong> UDP Flood</p>
+                                </div>
+                                <div class="ddos-card">
+                                    <h4>Protocol Attacks</h4>
+                                    <p>Ausnutzung von Protokollschwächen</p>
+                                    <p><strong>Beispiel:</strong> SYN Flood</p>
+                                </div>
+                                <div class="ddos-card">
+                                    <h4>Application Layer Attacks</h4>
+                                    <p>Überlastung der Anwendung</p>
+                                    <p><strong>Beispiel:</strong> HTTP Flood</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Wireless-Angriffe
+                        </button>
+                        <div class="expandable-content">
+                            <div class="wireless-attacks">
+                                <div class="attack-card">
+                                    <h4>Rogue Access Point</h4>
+                                    <p>Unberechtigte WLAN-Zugangspunkte</p>
+                                    <p><strong>Schutz:</strong> WLAN-Monitoring</p>
+                                </div>
+                                <div class="attack-card">
+                                    <h4>Evil Twin</h4>
+                                    <p>Fake-Access-Point mit bekannter SSID</p>
+                                    <p><strong>Schutz:</strong> WPA2/WPA3 Enterprise</p>
+                                </div>
+                                <div class="attack-card">
+                                    <h4>Deauthentication Attack</h4>
+                                    <p>Zwangsweise Trennung von Clients</p>
+                                    <p><strong>Schutz:</strong> 802.11w (PMF)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Exercises Section -->
+                <section id="exercises" class="content-section">
+                    <h2>Praktische Übungen</h2>
+                    <p>Vertiefen Sie Ihr Wissen durch praktische Übungen zu allen Themenbereichen.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Subnetting-Übungen
+                        </button>
+                        <div class="expandable-content">
+                            <div class="exercise-card">
+                                <h4>Übung 1: Netzwerk 192.168.1.0/24 in 4 Subnetze aufteilen</h4>
+                                <p><strong>Schwierigkeit:</strong> Beginner</p>
+                                <p><strong>Aufgabe:</strong> Teilen Sie das Netzwerk 192.168.1.0/24 in 4 gleich große Subnetze auf.</p>
+                                <div class="solution">
+                                    <h5>Lösung:</h5>
+                                    <ol>
+                                        <li>Für 4 Subnetze brauchen wir 2 zusätzliche Bits (2² = 4)</li>
+                                        <li>Neue Subnetzmaske: /26 (255.255.255.192)</li>
+                                        <li>Subnetz 1: 192.168.1.0/26 (192.168.1.1 - 192.168.1.62)</li>
+                                        <li>Subnetz 2: 192.168.1.64/26 (192.168.1.65 - 192.168.1.126)</li>
+                                        <li>Subnetz 3: 192.168.1.128/26 (192.168.1.129 - 192.168.1.190)</li>
+                                        <li>Subnetz 4: 192.168.1.192/26 (192.168.1.193 - 192.168.1.254)</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h4>Übung 2: VLSM-Planung</h4>
+                                <p><strong>Schwierigkeit:</strong> Intermediate</p>
+                                <p><strong>Aufgabe:</strong> Erstellen Sie ein VLSM-Schema für folgende Anforderungen:</p>
+                                <ul>
+                                    <li>Abteilung A: 100 Hosts</li>
+                                    <li>Abteilung B: 50 Hosts</li>
+                                    <li>Abteilung C: 25 Hosts</li>
+                                    <li>WAN-Links: 2 Hosts</li>
+                                </ul>
+                                <div class="solution">
+                                    <h5>Lösung:</h5>
+                                    <ol>
+                                        <li>Abteilung A: 192.168.1.0/25 (126 Hosts)</li>
+                                        <li>Abteilung B: 192.168.1.128/26 (62 Hosts)</li>
+                                        <li>Abteilung C: 192.168.1.192/27 (30 Hosts)</li>
+                                        <li>WAN-Link 1: 192.168.1.224/30 (2 Hosts)</li>
+                                        <li>WAN-Link 2: 192.168.1.228/30 (2 Hosts)</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Routing-Übungen
+                        </button>
+                        <div class="expandable-content">
+                            <div class="exercise-card">
+                                <h4>Übung 3: Routing-Tabelle erstellen</h4>
+                                <p><strong>Schwierigkeit:</strong> Intermediate</p>
+                                <p><strong>Aufgabe:</strong> Erstellen Sie eine Routing-Tabelle für Router R1 mit folgender Topologie:</p>
+                                <div class="topology-description">
+                                    <p>R1 (192.168.1.1/24) ↔ R2 (192.168.2.1/24) ↔ R3 (192.168.3.1/24)</p>
+                                </div>
+                                <div class="solution">
+                                    <h5>Lösung:</h5>
+                                    <div class="code-example">
+                                        <pre><code># Router R1 Konfiguration
+ip route 192.168.2.0 255.255.255.0 192.168.1.2
+ip route 192.168.3.0 255.255.255.0 192.168.1.2
+
+# Routing-Tabelle
+Network         Netmask         Gateway         Interface
+192.168.1.0     255.255.255.0   0.0.0.0         Fa0/0
+192.168.2.0     255.255.255.0   192.168.1.2     Fa0/0
+192.168.3.0     255.255.255.0   192.168.1.2     Fa0/0</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            OSI-Modell Übungen
+                        </button>
+                        <div class="expandable-content">
+                            <div class="exercise-card">
+                                <h4>Übung 4: Protokolle den OSI-Schichten zuordnen</h4>
+                                <p><strong>Schwierigkeit:</strong> Beginner</p>
+                                <p><strong>Aufgabe:</strong> Ordnen Sie folgende Protokolle den richtigen OSI-Schichten zu:</p>
+                                <ul>
+                                    <li>HTTP</li>
+                                    <li>TCP</li>
+                                    <li>IP</li>
+                                    <li>Ethernet</li>
+                                </ul>
+                                <div class="solution">
+                                    <h5>Lösung:</h5>
+                                    <ul>
+                                        <li><strong>HTTP:</strong> Layer 7 (Application)</li>
+                                        <li><strong>TCP:</strong> Layer 4 (Transport)</li>
+                                        <li><strong>IP:</strong> Layer 3 (Network)</li>
+                                        <li><strong>Ethernet:</strong> Layer 2 (Data Link)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Sicherheits-Übungen
+                        </button>
+                        <div class="expandable-content">
+                            <div class="exercise-card">
+                                <h4>Übung 5: WLAN-Sicherheit konfigurieren</h4>
+                                <p><strong>Schwierigkeit:</strong> Intermediate</p>
+                                <p><strong>Aufgabe:</strong> Konfigurieren Sie ein sicheres WLAN mit WPA2-PSK.</p>
+                                <div class="solution">
+                                    <h5>Lösung:</h5>
+                                    <div class="code-example">
+                                        <pre><code># Access Point Konfiguration
+wlan ssid "Sicheres-WLAN"
+wlan security wpa2-psk "StarkesPa55w0rt!"
+wlan mode access-point
+wlan broadcast-ssid disable
+wlan mac-filter enable</code></pre>
+                                    </div>
+                                    <p><strong>Zusätzliche Sicherheitsmaßnahmen:</strong></p>
+                                    <ul>
+                                        <li>SSID-Broadcast deaktivieren</li>
+                                        <li>MAC-Filter aktivieren</li>
+                                        <li>Regelmäßige Passwort-Updates</li>
+                                        <li>Gastnetzwerk isolieren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Troubleshooting-Übungen
+                        </button>
+                        <div class="expandable-content">
+                            <div class="exercise-card">
+                                <h4>Übung 6: Netzwerk-Troubleshooting</h4>
+                                <p><strong>Schwierigkeit:</strong> Advanced</p>
+                                <p><strong>Szenario:</strong> Ein Client kann nicht auf das Internet zugreifen, lokale Ressourcen sind erreichbar.</p>
+                                <div class="solution">
+                                    <h5>Troubleshooting-Schritte:</h5>
+                                    <ol>
+                                        <li><strong>Layer 1:</strong> Kabelverbindung prüfen</li>
+                                        <li><strong>Layer 2:</strong> Switch-Port Status</li>
+                                        <li><strong>Layer 3:</strong> IP-Konfiguration (ipconfig)</li>
+                                        <li><strong>Layer 3:</strong> Gateway-Erreichbarkeit (ping)</li>
+                                        <li><strong>Layer 3:</strong> DNS-Auflösung (nslookup)</li>
+                                        <li><strong>Layer 4:</strong> Port-Erreichbarkeit (telnet)</li>
+                                    </ol>
+                                    <div class="code-example">
+                                        <pre><code># Troubleshooting-Kommandos
+ipconfig /all
+ping 192.168.1.1
+nslookup google.com
+tracert 8.8.8.8
+netstat -an</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Careers Section -->
+                <section id="careers" class="content-section">
+                    <h2>Karrierewege</h2>
+                    <p>Entdecken Sie die vielfältigen Karrieremöglichkeiten in der Netzwerktechnik.</p>
+                    
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Netzwerkadministrator
+                        </button>
+                        <div class="expandable-content">
+                            <div class="career-details">
+                                <h4>Aufgaben:</h4>
+                                <ul>
+                                    <li>Netzwerküberwachung und -wartung</li>
+                                    <li>Konfiguration von Netzwerkgeräten</li>
+                                    <li>Fehlerbehebung und Support</li>
+                                    <li>Dokumentation und Reporting</li>
+                                </ul>
+                                <h4>Erforderliche Fähigkeiten:</h4>
+                                <ul>
+                                    <li>Grundkenntnisse in TCP/IP</li>
+                                    <li>Router- und Switch-Konfiguration</li>
+                                    <li>Monitoring-Tools</li>
+                                    <li>Dokumentationsfähigkeiten</li>
+                                </ul>
+                                <h4>Durchschnittliches Gehalt:</h4>
+                                <p>45.000 - 65.000 € pro Jahr</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Netzwerkingenieur
+                        </button>
+                        <div class="expandable-content">
+                            <div class="career-details">
+                                <h4>Aufgaben:</h4>
+                                <ul>
+                                    <li>Netzwerkdesign und -planung</li>
+                                    <li>Implementierung komplexer Lösungen</li>
+                                    <li>Performance-Optimierung</li>
+                                    <li>Technische Beratung</li>
+                                </ul>
+                                <h4>Erforderliche Fähigkeiten:</h4>
+                                <ul>
+                                    <li>Erweiterte Routing-Kenntnisse</li>
+                                    <li>Netzwerkdesign-Prinzipien</li>
+                                    <li>Automatisierung und Scripting</li>
+                                    <li>Projektmanagement</li>
+                                </ul>
+                                <h4>Durchschnittliches Gehalt:</h4>
+                                <p>60.000 - 85.000 € pro Jahr</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Netzwerk-Sicherheitsexperte
+                        </button>
+                        <div class="expandable-content">
+                            <div class="career-details">
+                                <h4>Aufgaben:</h4>
+                                <ul>
+                                    <li>Sicherheitsanalysen und -bewertungen</li>
+                                    <li>Implementierung von Sicherheitslösungen</li>
+                                    <li>Incident Response</li>
+                                    <li>Compliance-Überwachung</li>
+                                </ul>
+                                <h4>Erforderliche Fähigkeiten:</h4>
+                                <ul>
+                                    <li>Firewall- und IDS-Konfiguration</li>
+                                    <li>Penetration Testing</li>
+                                    <li>Sicherheitsstandards (ISO 27001)</li>
+                                    <li>Forensik-Grundlagen</li>
+                                </ul>
+                                <h4>Durchschnittliches Gehalt:</h4>
+                                <p>70.000 - 100.000 € pro Jahr</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Zertifizierungen
+                        </button>
+                        <div class="expandable-content">
+                            <div class="certification-grid">
+                                <div class="cert-card">
+                                    <h4>Cisco Zertifizierungen</h4>
+                                    <ul>
+                                        <li><strong>CCNA:</strong> Einstieg in Cisco-Netzwerke</li>
+                                        <li><strong>CCNP:</strong> Professionelle Netzwerktechnik</li>
+                                        <li><strong>CCIE:</strong> Experten-Level</li>
+                                    </ul>
+                                </div>
+                                <div class="cert-card">
+                                    <h4>CompTIA Zertifizierungen</h4>
+                                    <ul>
+                                        <li><strong>Network+:</strong> Netzwerk-Grundlagen</li>
+                                        <li><strong>Security+:</strong> IT-Sicherheit</li>
+                                        <li><strong>CySA+:</strong> Cyber Security Analyst</li>
+                                    </ul>
+                                </div>
+                                <div class="cert-card">
+                                    <h4>Microsoft Zertifizierungen</h4>
+                                    <ul>
+                                        <li><strong>Azure Network Engineer:</strong> Cloud-Netzwerke</li>
+                                        <li><strong>Azure Security Engineer:</strong> Cloud-Sicherheit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-down"></i>
+                            Weiterbildungsmöglichkeiten
+                        </button>
+                        <div class="expandable-content">
+                            <div class="education-resources">
+                                <h4>Online-Kurse:</h4>
+                                <ul>
+                                    <li>Cisco Networking Academy</li>
+                                    <li>Udemy Netzwerk-Kurse</li>
+                                    <li>Coursera Network Specializations</li>
+                                    <li>Pluralsight IT-Kurse</li>
+                                </ul>
+                                <h4>Praktische Erfahrung:</h4>
+                                <ul>
+                                    <li>Homelab aufbauen</li>
+                                    <li>Packet Tracer Simulationen</li>
+                                    <li>GNS3 Übungen</li>
+                                    <li>Cloud-Plattformen nutzen</li>
+                                </ul>
+                                <h4>Weiterführende Literatur:</h4>
+                                <ul>
+                                    <li>"Network Warrior" - Gary Donahue</li>
+                                    <li>"TCP/IP Illustrated" - W. Richard Stevens</li>
+                                    <li>"Computer Networking" - Kurose & Ross</li>
+                                    <li>"CCNA Study Guide" - Todd Lammle</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

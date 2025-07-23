@@ -1,0 +1,617 @@
+/* Asset-Modellierung Styles */
+
+/* Asset Dashboard Layout */
+.asset-dashboard {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.asset-canvas-container,
+.asset-details-panel {
+  flex: 1;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.asset-canvas-container {
+  flex: 2;
+}
+
+/* Asset Toolbar */
+.asset-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.asset-view-controls {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.asset-view-controls label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Asset Canvas */
+.asset-canvas-wrapper {
+  position: relative;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+#asset-canvas {
+  display: block;
+  cursor: default;
+  background-color: #f9f9f9;
+}
+
+#asset-canvas:hover {
+  cursor: grab;
+}
+
+#asset-canvas.dragging {
+  cursor: grabbing;
+}
+
+/* Asset Legend */
+.asset-legend {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.asset-legend .legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.asset-legend .legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: var(--spacing-xs);
+  border-radius: 3px;
+  border: 1px solid var(--border-color);
+}
+
+.legend-color.asset-critical {
+  background-color: #F44336;
+}
+
+.legend-color.asset-medium {
+  background-color: #FF9800;
+}
+
+.legend-color.asset-low {
+  background-color: #4CAF50;
+}
+
+/* Asset Management Section */
+.asset-management-section {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+/* Asset Filter Container */
+.asset-filter-container {
+  margin-bottom: var(--spacing-md);
+}
+
+.asset-filter-buttons,
+.asset-criticality-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.asset-filter-btn,
+.criticality-filter-btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.asset-filter-btn:hover,
+.criticality-filter-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.asset-filter-btn.active,
+.criticality-filter-btn.active {
+  background-color: var(--primary-color);
+}
+
+/* Asset Search Box */
+.asset-search-box {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+}
+
+.asset-search-box input {
+  flex: 1;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.asset-search-box button {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  cursor: pointer;
+}
+
+/* Assets List */
+.assets-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  min-height: 200px;
+  padding: var(--spacing-sm);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+/* Asset Item */
+.asset-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.asset-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.asset-item.selected {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+.asset-item.server {
+  border-left: 4px solid #2196F3;
+}
+
+.asset-item.database {
+  border-left: 4px solid #4CAF50;
+}
+
+.asset-item.application {
+  border-left: 4px solid #FF9800;
+}
+
+.asset-item.network {
+  border-left: 4px solid #9C27B0;
+}
+
+.asset-item.data {
+  border-left: 4px solid #F44336;
+}
+
+.asset-item.personnel {
+  border-left: 4px solid #795548;
+}
+
+.asset-item.facility {
+  border-left: 4px solid #607D8B;
+}
+
+.asset-item.device {
+  border-left: 4px solid #00BCD4;
+}
+
+/* Asset Header */
+.asset-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.asset-id {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+.asset-criticality-badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.asset-item.criticality-3 .asset-criticality-badge {
+  background-color: #F44336;
+}
+
+.asset-item.criticality-2 .asset-criticality-badge {
+  background-color: #FF9800;
+}
+
+.asset-item.criticality-1 .asset-criticality-badge {
+  background-color: #4CAF50;
+}
+
+.asset-name {
+  font-weight: bold;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-color);
+}
+
+.asset-type {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.asset-owner {
+  font-size: 0.8rem;
+  color: var(--light-text);
+}
+
+/* Asset Details Panel */
+.asset-details-panel h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.asset-info {
+  margin-bottom: var(--spacing-md);
+}
+
+.asset-info h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.asset-info p {
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.4;
+}
+
+.asset-info strong {
+  color: var(--text-color);
+}
+
+/* Asset CIA Chart */
+.asset-cia-chart {
+  margin-top: var(--spacing-md);
+  height: 250px;
+}
+
+.asset-cia-chart h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Asset Threat List */
+.asset-threat-list,
+.asset-control-list {
+  margin-top: var(--spacing-md);
+}
+
+.asset-threat-list h3,
+.asset-control-list h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.asset-threat-item,
+.asset-control-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.threat-id,
+.control-id {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+.threat-name,
+.control-name {
+  flex: 1;
+  margin-left: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.threat-risk {
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  color: white;
+}
+
+.threat-risk:contains("Hohes Risiko") {
+  background-color: #F44336;
+}
+
+.threat-risk:contains("Mittleres Risiko") {
+  background-color: #FF9800;
+}
+
+.threat-risk:contains("Niedriges Risiko") {
+  background-color: #4CAF50;
+}
+
+.control-type {
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Asset Modal Styles */
+#asset-modal .modal-content {
+  max-width: 700px;
+}
+
+.cia-form-sliders {
+  margin-top: var(--spacing-md);
+}
+
+.cia-form-sliders .form-group {
+  margin-bottom: var(--spacing-sm);
+}
+
+.cia-form-sliders label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.cia-form-sliders input[type="range"] {
+  width: 100%;
+  margin-top: var(--spacing-xs);
+}
+
+/* Threat Linking Modal */
+#threat-linking-modal .modal-content {
+  max-width: 800px;
+}
+
+.threat-linking-content {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.available-threats,
+.linked-threats {
+  flex: 1;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.available-threats h3,
+.linked-threats h3 {
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.threat-link-item {
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.threat-link-item:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.threat-link-item.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Asset Risk Matrix Styles */
+.asset-risk-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.asset-risk-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.asset-risk-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.asset-risk-card.high-risk {
+  border-left: 4px solid #F44336;
+}
+
+.asset-risk-card.medium-risk {
+  border-left: 4px solid #FF9800;
+}
+
+.asset-risk-card.low-risk {
+  border-left: 4px solid #4CAF50;
+}
+
+.asset-risk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.asset-risk-score {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.asset-risk-details {
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+
+.asset-risk-details div {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Responsive Design für Assets */
+@media (max-width: 992px) {
+  .asset-dashboard {
+    flex-direction: column;
+  }
+  
+  .assets-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .asset-toolbar {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .threat-linking-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .asset-filter-buttons,
+  .asset-criticality-filters {
+    flex-direction: column;
+  }
+  
+  .assets-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .asset-canvas-wrapper {
+    overflow-x: auto;
+  }
+  
+  #asset-canvas {
+    min-width: 600px;
+  }
+}
+
+/* Dark Theme Anpassungen für Assets */
+.dark-theme .asset-canvas-wrapper,
+.dark-theme #asset-canvas {
+  background-color: #2a2a2a;
+}
+
+.dark-theme .asset-risk-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.dark-theme .threat-link-item:hover {
+  background-color: var(--primary-color);
+}
+
+/* Animation für Asset-Interaktionen */
+@keyframes assetPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.asset-item.pulse {
+  animation: assetPulse 0.5s ease-in-out;
+}
+
+/* Asset Connection Lines */
+.asset-connection {
+  stroke: var(--primary-color);
+  stroke-width: 2;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.asset-connection:hover {
+  opacity: 1;
+  stroke-width: 3;
+}
+
+/* Asset Tooltip */
+.asset-tooltip {
+  position: absolute;
+  background-color: var(--text-color);
+  color: var(--card-bg);
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.asset-tooltip.show {
+  opacity: 1;
+}
+

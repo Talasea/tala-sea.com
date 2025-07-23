@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snort3 Dokumentation - Kali Linux & Ubuntu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Snort3 Dokumentation</h1>
+                </div>
+                <nav class="nav-tabs">
+                    <button class="tab-button active" data-tab="kali">Kali Linux</button>
+                    <button class="tab-button" data-tab="ubuntu">Ubuntu</button>
+                </nav>
+                <div class="header-controls">
+                    <button class="search-toggle" id="searchToggle">🔍</button>
+                    <button class="theme-toggle" id="themeToggle">🌙</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+                </div>
+            </div>
+        </div>
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <input type="text" id="searchInput" placeholder="Dokumentation durchsuchen...">
+                <button class="search-close" id="searchClose">×</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu" id="kaliNav">
+                    <li><a href="#kali-willkommen" class="nav-link">Willkommen</a></li>
+                    <li><a href="#kali-systemvoraussetzungen" class="nav-link">Systemvoraussetzungen</a></li>
+                    <li><a href="#kali-installation" class="nav-link">Installation</a></li>
+                    <li><a href="#kali-regeln" class="nav-link">Regeln einpflegen</a></li>
+                    <li><a href="#kali-heimconfig" class="nav-link">Heimkonfiguration</a></li>
+                    <li><a href="#kali-test" class="nav-link">Funktionstest</a></li>
+                    <li><a href="#kali-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    <li><a href="#downloads" class="nav-link">Downloads</a></li>
+                    <li><a href="#ressourcen" class="nav-link">Weiterführende Ressourcen</a></li>
+                </ul>
+                <ul class="nav-menu hidden" id="ubuntuNav">
+                    <li><a href="#ubuntu-willkommen" class="nav-link">Willkommen</a></li>
+                    <li><a href="#ubuntu-systemvoraussetzungen" class="nav-link">Systemvoraussetzungen</a></li>
+                    <li><a href="#ubuntu-installation" class="nav-link">Installation</a></li>
+                    <li><a href="#ubuntu-regeln" class="nav-link">Regeln einpflegen</a></li>
+                    <li><a href="#ubuntu-heimconfig" class="nav-link">Heimkonfiguration</a></li>
+                    <li><a href="#ubuntu-test" class="nav-link">Funktionstest</a></li>
+                    <li><a href="#ubuntu-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    <li><a href="#downloads" class="nav-link">Downloads</a></li>
+                    <li><a href="#ressourcen" class="nav-link">Weiterführende Ressourcen</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            <!-- Kali Linux Content -->
+            <div class="tab-content active" id="kaliContent">
+                <section id="kali-willkommen">
+                    <h2>Willkommen zur Snort3-Dokumentation für Kali Linux</h2>
+                    <p>Willkommen zur umfassenden Snort3-Dokumentation für Kali Linux. Diese Anleitung führt Sie durch die komplette Installation und Konfiguration von Snort3 auf Kali Linux.</p>
+                    <div class="info-box">
+                        <h3>Was ist Snort3?</h3>
+                        <p>Snort3 ist die nächste Generation des populären Intrusion Detection Systems (IDS) und Intrusion Prevention Systems (IPS). Es bietet erweiterte Funktionalitäten und bessere Performance.</p>
+                    </div>
+                </section>
+
+                <section id="kali-systemvoraussetzungen">
+                    <h2>Systemvoraussetzungen</h2>
+                    <ul>
+                        <li>Kali Linux 2023.x oder neuer</li>
+                        <li>Mindestens 2GB RAM (4GB empfohlen)</li>
+                        <li>Netzwerkadapter mit Promiscuous Mode Support</li>
+                        <li>Root-Berechtigung für Installation</li>
+                    </ul>
+                </section>
+
+                <section id="kali-installation">
+                    <h2>Installation</h2>
+                    <h3>APT-Installation (empfohlen)</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash">sudo apt update && sudo apt install snort -y</code></pre>
+                    </div>
+
+                    <h3>Source-Build Installation</h3>
+                    <p>Für die neueste Version oder erweiterte Funktionen:</p>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># Abhängigkeiten installieren
+sudo apt update
+sudo apt install build-essential cmake libpcap-dev libdumbnet-dev \
+    zlib1g-dev libssl-dev libnghttp2-dev libdnet-dev \
+    libhwloc-dev pkg-config
+
+# Snort3 herunterladen und kompilieren
+cd /tmp
+wget https://github.com/snort3/snort3/archive/refs/heads/master.zip
+unzip master.zip
+cd snort3-master
+./configure_cmake.sh --prefix=/usr/local
+cd build
+make -j$(nproc)
+sudo make install</code></pre>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3>Wichtiger Hinweis</h3>
+                        <p>Bei Source-Build können Abhängigkeitsprobleme auftreten. Stellen Sie sicher, dass alle erforderlichen Bibliotheken installiert sind.</p>
+                    </div>
+                </section>
+
+                <section id="kali-regeln">
+                    <h2>Regeln einpflegen</h2>
+                    <h3>Community-Rules herunterladen</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash">cd /tmp
+wget https://www.snort.org/downloads/community/snort3-community-rules.tar.gz
+tar -xzf snort3-community-rules.tar.gz
+sudo cp -r snort3-community-rules/* /usr/local/etc/snort/</code></pre>
+                    </div>
+
+                    <h3>Regeln in Konfiguration einbinden</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-lua">-- In /usr/local/etc/snort/snort.lua
+include 'snort3-community.rules'</code></pre>
+                    </div>
+                </section>
+
+                <section id="kali-heimconfig">
+                    <h2>Heimkonfiguration</h2>
+                    <h3>Netzwerk-Variablen definieren</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-lua">-- Heimnetzwerk definieren
+HOME_NET = '192.168.0.0/24'
+EXTERNAL_NET = 'any'
+
+-- Logging-Konfiguration
+alert_json = {
+    file = true,
+    timestamp = true,
+    proto = true,
+    src_ap = true,
+    dst_ap = true,
+}</code></pre>
+                    </div>
+                </section>
+
+                <section id="kali-test">
+                    <h2>Funktionstest</h2>
+                    <h3>Test-Regel erstellen</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># Test-Regel in /usr/local/etc/snort/rules/local.rules
+alert icmp any any -> $HOME_NET any (msg:"ICMP Test Alert"; sid:1000001; rev:1;)</code></pre>
+                    </div>
+
+                    <h3>Snort3 starten</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash">sudo snort -c /usr/local/etc/snort/snort.lua -i eth0</code></pre>
+                    </div>
+
+                    <h3>Logs überprüfen</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash">tail -f /var/log/snort/alert_json.txt</code></pre>
+                    </div>
+                </section>
+
+                <section id="kali-troubleshooting">
+                    <h2>Troubleshooting</h2>
+                    <h3>Häufige Probleme</h3>
+                    <div class="trouble-item">
+                        <h4>libdnet-dev Fehler</h4>
+                        <p>Lösung: libdumbnet-dev verwenden</p>
+                        <div class="code-block">
+                            <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                            <pre><code class="language-bash">sudo apt install libdumbnet-dev</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="trouble-item">
+                        <h4>Autoreconf nicht gefunden</h4>
+                        <div class="code-block">
+                            <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                            <pre><code class="language-bash">sudo apt install autoconf automake libtool</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="trouble-item">
+                        <h4>Netzwerkadapter nicht erkannt</h4>
+                        <div class="code-block">
+                            <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                            <pre><code class="language-bash"># Verfügbare Interfaces anzeigen
+ip link show
+
+# Interface in Promiscuous Mode setzen
+sudo ip link set eth0 promisc on</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Ubuntu Content -->
+            <div class="tab-content" id="ubuntuContent">
+                <section id="ubuntu-willkommen">
+                    <h2>Snort3-Installation auf Ubuntu</h2>
+                    <p>Snort3-Installation auf Ubuntu 22.04 LTS bis 24.04. Diese Anleitung führt Sie durch die komplette Installation und Konfiguration von Snort3 auf Ubuntu-Systemen.</p>
+                    <div class="info-box">
+                        <h3>Ubuntu-spezifische Vorteile</h3>
+                        <p>Ubuntu bietet stabilen LTS-Support und einfache Paketmanagement-Integration für Snort3.</p>
+                    </div>
+                </section>
+
+                <section id="ubuntu-systemvoraussetzungen">
+                    <h2>Systemvoraussetzungen</h2>
+                    <ul>
+                        <li>Ubuntu 22.04 LTS oder neuer</li>
+                        <li>build-essential Paket</li>
+                        <li>cmake (Version 3.16 oder neuer)</li>
+                        <li>Mindestens 2GB RAM</li>
+                        <li>Netzwerkadapter mit Monitor-Mode</li>
+                    </ul>
+                </section>
+
+                <section id="ubuntu-installation">
+                    <h2>Installation</h2>
+                    <h3>Vorbereitung</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash">sudo apt update
+sudo apt install build-essential cmake libpcap-dev libdumbnet-dev \
+    zlib1g-dev libssl-dev libnghttp2-dev</code></pre>
+                    </div>
+
+                    <h3>Source-Build (empfohlen für Ubuntu)</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># Snort3 herunterladen
+cd /tmp
+wget https://github.com/snort3/snort3/releases/download/3.1.74.0/snort3-3.1.74.0.tar.gz
+tar -xzf snort3-3.1.74.0.tar.gz
+cd snort3-3.1.74.0
+
+# Kompilieren und installieren
+./configure_cmake.sh --prefix=/usr/local
+cd build
+make -j$(nproc)
+sudo make install</code></pre>
+                    </div>
+
+                    <h3>Systemd-Service einrichten</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># Service-Datei erstellen
+sudo nano /etc/systemd/system/snort3.service</code></pre>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-ini">[Unit]
+Description=Snort3 NIDS Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/snort -c /usr/local/etc/snort/snort.lua -i eth0
+Restart=always
+User=snort
+Group=snort
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+                    </div>
+                </section>
+
+                <section id="ubuntu-regeln">
+                    <h2>Regeln einpflegen</h2>
+                    <h3>Balanced-IPS Policy (empfohlen)</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># PulledPork3 für Regel-Management
+cd /tmp
+git clone https://github.com/shirkdog/pulledpork3.git
+cd pulledpork3
+sudo cp pulledpork.py /usr/local/bin/
+sudo chmod +x /usr/local/bin/pulledpork.py</code></pre>
+                    </div>
+
+                    <h3>Community-Rules + lokale Regeln</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># Regeln herunterladen
+wget https://www.snort.org/downloads/community/snort3-community-rules.tar.gz
+tar -xzf snort3-community-rules.tar.gz
+sudo cp -r snort3-community-rules/* /usr/local/etc/snort/</code></pre>
+                    </div>
+                </section>
+
+                <section id="ubuntu-heimconfig">
+                    <h2>Heimkonfiguration</h2>
+                    <h3>Netzwerk-Variablen für Ubuntu</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-lua">-- Ubuntu Heimnetzwerk-Konfiguration
+HOME_NET = '192.168.0.0/24'
+EXTERNAL_NET = 'any'
+
+-- Balanced-IPS für Heimnetze
+ips = {
+    mode = inline,
+    variables = default_variables,
+    rules = [[
+        include $RULE_PATH/snort3-community.rules
+        include $RULE_PATH/local.rules
+    ]]
+}</code></pre>
+                    </div>
+
+                    <h3>Ausgewogene IPS-Erkennung</h3>
+                    <p>Die balanced-ips Policy bietet eine ausgewogene Erkennung für Heimnetze ohne zu viele False-Positives.</p>
+                </section>
+
+                <section id="ubuntu-test">
+                    <h2>Funktionstest</h2>
+                    <h3>Systemd-Service starten</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># Service aktivieren und starten
+sudo systemctl enable snort3.service
+sudo systemctl start snort3.service
+
+# Status überprüfen
+sudo systemctl status snort3.service</code></pre>
+                    </div>
+
+                    <h3>Logs mit journalctl</h3>
+                    <div class="code-block">
+                        <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                        <pre><code class="language-bash"># Live-Logs anzeigen
+journalctl -u snort3.service -f
+
+# Letzte 100 Einträge
+journalctl -u snort3.service -n 100</code></pre>
+                    </div>
+                </section>
+
+                <section id="ubuntu-troubleshooting">
+                    <h2>Troubleshooting</h2>
+                    <h3>Ubuntu-spezifische Probleme</h3>
+                    <div class="trouble-item">
+                        <h4>Service startet nicht</h4>
+                        <div class="code-block">
+                            <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                            <pre><code class="language-bash"># Benutzer und Gruppe erstellen
+sudo useradd -r -s /bin/false snort
+sudo mkdir -p /var/log/snort
+sudo chown snort:snort /var/log/snort</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="trouble-item">
+                        <h4>Berechtigungsfehler</h4>
+                        <div class="code-block">
+                            <button class="copy-button" onclick="copyToClipboard(this)">Kopieren</button>
+                            <pre><code class="language-bash"># Konfiguration für snort-User zugänglich machen
+sudo chown -R snort:snort /usr/local/etc/snort/</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Shared Sections -->
+            <section id="downloads">
+                <h2>Downloads</h2>
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <h3>Snort3 Source</h3>
+                        <p>Neueste Snort3-Version von GitHub</p>
+                        <a href="https://github.com/snort3/snort3/releases" target="_blank" class="download-link">Download</a>
+                    </div>
+                    <div class="download-item">
+                        <h3>Community Rules</h3>
+                        <p>Kostenlose Community-Regeln</p>
+                        <a href="https://www.snort.org/downloads/community/snort3-community-rules.tar.gz" target="_blank" class="download-link">Download</a>
+                    </div>
+                    <div class="download-item">
+                        <h3>PulledPork3</h3>
+                        <p>Regel-Management-Tool</p>
+                        <a href="https://github.com/shirkdog/pulledpork3" target="_blank" class="download-link">Download</a>
+                    </div>
+                    <div class="download-item">
+                        <h3>Ubuntu ISO</h3>
+                        <p>Ubuntu Desktop herunterladen</p>
+                        <a href="https://ubuntu.com/download/desktop" target="_blank" class="download-link">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ressourcen">
+                <h2>Weiterführende Ressourcen</h2>
+                <div class="resources-grid">
+                    <div class="resource-item">
+                        <h3>Offizielle Dokumentation</h3>
+                        <p>Umfassende Snort3-Dokumentation</p>
+                        <a href="https://docs.snort.org/" target="_blank">docs.snort.org</a>
+                    </div>
+                    <div class="resource-item">
+                        <h3>GitHub Repository</h3>
+                        <p>Source-Code und Issues</p>
+                        <a href="https://github.com/snort3/snort3" target="_blank">github.com/snort3</a>
+                    </div>
+                    <div class="resource-item">
+                        <h3>Community Forum</h3>
+                        <p>Hilfe und Diskussionen</p>
+                        <a href="https://snort.org/forums" target="_blank">snort.org/forums</a>
+                    </div>
+                    <div class="resource-item">
+                        <h3>Regel-Schreibung</h3>
+                        <p>Anleitung zum Schreiben eigener Regeln</p>
+                        <a href="https://docs.snort.org/rules" target="_blank">Rule Writing Guide</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

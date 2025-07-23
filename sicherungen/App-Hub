@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TALA-SEA App-Hub</title>
+  <style>
+    :root {
+      --matrix-green: #00ff41;
+      --matrix-dark: #0d0208;
+      --matrix-light: #003b00;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', monospace;
+      background-color: var(--matrix-dark);
+      color: var(--matrix-green);
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.2;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      z-index: 1;
+      position: relative;
+      height: 100vh;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--matrix-green);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      letter-spacing: 0.5rem;
+      text-shadow: 0 0 10px var(--matrix-green);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .rabbit {
+      font-size: 2.5rem;
+      color: white;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rabbit:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+    }
+
+    .rabbit-label {
+      font-size: 0.7rem;
+      color: var(--matrix-green);
+      margin-top: 0.3rem;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .app-card {
+      background-color: rgba(0, 20, 0, 0.7);
+      border: 1px solid var(--matrix-green);
+      border-radius: 5px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+    }
+
+    .app-card h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--matrix-green);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .app-card p {
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background-color: var(--matrix-light);
+      color: var(--matrix-green);
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      border: 1px solid var(--matrix-green);
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--matrix-light);
+      color: var(--matrix-green);
+      padding: 0.8rem 1.5rem;
+      border: 1px solid var(--matrix-green);
+      border-radius: 3px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin-top: auto;
+    }
+
+    .button:hover {
+      background-color: var(--matrix-green);
+      color: var(--matrix-dark);
+      box-shadow: 0 0 15px var(--matrix-green);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 8px var(--matrix-green);
+    }
+
+    .search-container {
+      margin: 2rem auto;
+      max-width: 600px;
+      display: flex;
+    }
+
+    .search-input {
+      flex: 1;
+      background-color: rgba(0, 20, 0, 0.7);
+      border: 1px solid var(--matrix-green);
+      color: var(--matrix-green);
+      padding: 0.8rem;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .search-input:focus {
+      outline: none;
+      box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+    }
+
+    .search-button {
+      background-color: var(--matrix-light);
+      color: var(--matrix-green);
+      border: 1px solid var(--matrix-green);
+      border-left: none;
+      padding: 0 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .search-button:hover {
+      background-color: var(--matrix-green);
+      color: var(--matrix-dark);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--matrix-green);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0.3rem;
+      }
+
+      .home-button {
+        position: relative;
+        display: block;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: 0 auto 1.5rem auto;
+        width: fit-content;
+      }
+
+      header {
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .rabbit {
+        font-size: 2rem;
+      }
+
+      .apps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
+<div class="container">
+  <header>
+    <a href="index.html" class="home-button">
+      <div class="rabbit">🐇
+        <span class="rabbit-label">ZURÜCK</span>
+      </div>
+    </a>
+    <h1>TALA-SEA APP-HUB</h1>
+    <div class="subtitle">[ ANWENDUNGEN & TOOLS ]</div>
+  </header>
+
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Suche nach Anwendungen...">
+    <button class="search-button">🔍</button>
+  </div>
+
+  <h2 class="section-title">VERFÜGBARE ANWENDUNGEN</h2>
+
+  <div class="apps-grid">
+    <div class="app-card">
+      <h3>BSI-Grundschutz Quiz</h3>
+      <div class="tags">
+        <span class="tag">Sicherheit</span>
+        <span class="tag">Bildung</span>
+        <span class="tag">Quiz</span>
+      </div>
+      <p>Teste dein Wissen zum BSI-Grundschutz mit diesem interaktiven Quiz. Lerne die wichtigsten Konzepte und bereite dich auf Zertifizierungen vor.</p>
+      <a href="apps/Bsi-grundschutz-quiz/index.html" class="button">Quiz starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>BSI Quiz</h3>
+      <div class="tags">
+        <span class="tag">BSI</span>
+        <span class="tag">Sicherheit</span>
+        <span class="tag">Quiz</span>
+        <span class="tag">Bildung</span>
+      </div>
+      <p>Erweiterte BSI-Wissensprüfung mit fokussierten Fragen zu spezifischen Bereichen der IT-Sicherheit und des Bundesamts für Sicherheit in der Informationstechnik.</p>
+      <a href="apps/BsiQuiz/index.html" class="button">Quiz starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>IT-Sicherheits Quiz</h3>
+      <div class="tags">
+        <span class="tag">Sicherheit</span>
+        <span class="tag">Bildung</span>
+        <span class="tag">Quiz</span>
+      </div>
+      <p>Teste dein Wissen im Bereich IT-Sicherheit. Decke verschiedene Themen ab und prüfe deine Kenntnisse.</p>
+      <a href="apps/IT-Sicherheitsb-Quiz/index.html" class="button">Quiz starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Interaktive Risikomatrix</h3>
+      <div class="tags">
+        <span class="tag">Risikomanagement</span>
+        <span class="tag">Analyse</span>
+        <span class="tag">Tool</span>
+        <span class="tag">Bewertung</span>
+      </div>
+      <p>Professionelles Tool zur Risikobewertung und -analyse. Erstelle interaktive Risikomatrizen und erhalte fundierte Einschätzungen für deine Projekte.</p>
+      <a href="apps/InteraktiveRisikomatrix/index.html" class="button">Matrix öffnen</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Linux Command Quiz</h3>
+      <div class="tags">
+        <span class="tag">Linux</span>
+        <span class="tag">Kommandozeile</span>
+        <span class="tag">Bildung</span>
+        <span class="tag">Quiz</span>
+      </div>
+      <p>Prüfe deine Kenntnisse der Linux-Kommandozeile. Von grundlegenden bis zu fortgeschrittenen Befehlen - teste dein Wissen über Unix/Linux-Systeme.</p>
+      <a href="apps/LinuxCommandQuiz/index.html" class="button">Quiz starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Netzwerk Quiz</h3>
+      <div class="tags">
+        <span class="tag">Netzwerk</span>
+        <span class="tag">Bildung</span>
+        <span class="tag">Quiz</span>
+      </div>
+      <p>Wie gut kennst du dich mit Netzwerken aus? Dieses Quiz prüft dein Verständnis von Protokollen, Topologien und mehr.</p>
+      <a href="apps/NetzwerkQuiz/index.html" class="button">Quiz starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>PC Quiz</h3>
+      <div class="tags">
+        <span class="tag">Hardware</span>
+        <span class="tag">Software</span>
+        <span class="tag">Bildung</span>
+        <span class="tag">Quiz</span>
+      </div>
+      <p>Teste dein Wissen über PC-Komponenten, Betriebssysteme und allgemeine Computertechnik.</p>
+      <a href="apps/PcQuiz/index.html" class="button">Quiz starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Passwort-Generator</h3>
+      <div class="tags">
+        <span class="tag">Sicherheit</span>
+        <span class="tag">Tool</span>
+        <span class="tag">Passwort</span>
+      </div>
+      <p>Erzeuge sichere Passwörter nach modernsten Standards. Du kannst Komplexität, Länge und verwendete Zeichensätze anpassen.</p>
+      <a href="apps/PasswortGenerator/index.html" class="button">Generator starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Sicherheits-Scanner</h3>
+      <div class="tags">
+        <span class="tag">Netzwerk</span>
+        <span class="tag">Analyse</span>
+      </div>
+      <p>Scanne deine Netzwerkumgebung auf potentielle Schwachstellen und erhalte maßgeschneiderte Empfehlungen zur Absicherung.</p>
+      <a href="#" class="button">Demnächst verfügbar</a>
+    </div>
+
+    <div class="app-card">
+      <h3>DSGVO-Checker</h3>
+      <div class="tags">
+        <span class="tag">Compliance</span>
+        <span class="tag">Recht</span>
+      </div>
+      <p>Überprüfe die DSGVO-Konformität deiner Projekte und erhalte Hinweise zur Verbesserung des Datenschutzes.</p>
+      <a href="apps/DSGVO-Checker/index.html" class="button">Checker starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Kryptografie-Trainer</h3>
+      <div class="tags">
+        <span class="tag">Bildung</span>
+        <span class="tag">Übung</span>
+      </div>
+      <p>Lerne Grundlagen der Kryptografie und übe deren Anwendung in praktischen Szenarien.</p>
+      <a href="apps/Kryptografie-Trainer/index.html" class="button">Trainer starten</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Matrix OSINT Tool</h3>
+      <div class="tags">
+        <span class="tag">OSINT</span>
+        <span class="tag">Recherche</span>
+        <span class="tag">Matrix</span>
+        <span class="tag">Tool</span>
+      </div>
+      <p>Modernes Matrix-Style OSINT-Tool für Google Dorks, DuckDuckGo und zahlreiche freie Recherchequellen. Ideal für Security-Analysen, Investigations und Open Source Intelligence.</p>
+      <a href="apps/MatrixOsint/index.html" class="button">Tool starten</a>
+    </div>
+
+
+
+    <div class="app-card">
+      <h3>Vorschlagen</h3>
+      <div class="tags">
+        <span class="tag">Feedback</span>
+        <span class="tag">Community</span>
+      </div>
+      <p>Du hast eine Idee für eine neue Anwendung oder ein Tool? Teile sie mit uns, und vielleicht wird sie Teil des App-Hubs!</p>
+      <a href="apps/Vorschlagen/index.html" class="button">Vorschlag senden</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 TALA-SEA Project | Alle Rechte vorbehalten
+  </footer>
+</div>
+
+<script>
+  // Matrix rain effect
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%"\'#&_();:,.<>[]{}|';
+  const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+  const matrixChars = characters + katakana;
+
+  const fontSize = 14;
+  const columns = Math.floor(canvas.width / fontSize);
+
+  const drops = [];
+  for (let i = 0; i < columns; i++) {
+    drops[i] = 1 - Math.floor(Math.random() * (canvas.height / fontSize));
+  }
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 2, 8, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#00ff41';
+    ctx.font = `${fontSize}px monospace`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+      const xPos = i * fontSize;
+      const yPos = drops[i] * fontSize;
+
+      if (yPos > 0 && yPos < canvas.height) {
+        ctx.fillText(text, xPos, yPos);
+      }
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  // Search functionality
+  const searchInput = document.querySelector('.search-input');
+  const searchButton = document.querySelector('.search-button');
+  const appCards = document.querySelectorAll('.app-card');
+
+  function performSearch() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    appCards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      const description = card.querySelector('p').textContent.toLowerCase();
+      const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+
+      const isMatch = searchTerm === '' ||
+              title.includes(searchTerm) ||
+              description.includes(searchTerm) ||
+              tags.some(tag => tag.includes(searchTerm));
+
+      card.style.display = isMatch ? 'flex' : 'none';
+      if (isMatch) {
+        visibleCount++;
+      }
+    });
+  }
+
+  searchButton.addEventListener('click', performSearch);
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      performSearch();
+    }
+  });
+
+  let lastTime = 0;
+  const fps = 30;
+  const interval = 1000 / fps;
+
+  function animate(timestamp) {
+    const deltaTime = timestamp - lastTime;
+
+    if(deltaTime > interval) {
+      draw();
+      lastTime = timestamp - (deltaTime % interval);
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>

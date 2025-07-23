@@ -1,0 +1,3301 @@
+{
+  "metadata": {
+    "title": "DSGVO Datenschutz-Beauftragter Kompakt-Seminar",
+    "subtitle": "CloudCommand 24-6 - IHK Akademie Schwaben",
+    "totalSlides": 85,
+    "totalChapters": 4,
+    "version": "1.0"
+  },
+  "chapters": [
+    {
+      "name": "Praktische Umsetzung des Datenschutzes",
+      "description": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "slides": [
+        {
+          "id": 7,
+          "title": "Inhalt: Praktische Umsetzung des Datenschutzes",
+          "content": "Detaillierter Inhalt zu: Inhalt: Praktische Umsetzung des Datenschutzes",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "inhalt:",
+            "praktische",
+            "umsetzung",
+            "des",
+            "datenschutzes"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Datenschutz ist ein Grundrechtsschutz",
+          "content": "Detaillierter Inhalt zu: Datenschutz ist ein Grundrechtsschutz",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "datenschutz",
+            "ist",
+            "ein",
+            "grundrechtsschutz"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 9,
+          "title": "Datenschutz im Überblick",
+          "content": "Detaillierter Inhalt zu: Datenschutz im Überblick",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "datenschutz",
+            "im",
+            "überblick"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Datenschutz - eine Management-Aufgabe",
+          "content": "Detaillierter Inhalt zu: Datenschutz - eine Management-Aufgabe",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "datenschutz",
+            "eine",
+            "management",
+            "aufgabe"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 11,
+          "title": "Wo ist Datenschutz geregelt?",
+          "content": "Detaillierter Inhalt zu: Wo ist Datenschutz geregelt?",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "wo",
+            "ist",
+            "datenschutz",
+            "geregelt?"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 12,
+          "title": "EU-DSGVO - Europäische Datenschutz-Grundverordnung",
+          "content": "Detaillierter Inhalt zu: EU-DSGVO - Europäische Datenschutz-Grundverordnung",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "eu",
+            "dsgvo",
+            "europäische",
+            "datenschutz",
+            "grundverordnung"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Rechtsgrundlagen im Datenschutz (Auszug)",
+          "content": "Detaillierter Inhalt zu: Rechtsgrundlagen im Datenschutz (Auszug)",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "rechtsgrundlagen",
+            "im",
+            "datenschutz",
+            "auszug"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 14,
+          "title": "EU-DSGVO / GDPR - Grundsätzliches",
+          "content": "Detaillierter Inhalt zu: EU-DSGVO / GDPR - Grundsätzliches",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "eu",
+            "dsgvo",
+            "/",
+            "gdpr",
+            "grundsätzliches"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 15,
+          "title": "DSGVO - Sachlicher Anwendungsbereich (Art.2 DSGVO)",
+          "content": "Detaillierter Inhalt zu: DSGVO - Sachlicher Anwendungsbereich (Art.2 DSGVO)",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "dsgvo",
+            "sachlicher",
+            "anwendungsbereich",
+            "art.2",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 16,
+          "title": "DSGVO - Räumlicher Anwendungsbereich (Art.3 DSGVO)",
+          "content": "Detaillierter Inhalt zu: DSGVO - Räumlicher Anwendungsbereich (Art.3 DSGVO)",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "dsgvo",
+            "räumlicher",
+            "anwendungsbereich",
+            "art.3",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 17,
+          "title": "DSGVO - Vertretermodell, Benennungspflicht (Art.27 Abs.1 und 2 DSGVO)",
+          "content": "Detaillierter Inhalt zu: DSGVO - Vertretermodell, Benennungspflicht (Art.27 Abs.1 und 2 DSGVO)",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "dsgvo",
+            "vertretermodell,",
+            "benennungspflicht",
+            "art.27",
+            "abs.1",
+            "und",
+            "2",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 18,
+          "title": "DSGVO - persönlicher familiärer Bereich (Haushaltsprivileg)",
+          "content": "Detaillierter Inhalt zu: DSGVO - persönlicher familiärer Bereich (Haushaltsprivileg)",
+          "chapter": "Praktische Umsetzung des Datenschutzes",
+          "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+          "keywords": [
+            "dsgvo",
+            "persönlicher",
+            "familiärer",
+            "bereich",
+            "haushaltsprivileg"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        }
+      ],
+      "slide_count": 12
+    },
+    {
+      "name": "Begriffsbestimmungen",
+      "description": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "slides": [
+        {
+          "id": 19,
+          "title": "Agenda: Begriffsbestimmung",
+          "content": "Detaillierter Inhalt zu: Agenda: Begriffsbestimmung",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "agenda:",
+            "begriffsbestimmung"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 20,
+          "title": "Begriffe der DSGVO (Art.4 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Begriffe der DSGVO (Art.4 DSGVO)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "begriffe",
+            "der",
+            "dsgvo",
+            "art.4",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 21,
+          "title": "Rollen in der DSGVO",
+          "content": "Detaillierter Inhalt zu: Rollen in der DSGVO",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "rollen",
+            "in",
+            "der",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 22,
+          "title": "Personenbezogene Daten (Art.4 (1), ErwG.26,30 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Personenbezogene Daten (Art.4 (1), ErwG.26,30 DSGVO)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "personenbezogene",
+            "daten",
+            "art.4",
+            "1,",
+            "erwg.26,30",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 23,
+          "title": "Besondere personenbezogene Daten (Art.9, Art.10 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Besondere personenbezogene Daten (Art.9, Art.10 DSGVO)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "besondere",
+            "personenbezogene",
+            "daten",
+            "art.9,",
+            "art.10",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 24,
+          "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (1/4)",
+          "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (1/4)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "besondere",
+            "pers.bez.",
+            "daten",
+            "art.9",
+            "abs.1",
+            "dsgvo",
+            "1/4"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 25,
+          "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (2/4)",
+          "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (2/4)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "besondere",
+            "pers.bez.",
+            "daten",
+            "art.9",
+            "abs.1",
+            "dsgvo",
+            "2/4"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 26,
+          "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (3/4)",
+          "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (3/4)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "besondere",
+            "pers.bez.",
+            "daten",
+            "art.9",
+            "abs.1",
+            "dsgvo",
+            "3/4"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 27,
+          "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (4/4)",
+          "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (4/4)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "besondere",
+            "pers.bez.",
+            "daten",
+            "art.9",
+            "abs.1",
+            "dsgvo",
+            "4/4"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 28,
+          "title": "Besondere pers.bez. Daten - Ausnahmen (Art.9 Abs.2 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten - Ausnahmen (Art.9 Abs.2 DSGVO)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "besondere",
+            "pers.bez.",
+            "daten",
+            "ausnahmen",
+            "art.9",
+            "abs.2",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 29,
+          "title": "DSGVO - Relevante Verarbeitungen (Art.4 (2) DSGVO)",
+          "content": "Detaillierter Inhalt zu: DSGVO - Relevante Verarbeitungen (Art.4 (2) DSGVO)",
+          "chapter": "Begriffsbestimmungen",
+          "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+          "keywords": [
+            "dsgvo",
+            "relevante",
+            "verarbeitungen",
+            "art.4",
+            "2",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        }
+      ],
+      "slide_count": 11
+    },
+    {
+      "name": "Grundsätze und Rechtmäßigkeit",
+      "description": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "slides": [
+        {
+          "id": 30,
+          "title": "Agenda: Grundsätze, Rechtmäßigkeit",
+          "content": "Detaillierter Inhalt zu: Agenda: Grundsätze, Rechtmäßigkeit",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "agenda:",
+            "grundsätze,",
+            "rechtmäßigkeit"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 31,
+          "title": "Grundsätze der DSGVO (Art.5 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsätze der DSGVO (Art.5 DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsätze",
+            "der",
+            "dsgvo",
+            "art.5",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 32,
+          "title": "Grundsatz - Rechtmäßigkeit (Art.5 Abs.1 lit.a DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsatz - Rechtmäßigkeit (Art.5 Abs.1 lit.a DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsatz",
+            "rechtmäßigkeit",
+            "art.5",
+            "abs.1",
+            "lit.a",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 33,
+          "title": "Grundsatz - Zweckbindung (Art.5 Abs.1 lit.b DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsatz - Zweckbindung (Art.5 Abs.1 lit.b DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsatz",
+            "zweckbindung",
+            "art.5",
+            "abs.1",
+            "lit.b",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 34,
+          "title": "Grundsatz - Datenminimierung (Art.5 Abs.1 lit.c DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsatz - Datenminimierung (Art.5 Abs.1 lit.c DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsatz",
+            "datenminimierung",
+            "art.5",
+            "abs.1",
+            "lit.c",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 35,
+          "title": "Grundsatz - Richtigkeit (Art.5 Abs.1 lit.d DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsatz - Richtigkeit (Art.5 Abs.1 lit.d DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsatz",
+            "richtigkeit",
+            "art.5",
+            "abs.1",
+            "lit.d",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 36,
+          "title": "Grundsatz - Speicherbegrenzung (Art.5 Abs.1 lit.e DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsatz - Speicherbegrenzung (Art.5 Abs.1 lit.e DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsatz",
+            "speicherbegrenzung",
+            "art.5",
+            "abs.1",
+            "lit.e",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 37,
+          "title": "Grundsatz - Datensicherheit (Art.5 Abs.1 lit.f DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsatz - Datensicherheit (Art.5 Abs.1 lit.f DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsatz",
+            "datensicherheit",
+            "art.5",
+            "abs.1",
+            "lit.f",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 38,
+          "title": "Sicherheit der Verarbeitung (Art.32, ErwG.75, 83 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Sicherheit der Verarbeitung (Art.32, ErwG.75, 83 DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "sicherheit",
+            "der",
+            "verarbeitung",
+            "art.32,",
+            "erwg.75,",
+            "83",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 39,
+          "title": "Exkurs: Schutzklassen DIN 66399 Datenträgervernichtung",
+          "content": "Detaillierter Inhalt zu: Exkurs: Schutzklassen DIN 66399 Datenträgervernichtung",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "exkurs:",
+            "schutzklassen",
+            "din",
+            "66399",
+            "datenträgervernichtung"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 40,
+          "title": "Maßnahmen (TOM) der Informationssicherheit",
+          "content": "Detaillierter Inhalt zu: Maßnahmen (TOM) der Informationssicherheit",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "maßnahmen",
+            "tom",
+            "der",
+            "informationssicherheit"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 41,
+          "title": "Privacy by Design (Art.25 Abs.1 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Privacy by Design (Art.25 Abs.1 DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "privacy",
+            "by",
+            "design",
+            "art.25",
+            "abs.1",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 42,
+          "title": "Privacy by Default (Art.25 Abs.2 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Privacy by Default (Art.25 Abs.2 DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "privacy",
+            "by",
+            "default",
+            "art.25",
+            "abs.2",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 43,
+          "title": "Notfall-Management",
+          "content": "Detaillierter Inhalt zu: Notfall-Management",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "notfall",
+            "management"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 44,
+          "title": "Notfall-Management-Prozess - Audit-Trail",
+          "content": "Detaillierter Inhalt zu: Notfall-Management-Prozess - Audit-Trail",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "notfall",
+            "management",
+            "prozess",
+            "audit",
+            "trail"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 45,
+          "title": "Krisenkommunikation Datenschutz",
+          "content": "Detaillierter Inhalt zu: Krisenkommunikation Datenschutz",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "krisenkommunikation",
+            "datenschutz"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 46,
+          "title": "Sicherheit der Verarbeitung - Stand der Technik",
+          "content": "Detaillierter Inhalt zu: Sicherheit der Verarbeitung - Stand der Technik",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "sicherheit",
+            "der",
+            "verarbeitung",
+            "stand",
+            "der",
+            "technik"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 47,
+          "title": "Fazit: Sicherheit der Verarbeitung",
+          "content": "Detaillierter Inhalt zu: Fazit: Sicherheit der Verarbeitung",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "fazit:",
+            "sicherheit",
+            "der",
+            "verarbeitung"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 48,
+          "title": "Grundsatz - Nachweisbarkeit (Art.5 Abs.2 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Grundsatz - Nachweisbarkeit (Art.5 Abs.2 DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "grundsatz",
+            "nachweisbarkeit",
+            "art.5",
+            "abs.2",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 49,
+          "title": "Rechtmäßigkeit der Verarbeitung (Art.6 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit der Verarbeitung (Art.6 DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "der",
+            "verarbeitung",
+            "art.6",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 50,
+          "title": "Rechtmäßigkeit - Einwilligung (Art.6 Abs.1 S.1 lit.a DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Einwilligung (Art.6 Abs.1 S.1 lit.a DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "einwilligung",
+            "art.6",
+            "abs.1",
+            "s.1",
+            "lit.a",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 51,
+          "title": "Rechtmäßigkeit - Einwilligung Minderjährige (Art.8 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Einwilligung Minderjährige (Art.8 DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "einwilligung",
+            "minderjährige",
+            "art.8",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 52,
+          "title": "Rechtmäßigkeit - Vertrag/Vorvertrag (Art.6 Abs.1 S.1 lit.b DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Vertrag/Vorvertrag (Art.6 Abs.1 S.1 lit.b DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "vertrag/vorvertrag",
+            "art.6",
+            "abs.1",
+            "s.1",
+            "lit.b",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 53,
+          "title": "Rechtmäßigkeit - Rechtl. Verpflichtung (Art.6 Abs.1 S.1 lit.c DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Rechtl. Verpflichtung (Art.6 Abs.1 S.1 lit.c DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "rechtl.",
+            "verpflichtung",
+            "art.6",
+            "abs.1",
+            "s.1",
+            "lit.c",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 54,
+          "title": "Rechtmäßigkeit - Lebenswichtige Interessen (Art.6 Abs.1 S.1 lit.d DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Lebenswichtige Interessen (Art.6 Abs.1 S.1 lit.d DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "lebenswichtige",
+            "interessen",
+            "art.6",
+            "abs.1",
+            "s.1",
+            "lit.d",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 55,
+          "title": "Rechtmäßigkeit - Öffentliches Interesse (Art.6 Abs.1 S.1 lit.e DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Öffentliches Interesse (Art.6 Abs.1 S.1 lit.e DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "öffentliches",
+            "interesse",
+            "art.6",
+            "abs.1",
+            "s.1",
+            "lit.e",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 56,
+          "title": "Rechtmäßigkeit - Berechtigtes Interesse (Art.6 Abs.1 S.1 lit.f DSGVO)",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Berechtigtes Interesse (Art.6 Abs.1 S.1 lit.f DSGVO)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "berechtigtes",
+            "interesse",
+            "art.6",
+            "abs.1",
+            "s.1",
+            "lit.f",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 57,
+          "title": "Exkurs: Berechtigtes Interesse - Hauptprüfschritte",
+          "content": "Detaillierter Inhalt zu: Exkurs: Berechtigtes Interesse - Hauptprüfschritte",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "exkurs:",
+            "berechtigtes",
+            "interesse",
+            "hauptprüfschritte"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 58,
+          "title": "Exkurs: Berechtigtes Interesse (Beispiele)",
+          "content": "Detaillierter Inhalt zu: Exkurs: Berechtigtes Interesse (Beispiele)",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "exkurs:",
+            "berechtigtes",
+            "interesse",
+            "beispiele"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 59,
+          "title": "Rechtmäßigkeit - Art.6 Abs.2, Art.6 Abs.3 DSGVO",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Art.6 Abs.2, Art.6 Abs.3 DSGVO",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "art.6",
+            "abs.2,",
+            "art.6",
+            "abs.3",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 60,
+          "title": "Rechtmäßigkeit - Art.6 Abs.4 DSGVO",
+          "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Art.6 Abs.4 DSGVO",
+          "chapter": "Grundsätze und Rechtmäßigkeit",
+          "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+          "keywords": [
+            "rechtmäßigkeit",
+            "art.6",
+            "abs.4",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        }
+      ],
+      "slide_count": 31
+    },
+    {
+      "name": "Betroffenenrechte",
+      "description": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "slides": [
+        {
+          "id": 61,
+          "title": "Agenda: Betroffenen-Rechte",
+          "content": "Detaillierter Inhalt zu: Agenda: Betroffenen-Rechte",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "agenda:",
+            "betroffenen",
+            "rechte"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 62,
+          "title": "Die Interventions-Rechte der betroffenen Person",
+          "content": "Detaillierter Inhalt zu: Die Interventions-Rechte der betroffenen Person",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "die",
+            "interventions",
+            "rechte",
+            "der",
+            "betroffenen",
+            "person"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 63,
+          "title": "Transparenz (Art.12, ErwG.39 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Transparenz (Art.12, ErwG.39 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "transparenz",
+            "art.12,",
+            "erwg.39",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 64,
+          "title": "Informationspflicht (Art.13/14 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Informationspflicht (Art.13/14 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "informationspflicht",
+            "art.13/14",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 65,
+          "title": "Informationspflicht (Art.13/14 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Informationspflicht (Art.13/14 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "informationspflicht",
+            "art.13/14",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 66,
+          "title": "Information DSE/DPD (DS-Erklärung / Data Protection Declaration)",
+          "content": "Detaillierter Inhalt zu: Information DSE/DPD (DS-Erklärung / Data Protection Declaration)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "information",
+            "dse/dpd",
+            "ds",
+            "erklärung",
+            "/",
+            "data",
+            "protection",
+            "declaration"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 67,
+          "title": "DSE/DPD vs. Einwilligungserklärung (EWE)",
+          "content": "Detaillierter Inhalt zu: DSE/DPD vs. Einwilligungserklärung (EWE)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "dse/dpd",
+            "vs.",
+            "einwilligungserklärung",
+            "ewe"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 68,
+          "title": "Auskunftsrecht (Art.15 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Auskunftsrecht (Art.15 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "auskunftsrecht",
+            "art.15",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 69,
+          "title": "Auskunftsanspruch (Art.15 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Auskunftsanspruch (Art.15 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "auskunftsanspruch",
+            "art.15",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 70,
+          "title": "Auskunftsrecht - Ausnahmetatbestand (§34 Abs.1 BDSG)",
+          "content": "Detaillierter Inhalt zu: Auskunftsrecht - Ausnahmetatbestand (§34 Abs.1 BDSG)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "auskunftsrecht",
+            "ausnahmetatbestand",
+            "§34",
+            "abs.1",
+            "bdsg"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 71,
+          "title": "Auskunftsrecht - Identitätsprüfung",
+          "content": "Detaillierter Inhalt zu: Auskunftsrecht - Identitätsprüfung",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "auskunftsrecht",
+            "identitätsprüfung"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 72,
+          "title": "Auskunftsrecht - Zugang, Form/Weg",
+          "content": "Detaillierter Inhalt zu: Auskunftsrecht - Zugang, Form/Weg",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "auskunftsrecht",
+            "zugang,",
+            "form/weg"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 73,
+          "title": "Auskunftsrecht - Verweigerung, Kosten",
+          "content": "Detaillierter Inhalt zu: Auskunftsrecht - Verweigerung, Kosten",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "auskunftsrecht",
+            "verweigerung,",
+            "kosten"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 74,
+          "title": "Auskunftsrecht - notwendige Regelungen",
+          "content": "Detaillierter Inhalt zu: Auskunftsrecht - notwendige Regelungen",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "auskunftsrecht",
+            "notwendige",
+            "regelungen"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 75,
+          "title": "Recht auf Berichtigung (Art. 16 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Recht auf Berichtigung (Art. 16 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "recht",
+            "auf",
+            "berichtigung",
+            "art.",
+            "16",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 76,
+          "title": "Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "recht",
+            "auf",
+            "löschen",
+            "der",
+            "pers.bez.",
+            "daten",
+            "art.17",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 77,
+          "title": "Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "recht",
+            "auf",
+            "löschen",
+            "der",
+            "pers.bez.",
+            "daten",
+            "art.17",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 78,
+          "title": "Exkurs: Recht auf Löschung - DIN 66398 Löschkonzept",
+          "content": "Detaillierter Inhalt zu: Exkurs: Recht auf Löschung - DIN 66398 Löschkonzept",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "exkurs:",
+            "recht",
+            "auf",
+            "löschung",
+            "din",
+            "66398",
+            "löschkonzept"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 79,
+          "title": "Exkurs: Recht auf Löschung - DIN 66399/ ISO/IEC 21964",
+          "content": "Detaillierter Inhalt zu: Exkurs: Recht auf Löschung - DIN 66399/ ISO/IEC 21964",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "exkurs:",
+            "recht",
+            "auf",
+            "löschung",
+            "din",
+            "66399/",
+            "iso/iec",
+            "21964"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 80,
+          "title": "Recht auf Sperrung (§35 Abs.4 BDSG)",
+          "content": "Detaillierter Inhalt zu: Recht auf Sperrung (§35 Abs.4 BDSG)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "recht",
+            "auf",
+            "sperrung",
+            "§35",
+            "abs.4",
+            "bdsg"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 81,
+          "title": "Recht auf Vergessenwerden (Art.17 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Recht auf Vergessenwerden (Art.17 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "recht",
+            "auf",
+            "vergessenwerden",
+            "art.17",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 82,
+          "title": "Recht auf Einschränkung (Art.18 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Recht auf Einschränkung (Art.18 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "recht",
+            "auf",
+            "einschränkung",
+            "art.18",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 83,
+          "title": "Mitteilungspflicht (Art.19 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Mitteilungspflicht (Art.19 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "mitteilungspflicht",
+            "art.19",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 84,
+          "title": "Daten-Portabilität, Datenübertragbarkeit (Art.20 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Daten-Portabilität, Datenübertragbarkeit (Art.20 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "daten",
+            "portabilität,",
+            "datenübertragbarkeit",
+            "art.20",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 85,
+          "title": "Widerspruch der Verarbeitung (Art.21 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Widerspruch der Verarbeitung (Art.21 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "widerspruch",
+            "der",
+            "verarbeitung",
+            "art.21",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 86,
+          "title": "Widerruf der Verarbeitung (Art.21 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Widerruf der Verarbeitung (Art.21 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "widerruf",
+            "der",
+            "verarbeitung",
+            "art.21",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 87,
+          "title": "Automatisierte Entscheidungsfindung, Profiling (Art.22 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Automatisierte Entscheidungsfindung, Profiling (Art.22 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "automatisierte",
+            "entscheidungsfindung,",
+            "profiling",
+            "art.22",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 88,
+          "title": "Scoring und Bonitätsauskünfte (§31 BDSG)",
+          "content": "Detaillierter Inhalt zu: Scoring und Bonitätsauskünfte (§31 BDSG)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "scoring",
+            "und",
+            "bonitätsauskünfte",
+            "§31",
+            "bdsg"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 89,
+          "title": "Beschwerde-Recht bei einer Aufsichtsbehörde (Art.77 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Beschwerde-Recht bei einer Aufsichtsbehörde (Art.77 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "beschwerde",
+            "recht",
+            "bei",
+            "einer",
+            "aufsichtsbehörde",
+            "art.77",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 90,
+          "title": "Aufsichtsbehörde - Rechtsbehelf (Art.78 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Aufsichtsbehörde - Rechtsbehelf (Art.78 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "aufsichtsbehörde",
+            "rechtsbehelf",
+            "art.78",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        },
+        {
+          "id": 91,
+          "title": "Betroffenenrechte - Beschränkungen (Art.23 DSGVO)",
+          "content": "Detaillierter Inhalt zu: Betroffenenrechte - Beschränkungen (Art.23 DSGVO)",
+          "chapter": "Betroffenenrechte",
+          "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+          "keywords": [
+            "betroffenenrechte",
+            "beschränkungen",
+            "art.23",
+            "dsgvo"
+          ],
+          "tags": [
+            "DSGVO",
+            "Datenschutz",
+            "Compliance"
+          ]
+        }
+      ],
+      "slide_count": 31
+    }
+  ],
+  "slides": [
+    {
+      "id": 7,
+      "title": "Inhalt: Praktische Umsetzung des Datenschutzes",
+      "content": "Detaillierter Inhalt zu: Inhalt: Praktische Umsetzung des Datenschutzes",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "inhalt:",
+        "praktische",
+        "umsetzung",
+        "des",
+        "datenschutzes"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Datenschutz ist ein Grundrechtsschutz",
+      "content": "Detaillierter Inhalt zu: Datenschutz ist ein Grundrechtsschutz",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "datenschutz",
+        "ist",
+        "ein",
+        "grundrechtsschutz"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Datenschutz im Überblick",
+      "content": "Detaillierter Inhalt zu: Datenschutz im Überblick",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "datenschutz",
+        "im",
+        "überblick"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Datenschutz - eine Management-Aufgabe",
+      "content": "Detaillierter Inhalt zu: Datenschutz - eine Management-Aufgabe",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "datenschutz",
+        "eine",
+        "management",
+        "aufgabe"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Wo ist Datenschutz geregelt?",
+      "content": "Detaillierter Inhalt zu: Wo ist Datenschutz geregelt?",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "wo",
+        "ist",
+        "datenschutz",
+        "geregelt?"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "EU-DSGVO - Europäische Datenschutz-Grundverordnung",
+      "content": "Detaillierter Inhalt zu: EU-DSGVO - Europäische Datenschutz-Grundverordnung",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "eu",
+        "dsgvo",
+        "europäische",
+        "datenschutz",
+        "grundverordnung"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Rechtsgrundlagen im Datenschutz (Auszug)",
+      "content": "Detaillierter Inhalt zu: Rechtsgrundlagen im Datenschutz (Auszug)",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "rechtsgrundlagen",
+        "im",
+        "datenschutz",
+        "auszug"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "EU-DSGVO / GDPR - Grundsätzliches",
+      "content": "Detaillierter Inhalt zu: EU-DSGVO / GDPR - Grundsätzliches",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "eu",
+        "dsgvo",
+        "/",
+        "gdpr",
+        "grundsätzliches"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "DSGVO - Sachlicher Anwendungsbereich (Art.2 DSGVO)",
+      "content": "Detaillierter Inhalt zu: DSGVO - Sachlicher Anwendungsbereich (Art.2 DSGVO)",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "dsgvo",
+        "sachlicher",
+        "anwendungsbereich",
+        "art.2",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "DSGVO - Räumlicher Anwendungsbereich (Art.3 DSGVO)",
+      "content": "Detaillierter Inhalt zu: DSGVO - Räumlicher Anwendungsbereich (Art.3 DSGVO)",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "dsgvo",
+        "räumlicher",
+        "anwendungsbereich",
+        "art.3",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "DSGVO - Vertretermodell, Benennungspflicht (Art.27 Abs.1 und 2 DSGVO)",
+      "content": "Detaillierter Inhalt zu: DSGVO - Vertretermodell, Benennungspflicht (Art.27 Abs.1 und 2 DSGVO)",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "dsgvo",
+        "vertretermodell,",
+        "benennungspflicht",
+        "art.27",
+        "abs.1",
+        "und",
+        "2",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "DSGVO - persönlicher familiärer Bereich (Haushaltsprivileg)",
+      "content": "Detaillierter Inhalt zu: DSGVO - persönlicher familiärer Bereich (Haushaltsprivileg)",
+      "chapter": "Praktische Umsetzung des Datenschutzes",
+      "chapterDescription": "Grundlagen und praktische Aspekte der DSGVO-Umsetzung",
+      "keywords": [
+        "dsgvo",
+        "persönlicher",
+        "familiärer",
+        "bereich",
+        "haushaltsprivileg"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Agenda: Begriffsbestimmung",
+      "content": "Detaillierter Inhalt zu: Agenda: Begriffsbestimmung",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "agenda:",
+        "begriffsbestimmung"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Begriffe der DSGVO (Art.4 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Begriffe der DSGVO (Art.4 DSGVO)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "begriffe",
+        "der",
+        "dsgvo",
+        "art.4",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Rollen in der DSGVO",
+      "content": "Detaillierter Inhalt zu: Rollen in der DSGVO",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "rollen",
+        "in",
+        "der",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Personenbezogene Daten (Art.4 (1), ErwG.26,30 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Personenbezogene Daten (Art.4 (1), ErwG.26,30 DSGVO)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "personenbezogene",
+        "daten",
+        "art.4",
+        "1,",
+        "erwg.26,30",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Besondere personenbezogene Daten (Art.9, Art.10 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Besondere personenbezogene Daten (Art.9, Art.10 DSGVO)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "besondere",
+        "personenbezogene",
+        "daten",
+        "art.9,",
+        "art.10",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (1/4)",
+      "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (1/4)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "besondere",
+        "pers.bez.",
+        "daten",
+        "art.9",
+        "abs.1",
+        "dsgvo",
+        "1/4"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (2/4)",
+      "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (2/4)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "besondere",
+        "pers.bez.",
+        "daten",
+        "art.9",
+        "abs.1",
+        "dsgvo",
+        "2/4"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (3/4)",
+      "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (3/4)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "besondere",
+        "pers.bez.",
+        "daten",
+        "art.9",
+        "abs.1",
+        "dsgvo",
+        "3/4"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (4/4)",
+      "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten (Art.9 Abs.1 DSGVO) (4/4)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "besondere",
+        "pers.bez.",
+        "daten",
+        "art.9",
+        "abs.1",
+        "dsgvo",
+        "4/4"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Besondere pers.bez. Daten - Ausnahmen (Art.9 Abs.2 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Besondere pers.bez. Daten - Ausnahmen (Art.9 Abs.2 DSGVO)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "besondere",
+        "pers.bez.",
+        "daten",
+        "ausnahmen",
+        "art.9",
+        "abs.2",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "DSGVO - Relevante Verarbeitungen (Art.4 (2) DSGVO)",
+      "content": "Detaillierter Inhalt zu: DSGVO - Relevante Verarbeitungen (Art.4 (2) DSGVO)",
+      "chapter": "Begriffsbestimmungen",
+      "chapterDescription": "Wichtige Begriffe und Definitionen nach DSGVO",
+      "keywords": [
+        "dsgvo",
+        "relevante",
+        "verarbeitungen",
+        "art.4",
+        "2",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Agenda: Grundsätze, Rechtmäßigkeit",
+      "content": "Detaillierter Inhalt zu: Agenda: Grundsätze, Rechtmäßigkeit",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "agenda:",
+        "grundsätze,",
+        "rechtmäßigkeit"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Grundsätze der DSGVO (Art.5 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsätze der DSGVO (Art.5 DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsätze",
+        "der",
+        "dsgvo",
+        "art.5",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Grundsatz - Rechtmäßigkeit (Art.5 Abs.1 lit.a DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsatz - Rechtmäßigkeit (Art.5 Abs.1 lit.a DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsatz",
+        "rechtmäßigkeit",
+        "art.5",
+        "abs.1",
+        "lit.a",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Grundsatz - Zweckbindung (Art.5 Abs.1 lit.b DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsatz - Zweckbindung (Art.5 Abs.1 lit.b DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsatz",
+        "zweckbindung",
+        "art.5",
+        "abs.1",
+        "lit.b",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Grundsatz - Datenminimierung (Art.5 Abs.1 lit.c DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsatz - Datenminimierung (Art.5 Abs.1 lit.c DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsatz",
+        "datenminimierung",
+        "art.5",
+        "abs.1",
+        "lit.c",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Grundsatz - Richtigkeit (Art.5 Abs.1 lit.d DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsatz - Richtigkeit (Art.5 Abs.1 lit.d DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsatz",
+        "richtigkeit",
+        "art.5",
+        "abs.1",
+        "lit.d",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Grundsatz - Speicherbegrenzung (Art.5 Abs.1 lit.e DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsatz - Speicherbegrenzung (Art.5 Abs.1 lit.e DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsatz",
+        "speicherbegrenzung",
+        "art.5",
+        "abs.1",
+        "lit.e",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Grundsatz - Datensicherheit (Art.5 Abs.1 lit.f DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsatz - Datensicherheit (Art.5 Abs.1 lit.f DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsatz",
+        "datensicherheit",
+        "art.5",
+        "abs.1",
+        "lit.f",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Sicherheit der Verarbeitung (Art.32, ErwG.75, 83 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Sicherheit der Verarbeitung (Art.32, ErwG.75, 83 DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "sicherheit",
+        "der",
+        "verarbeitung",
+        "art.32,",
+        "erwg.75,",
+        "83",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Exkurs: Schutzklassen DIN 66399 Datenträgervernichtung",
+      "content": "Detaillierter Inhalt zu: Exkurs: Schutzklassen DIN 66399 Datenträgervernichtung",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "exkurs:",
+        "schutzklassen",
+        "din",
+        "66399",
+        "datenträgervernichtung"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Maßnahmen (TOM) der Informationssicherheit",
+      "content": "Detaillierter Inhalt zu: Maßnahmen (TOM) der Informationssicherheit",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "maßnahmen",
+        "tom",
+        "der",
+        "informationssicherheit"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Privacy by Design (Art.25 Abs.1 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Privacy by Design (Art.25 Abs.1 DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "privacy",
+        "by",
+        "design",
+        "art.25",
+        "abs.1",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Privacy by Default (Art.25 Abs.2 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Privacy by Default (Art.25 Abs.2 DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "privacy",
+        "by",
+        "default",
+        "art.25",
+        "abs.2",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Notfall-Management",
+      "content": "Detaillierter Inhalt zu: Notfall-Management",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "notfall",
+        "management"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Notfall-Management-Prozess - Audit-Trail",
+      "content": "Detaillierter Inhalt zu: Notfall-Management-Prozess - Audit-Trail",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "notfall",
+        "management",
+        "prozess",
+        "audit",
+        "trail"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Krisenkommunikation Datenschutz",
+      "content": "Detaillierter Inhalt zu: Krisenkommunikation Datenschutz",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "krisenkommunikation",
+        "datenschutz"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Sicherheit der Verarbeitung - Stand der Technik",
+      "content": "Detaillierter Inhalt zu: Sicherheit der Verarbeitung - Stand der Technik",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "sicherheit",
+        "der",
+        "verarbeitung",
+        "stand",
+        "der",
+        "technik"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 47,
+      "title": "Fazit: Sicherheit der Verarbeitung",
+      "content": "Detaillierter Inhalt zu: Fazit: Sicherheit der Verarbeitung",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "fazit:",
+        "sicherheit",
+        "der",
+        "verarbeitung"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 48,
+      "title": "Grundsatz - Nachweisbarkeit (Art.5 Abs.2 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Grundsatz - Nachweisbarkeit (Art.5 Abs.2 DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "grundsatz",
+        "nachweisbarkeit",
+        "art.5",
+        "abs.2",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Rechtmäßigkeit der Verarbeitung (Art.6 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit der Verarbeitung (Art.6 DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "der",
+        "verarbeitung",
+        "art.6",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 50,
+      "title": "Rechtmäßigkeit - Einwilligung (Art.6 Abs.1 S.1 lit.a DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Einwilligung (Art.6 Abs.1 S.1 lit.a DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "einwilligung",
+        "art.6",
+        "abs.1",
+        "s.1",
+        "lit.a",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 51,
+      "title": "Rechtmäßigkeit - Einwilligung Minderjährige (Art.8 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Einwilligung Minderjährige (Art.8 DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "einwilligung",
+        "minderjährige",
+        "art.8",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 52,
+      "title": "Rechtmäßigkeit - Vertrag/Vorvertrag (Art.6 Abs.1 S.1 lit.b DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Vertrag/Vorvertrag (Art.6 Abs.1 S.1 lit.b DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "vertrag/vorvertrag",
+        "art.6",
+        "abs.1",
+        "s.1",
+        "lit.b",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 53,
+      "title": "Rechtmäßigkeit - Rechtl. Verpflichtung (Art.6 Abs.1 S.1 lit.c DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Rechtl. Verpflichtung (Art.6 Abs.1 S.1 lit.c DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "rechtl.",
+        "verpflichtung",
+        "art.6",
+        "abs.1",
+        "s.1",
+        "lit.c",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 54,
+      "title": "Rechtmäßigkeit - Lebenswichtige Interessen (Art.6 Abs.1 S.1 lit.d DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Lebenswichtige Interessen (Art.6 Abs.1 S.1 lit.d DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "lebenswichtige",
+        "interessen",
+        "art.6",
+        "abs.1",
+        "s.1",
+        "lit.d",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 55,
+      "title": "Rechtmäßigkeit - Öffentliches Interesse (Art.6 Abs.1 S.1 lit.e DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Öffentliches Interesse (Art.6 Abs.1 S.1 lit.e DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "öffentliches",
+        "interesse",
+        "art.6",
+        "abs.1",
+        "s.1",
+        "lit.e",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 56,
+      "title": "Rechtmäßigkeit - Berechtigtes Interesse (Art.6 Abs.1 S.1 lit.f DSGVO)",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Berechtigtes Interesse (Art.6 Abs.1 S.1 lit.f DSGVO)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "berechtigtes",
+        "interesse",
+        "art.6",
+        "abs.1",
+        "s.1",
+        "lit.f",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 57,
+      "title": "Exkurs: Berechtigtes Interesse - Hauptprüfschritte",
+      "content": "Detaillierter Inhalt zu: Exkurs: Berechtigtes Interesse - Hauptprüfschritte",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "exkurs:",
+        "berechtigtes",
+        "interesse",
+        "hauptprüfschritte"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 58,
+      "title": "Exkurs: Berechtigtes Interesse (Beispiele)",
+      "content": "Detaillierter Inhalt zu: Exkurs: Berechtigtes Interesse (Beispiele)",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "exkurs:",
+        "berechtigtes",
+        "interesse",
+        "beispiele"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 59,
+      "title": "Rechtmäßigkeit - Art.6 Abs.2, Art.6 Abs.3 DSGVO",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Art.6 Abs.2, Art.6 Abs.3 DSGVO",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "art.6",
+        "abs.2,",
+        "art.6",
+        "abs.3",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 60,
+      "title": "Rechtmäßigkeit - Art.6 Abs.4 DSGVO",
+      "content": "Detaillierter Inhalt zu: Rechtmäßigkeit - Art.6 Abs.4 DSGVO",
+      "chapter": "Grundsätze und Rechtmäßigkeit",
+      "chapterDescription": "Datenschutzgrundsätze und Rechtsgrundlagen der Verarbeitung",
+      "keywords": [
+        "rechtmäßigkeit",
+        "art.6",
+        "abs.4",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 61,
+      "title": "Agenda: Betroffenen-Rechte",
+      "content": "Detaillierter Inhalt zu: Agenda: Betroffenen-Rechte",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "agenda:",
+        "betroffenen",
+        "rechte"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 62,
+      "title": "Die Interventions-Rechte der betroffenen Person",
+      "content": "Detaillierter Inhalt zu: Die Interventions-Rechte der betroffenen Person",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "die",
+        "interventions",
+        "rechte",
+        "der",
+        "betroffenen",
+        "person"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 63,
+      "title": "Transparenz (Art.12, ErwG.39 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Transparenz (Art.12, ErwG.39 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "transparenz",
+        "art.12,",
+        "erwg.39",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 64,
+      "title": "Informationspflicht (Art.13/14 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Informationspflicht (Art.13/14 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "informationspflicht",
+        "art.13/14",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 65,
+      "title": "Informationspflicht (Art.13/14 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Informationspflicht (Art.13/14 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "informationspflicht",
+        "art.13/14",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 66,
+      "title": "Information DSE/DPD (DS-Erklärung / Data Protection Declaration)",
+      "content": "Detaillierter Inhalt zu: Information DSE/DPD (DS-Erklärung / Data Protection Declaration)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "information",
+        "dse/dpd",
+        "ds",
+        "erklärung",
+        "/",
+        "data",
+        "protection",
+        "declaration"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 67,
+      "title": "DSE/DPD vs. Einwilligungserklärung (EWE)",
+      "content": "Detaillierter Inhalt zu: DSE/DPD vs. Einwilligungserklärung (EWE)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "dse/dpd",
+        "vs.",
+        "einwilligungserklärung",
+        "ewe"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 68,
+      "title": "Auskunftsrecht (Art.15 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Auskunftsrecht (Art.15 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "auskunftsrecht",
+        "art.15",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 69,
+      "title": "Auskunftsanspruch (Art.15 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Auskunftsanspruch (Art.15 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "auskunftsanspruch",
+        "art.15",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 70,
+      "title": "Auskunftsrecht - Ausnahmetatbestand (§34 Abs.1 BDSG)",
+      "content": "Detaillierter Inhalt zu: Auskunftsrecht - Ausnahmetatbestand (§34 Abs.1 BDSG)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "auskunftsrecht",
+        "ausnahmetatbestand",
+        "§34",
+        "abs.1",
+        "bdsg"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 71,
+      "title": "Auskunftsrecht - Identitätsprüfung",
+      "content": "Detaillierter Inhalt zu: Auskunftsrecht - Identitätsprüfung",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "auskunftsrecht",
+        "identitätsprüfung"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 72,
+      "title": "Auskunftsrecht - Zugang, Form/Weg",
+      "content": "Detaillierter Inhalt zu: Auskunftsrecht - Zugang, Form/Weg",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "auskunftsrecht",
+        "zugang,",
+        "form/weg"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 73,
+      "title": "Auskunftsrecht - Verweigerung, Kosten",
+      "content": "Detaillierter Inhalt zu: Auskunftsrecht - Verweigerung, Kosten",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "auskunftsrecht",
+        "verweigerung,",
+        "kosten"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 74,
+      "title": "Auskunftsrecht - notwendige Regelungen",
+      "content": "Detaillierter Inhalt zu: Auskunftsrecht - notwendige Regelungen",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "auskunftsrecht",
+        "notwendige",
+        "regelungen"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 75,
+      "title": "Recht auf Berichtigung (Art. 16 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Recht auf Berichtigung (Art. 16 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "recht",
+        "auf",
+        "berichtigung",
+        "art.",
+        "16",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 76,
+      "title": "Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "recht",
+        "auf",
+        "löschen",
+        "der",
+        "pers.bez.",
+        "daten",
+        "art.17",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 77,
+      "title": "Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Recht auf Löschen der pers.bez. Daten (Art.17 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "recht",
+        "auf",
+        "löschen",
+        "der",
+        "pers.bez.",
+        "daten",
+        "art.17",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 78,
+      "title": "Exkurs: Recht auf Löschung - DIN 66398 Löschkonzept",
+      "content": "Detaillierter Inhalt zu: Exkurs: Recht auf Löschung - DIN 66398 Löschkonzept",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "exkurs:",
+        "recht",
+        "auf",
+        "löschung",
+        "din",
+        "66398",
+        "löschkonzept"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 79,
+      "title": "Exkurs: Recht auf Löschung - DIN 66399/ ISO/IEC 21964",
+      "content": "Detaillierter Inhalt zu: Exkurs: Recht auf Löschung - DIN 66399/ ISO/IEC 21964",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "exkurs:",
+        "recht",
+        "auf",
+        "löschung",
+        "din",
+        "66399/",
+        "iso/iec",
+        "21964"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 80,
+      "title": "Recht auf Sperrung (§35 Abs.4 BDSG)",
+      "content": "Detaillierter Inhalt zu: Recht auf Sperrung (§35 Abs.4 BDSG)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "recht",
+        "auf",
+        "sperrung",
+        "§35",
+        "abs.4",
+        "bdsg"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 81,
+      "title": "Recht auf Vergessenwerden (Art.17 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Recht auf Vergessenwerden (Art.17 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "recht",
+        "auf",
+        "vergessenwerden",
+        "art.17",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 82,
+      "title": "Recht auf Einschränkung (Art.18 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Recht auf Einschränkung (Art.18 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "recht",
+        "auf",
+        "einschränkung",
+        "art.18",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 83,
+      "title": "Mitteilungspflicht (Art.19 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Mitteilungspflicht (Art.19 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "mitteilungspflicht",
+        "art.19",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 84,
+      "title": "Daten-Portabilität, Datenübertragbarkeit (Art.20 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Daten-Portabilität, Datenübertragbarkeit (Art.20 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "daten",
+        "portabilität,",
+        "datenübertragbarkeit",
+        "art.20",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 85,
+      "title": "Widerspruch der Verarbeitung (Art.21 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Widerspruch der Verarbeitung (Art.21 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "widerspruch",
+        "der",
+        "verarbeitung",
+        "art.21",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 86,
+      "title": "Widerruf der Verarbeitung (Art.21 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Widerruf der Verarbeitung (Art.21 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "widerruf",
+        "der",
+        "verarbeitung",
+        "art.21",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 87,
+      "title": "Automatisierte Entscheidungsfindung, Profiling (Art.22 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Automatisierte Entscheidungsfindung, Profiling (Art.22 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "automatisierte",
+        "entscheidungsfindung,",
+        "profiling",
+        "art.22",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 88,
+      "title": "Scoring und Bonitätsauskünfte (§31 BDSG)",
+      "content": "Detaillierter Inhalt zu: Scoring und Bonitätsauskünfte (§31 BDSG)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "scoring",
+        "und",
+        "bonitätsauskünfte",
+        "§31",
+        "bdsg"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 89,
+      "title": "Beschwerde-Recht bei einer Aufsichtsbehörde (Art.77 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Beschwerde-Recht bei einer Aufsichtsbehörde (Art.77 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "beschwerde",
+        "recht",
+        "bei",
+        "einer",
+        "aufsichtsbehörde",
+        "art.77",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 90,
+      "title": "Aufsichtsbehörde - Rechtsbehelf (Art.78 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Aufsichtsbehörde - Rechtsbehelf (Art.78 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "aufsichtsbehörde",
+        "rechtsbehelf",
+        "art.78",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    },
+    {
+      "id": 91,
+      "title": "Betroffenenrechte - Beschränkungen (Art.23 DSGVO)",
+      "content": "Detaillierter Inhalt zu: Betroffenenrechte - Beschränkungen (Art.23 DSGVO)",
+      "chapter": "Betroffenenrechte",
+      "chapterDescription": "Rechte der betroffenen Personen und deren praktische Umsetzung",
+      "keywords": [
+        "betroffenenrechte",
+        "beschränkungen",
+        "art.23",
+        "dsgvo"
+      ],
+      "tags": [
+        "DSGVO",
+        "Datenschutz",
+        "Compliance"
+      ]
+    }
+  ]
+}

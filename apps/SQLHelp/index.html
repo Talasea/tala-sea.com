@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Cheat Sheet - Dein Leitfaden für Datenbankbefehle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1 class="header-title">SQL Cheat Sheet</h1>
+                        <p class="header-subtitle">Alle wichtigen SQL-Befehle für Quereinsteiger</p>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln" aria-pressed="false">
+                        <span class="theme-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-wrapper">
+                    <input 
+                        type="search" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Suche nach SQL-Befehlen oder Beschreibungen..."
+                        aria-label="SQL-Befehle suchen"
+                    >
+                    <div class="search-icon" aria-hidden="true">🔍</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Accordion -->
+                <div class="accordion-container">
+                    <div class="accordion" id="sqlAccordion">
+                        <!-- Kategorien werden dynamisch eingefügt -->
+                    </div>
+                </div>
+
+                <!-- Visuals Section -->
+                <section class="visuals-section">
+                    <h2 class="section-title">SQL Übersicht</h2>
+                    <div class="visuals-grid">
+                        <div class="visual-item">
+                            <h3>Befehlskategorien</h3>
+                            <div class="image-container">
+                                <img 
+                                    src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/fe8cd00d59ac49a76b0114b5ad9294d5/a93292e0-3cc6-4080-8762-a9c6ab70f4b9/3783f518.png" 
+                                    alt="Diagramm der SQL-Befehlskategorien"
+                                    class="visual-image"
+                                    loading="lazy"
+                                    onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder\\'>📊<br>Diagramm der SQL-Befehlskategorien<br><small>Bild konnte nicht geladen werden</small></div>'"
+                                >
+                            </div>
+                        </div>
+                        <div class="visual-item">
+                            <h3>Datenbank-Konzept</h3>
+                            <div class="image-container">
+                                <img 
+                                    src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/19191f80-19b1-4a4d-9f8b-19c24ca451c7.png" 
+                                    alt="Illustration von Datenbank-Zylindern mit SQL-Schlüsselwörtern"
+                                    class="visual-image"
+                                    loading="lazy"
+                                    onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder\\'>🗃️<br>Datenbank-Konzept<br><small>Bild konnte nicht geladen werden</small></div>'"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>© 2025 SQL Cheat Sheet - Für alle, die SQL lernen möchten</p>
+            </div>
+        </footer>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast" role="status" aria-live="polite">
+            <span class="toast-message">Kopiert!</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

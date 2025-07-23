@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Passwort Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="matrix-canvas"></canvas>
+
+<div class="container">
+    <h1>Matrix Passwort Generator</h1>
+
+    <div class="result-container">
+        <input type="text" id="password-display" readonly placeholder="Generiertes Passwort...">
+        <button id="copy-btn" title="Passwort kopieren">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-720v480-480Z"/></svg>
+        </button>
+    </div>
+
+    <div class="settings">
+        <div class="setting">
+            <label for="length-slider">Passwortlänge: <span id="length-value">16</span></label>
+            <input type="range" id="length-slider" min="12" max="64" value="16">
+        </div>
+
+        <div class="setting">
+            <label>Zeichensätze:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="include-uppercase" checked>
+                <label for="include-uppercase">Großbuchstaben (A-Z)</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="include-lowercase" checked>
+                <label for="include-lowercase">Kleinbuchstaben (a-z)</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="include-numbers" checked>
+                <label for="include-numbers">Zahlen (0-9)</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="include-symbols" checked>
+                <label for="include-symbols">Sonderzeichen (!@#$%^&*)</label>
+            </div>
+        </div>
+
+        <button id="generate-btn">Passwort Generieren</button>
+    </div>
+    <p class="security-note">Passwörter werden lokal generiert und niemals gesendet.</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bis wir uns in Köln sehen...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* --- style.css --- */
+        :root {
+            --primary-bg-color: #fde2e4;
+            --secondary-bg-color: #e2eafc;
+            --text-color: #5c5454;
+            --heart-color: rgba(255, 105, 135, 0.1);
+            --heart-pulse-color: rgba(255, 105, 135, 0.2);
+            --silhouette-color: rgba(92, 84, 84, 0.3);
+            --silhouette-pulse-color: rgba(92, 84, 84, 0.4);
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-bg-color), var(--secondary-bg-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-color);
+        }
+
+        #background-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 90%;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+
+        #timer {
+            font-size: clamp(2rem, 10vw, 5rem);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .timer-labels {
+            display: flex;
+            justify-content: space-around;
+            gap: 5px;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+
+        .timer-labels span {
+            font-size: clamp(0.6rem, 2vw, 0.8rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="background-canvas"></canvas>
+
+<div class="container">
+    <h1>Nur noch ein kleiner Moment...</h1>
+    <p>...bis zu unserem Wiedersehen in Köln.</p>
+    <div id="timer">00:00:00:00</div>
+    <div class="timer-labels">
+        <span>Tage</span>
+        <span>Stunden</span>
+        <span>Minuten</span>
+        <span>Sekunden</span>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const timerDisplay = document.getElementById('timer');
+        const timerLabels = document.querySelector('.timer-labels');
+        const canvas = document.getElementById('background-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let pulseAnimation;
+
+        // Zieldatum: 15. August 2025, 11:00 Uhr
+        const targetDate = new Date('2025-08-15T11:00:00');
+
+        // SVG-Pfad für die Silhouette des Kölner Doms
+        const cathedralPathData = "M256 13.2L206.8 62.5V160H160V112H112V240H48V208H0V512H512V208H464V240H400V112H352V160H305.2V62.5L256 13.2ZM96 288H128V336H96V288ZM160 320H192V368H160V320ZM224 352H288V400H224V352ZM320 320H352V368H320V320ZM384 288H416V336H384V288Z";
+        const cathedralPath = new Path2D(cathedralPathData);
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawShapes(1);
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function drawShapes(scale) {
+            const width = canvas.width;
+            const height = canvas.height;
+            ctx.clearRect(0, 0, width, height);
+
+            // Herz zeichnen
+            const heartSize = Math.min(width, height) * 0.5 * scale;
+            const heartX = width / 2;
+            const heartY = height / 2 - heartSize * 0.1;
+
+            ctx.beginPath();
+            ctx.moveTo(heartX, heartY + heartSize / 4);
+            ctx.bezierCurveTo(heartX, heartY, heartX - heartSize / 2, heartY, heartX - heartSize / 2, heartY + heartSize / 4);
+            ctx.bezierCurveTo(heartX - heartSize / 2, heartY + heartSize / 2, heartX, heartY + heartSize / 1.5, heartX, heartY + heartSize);
+            ctx.bezierCurveTo(heartX, heartY + heartSize / 1.5, heartX + heartSize / 2, heartY + heartSize / 2, heartX + heartSize / 2, heartY + heartSize / 4);
+            ctx.bezierCurveTo(heartX + heartSize / 2, heartY, heartX, heartY, heartX, heartY + heartSize / 4);
+            ctx.closePath();
+            ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--heart-color').trim();
+            ctx.fill();
+
+            // Dom-Silhouette zeichnen
+            ctx.save();
+            const domScale = Math.min(width, height) * 0.0008 * scale;
+            // Positionierung im Zentrum des Canvas
+            const domX = width / 2 - (256 * domScale); // 256 ist die halbe Breite der SVG-Viewbox
+            const domY = height / 2 - (256 * domScale); // 256 ist die halbe Höhe der SVG-Viewbox
+
+            ctx.translate(domX, domY);
+            ctx.scale(domScale, domScale);
+            ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--silhouette-color').trim();
+            ctx.fill(cathedralPath);
+            ctx.restore();
+        }
+
+        function pulseHeart() {
+            if (pulseAnimation) clearInterval(pulseAnimation);
+
+            let scale = 1;
+            let direction = 1;
+            const pulseSpeed = 0.01;
+            const maxScale = 1.05;
+
+            pulseAnimation = setInterval(() => {
+                scale += direction * pulseSpeed;
+
+                if (scale > maxScale) {
+                    direction = -1;
+                    // Farben beim Pulsen ändern
+                    document.documentElement.style.setProperty('--heart-color', 'var(--heart-pulse-color)');
+                    document.documentElement.style.setProperty('--silhouette-color', 'var(--silhouette-pulse-color)');
+                } else if (scale < 1) {
+                    scale = 1;
+                    clearInterval(pulseAnimation);
+                    // Farben zurücksetzen
+                    document.documentElement.style.setProperty('--heart-color', 'rgba(255, 105, 135, 0.1)');
+                    document.documentElement.style.setProperty('--silhouette-color', 'rgba(92, 84, 84, 0.3)');
+                }
+
+                drawShapes(scale);
+            }, 10);
+        }
+
+        const timerInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                timerDisplay.textContent = "Jetzt!";
+                timerLabels.style.display = 'none';
+                document.querySelector('h1').textContent = "Endlich!";
+                document.querySelector('p').textContent = "Die Warterei hat ein Ende.";
+                if (pulseAnimation) clearInterval(pulseAnimation);
+                drawShapes(1.05);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timerDisplay.textContent = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            pulseHeart();
+        }, 1000);
+
+        drawShapes(1);
+    });
+</script>
+</body>
+</html>

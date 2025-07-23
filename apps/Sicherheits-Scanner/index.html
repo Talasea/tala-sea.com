@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecScan Matrix - Netzwerk Sicherheits-Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="matrix-bg"></div>
+
+<div class="container">
+    <header class="terminal-header">
+        <h1>>>> SECSCAN MATRIX v2.1 <<<</h1>
+        <p class="subtitle">Netzwerk-Sicherheitsanalyse-Tool</p>
+    </header>
+
+    <div class="control-panel">
+        <div class="scan-controls">
+            <button id="startScan" class="matrix-btn primary">
+                <span class="btn-text">SCAN STARTEN</span>
+            </button>
+            <button id="stopScan" class="matrix-btn secondary" disabled>
+                <span class="btn-text">SCAN STOPPEN</span>
+            </button>
+            <button id="clearResults" class="matrix-btn tertiary">
+                <span class="btn-text">ERGEBNISSE LÖSCHEN</span>
+            </button>
+        </div>
+
+        <div class="scan-options">
+            <label class="matrix-checkbox">
+                <input type="checkbox" id="quickScan" checked>
+                <span class="checkmark"></span>
+                Quick Scan (Top Ports)
+            </label>
+            <label class="matrix-checkbox">
+                <input type="checkbox" id="sslCheck">
+                <span class="checkmark"></span>
+                SSL/TLS Analyse
+            </label>
+            <label class="matrix-checkbox">
+                <input type="checkbox" id="localScan" checked>
+                <span class="checkmark"></span>
+                Lokales Netzwerk
+            </label>
+        </div>
+    </div>
+
+    <div class="scan-status">
+        <div class="status-indicator">
+            <span id="statusText">BEREIT</span>
+            <div class="status-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <span id="progressText">0%</span>
+        </div>
+    </div>
+
+    <div class="results-container">
+        <div class="terminal-window">
+            <div class="terminal-header-bar">
+                <span class="terminal-title">SCAN ERGEBNISSE</span>
+                <div class="terminal-controls">
+                    <span class="control minimize">-</span>
+                    <span class="control maximize">□</span>
+                    <span class="control close">×</span>
+                </div>
+            </div>
+            <div id="scanResults" class="terminal-content">
+                <div class="welcome-message">
+                    > Willkommen beim SecScan Matrix Tool<br>
+                    > Bereit für Netzwerk-Sicherheitsanalyse<br>
+                    > Klicken Sie 'SCAN STARTEN' um zu beginnen...<br>
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommendations-panel">
+            <h3>Sicherheitsempfehlungen</h3>
+            <div id="recommendations" class="recommendations-content">
+                <p>Starten Sie einen Scan um maßgeschneiderte Sicherheitsempfehlungen zu erhalten.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

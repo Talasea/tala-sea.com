@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Sicherheitsbeauftragter Quiz</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_purple.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">IT-Sicherheitsbeauftragter Quiz</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="#" id="main-menu-home">Startseite</a>
+                    <a class="mdl-navigation__link" href="#" id="main-menu-practice">Übungsmodus</a>
+                    <a class="mdl-navigation__link" href="#" id="main-menu-exam">Prüfungsmodus</a>
+                    <a class="mdl-navigation__link" href="#" id="main-menu-stats">Statistik</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Quiz-Menü</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="#" id="drawer-home">Startseite</a>
+                <a class="mdl-navigation__link" href="#" id="drawer-practice">Übungsmodus</a>
+                <a class="mdl-navigation__link" href="#" id="drawer-exam">Prüfungsmodus</a>
+                <a class="mdl-navigation__link" href="#" id="drawer-catalog">Fragenkatalog</a>
+                <a class="mdl-navigation__link" href="#" id="drawer-overview">Fragen & Antworten</a>
+                <a class="mdl-navigation__link" href="#" id="drawer-stats">Statistik</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div id="app">
+                    <!-- Startbildschirm -->
+                    <div id="startscreen" class="screen active">
+                        <div class="mdl-card mdl-shadow--4dp flipchart">
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">IT-Sicherheitsbeauftragter Quiz</h1>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <p>Willkommen zum IT-Sicherheitsbeauftragter Quiz! Wählen Sie einen Modus aus:</p>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border buttons">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="practice-btn">
+                                    <i class="material-icons">school</i> Übungsmodus
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="exam-btn">
+                                    <i class="material-icons">assignment</i> Prüfungsmodus
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised" id="catalog-btn">
+                                    <i class="material-icons">list</i> Fragenkatalog
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised" id="overview-btn">
+                                    <i class="material-icons">question_answer</i> Fragen & Antworten
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised" id="stats-btn">
+                                    <i class="material-icons">bar_chart</i> Statistik
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Übungsmodus -->
+                    <div id="practice-mode" class="screen">
+                        <div class="mdl-card mdl-shadow--4dp flipchart">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Übungsmodus</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="nav-buttons">
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="prev-question-practice" title="Vorherige Frage">
+                                        <i class="material-icons">arrow_back</i>
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="home-practice" title="Startseite">
+                                        <i class="material-icons">home</i>
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="catalog-practice" title="Fragenkatalog">
+                                        <i class="material-icons">list</i>
+                                    </button>
+                                </div>
+                                <div id="practice-question-container" class="question-container">
+                                    <!-- Hier werden die Fragen dynamisch eingefügt -->
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="check-answer-practice">
+                                    <i class="material-icons">check</i> Antwort prüfen
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="next-question-practice">
+                                    <i class="material-icons">arrow_forward</i> Nächste Frage
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prüfungsmodus -->
+                    <div id="exam-mode" class="screen">
+                        <div class="mdl-card mdl-shadow--4dp flipchart">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Prüfungsmodus</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="timer">Zeit: <span id="time-left">60:00</span></div>
+                                <div class="nav-buttons">
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="prev-question-exam" title="Vorherige Frage">
+                                        <i class="material-icons">arrow_back</i>
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="home-exam" title="Startseite">
+                                        <i class="material-icons">home</i>
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="catalog-exam" title="Fragenkatalog">
+                                        <i class="material-icons">list</i>
+                                    </button>
+                                </div>
+                                <div id="question-number">Frage 1/50</div>
+                                <div id="exam-question-container" class="question-container">
+                                    <!-- Hier werden die Fragen dynamisch eingefügt -->
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="next-question-exam">
+                                    <i class="material-icons">arrow_forward</i> Nächste Frage
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="submit-exam">
+                                    <i class="material-icons">done_all</i> Prüfung abgeben
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fragenkatalog -->
+                    <div id="catalog" class="screen">
+                        <div class="mdl-card mdl-shadow--4dp flipchart">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Fragenkatalog</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="nav-buttons">
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="home-catalog" title="Startseite">
+                                        <i class="material-icons">home</i>
+                                    </button>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="catalog-search">
+                                    <label class="mdl-textfield__label" for="catalog-search">Fragen durchsuchen...</label>
+                                </div>
+                                <div id="catalog-container">
+                                    <!-- Hier werden die Fragen-Links dynamisch eingefügt -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Übersicht aller Fragen und Antworten -->
+                    <div id="overview" class="screen">
+                        <div class="mdl-card mdl-shadow--4dp flipchart">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Alle Fragen & Antworten</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="nav-buttons">
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="home-overview" title="Startseite">
+                                        <i class="material-icons">home</i>
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="catalog-overview" title="Fragenkatalog">
+                                        <i class="material-icons">list</i>
+                                    </button>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="overview-search">
+                                    <label class="mdl-textfield__label" for="overview-search">Fragen durchsuchen...</label>
+                                </div>
+                                <div id="overview-container">
+                                    <!-- Hier werden alle Fragen und Antworten dynamisch eingefügt -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistik -->
+                    <div id="statistics" class="screen">
+                        <div class="mdl-card mdl-shadow--4dp flipchart">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Lernstatistik</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="nav-buttons">
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="home-stats" title="Startseite">
+                                        <i class="material-icons">home</i>
+                                    </button>
+                                </div>
+                                <div id="stats-summary" class="stats-summary">
+                                    <div class="mdl-grid">
+                                        <div class="mdl-cell mdl-cell--4-col stats-card">
+                                            <div class="mdl-card mdl-shadow--2dp">
+                                                <div class="mdl-card__title">
+                                                    <h2 class="mdl-card__title-text">Gesamt</h2>
+                                                </div>
+                                                <div class="mdl-card__supporting-text">
+                                                    <div id="total-questions" class="stats-number">0</div>
+                                                    <div>Fragen</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mdl-cell mdl-cell--4-col stats-card">
+                                            <div class="mdl-card mdl-shadow--2dp correct-card">
+                                                <div class="mdl-card__title">
+                                                    <h2 class="mdl-card__title-text">Richtig</h2>
+                                                </div>
+                                                <div class="mdl-card__supporting-text">
+                                                    <div id="correct-answers" class="stats-number">0</div>
+                                                    <div id="correct-percentage">(0%)</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mdl-cell mdl-cell--4-col stats-card">
+                                            <div class="mdl-card mdl-shadow--2dp incorrect-card">
+                                                <div class="mdl-card__title">
+                                                    <h2 class="mdl-card__title-text">Falsch</h2>
+                                                </div>
+                                                <div class="mdl-card__supporting-text">
+                                                    <div id="incorrect-answers" class="stats-number">0</div>
+                                                    <div id="incorrect-percentage">(0%)</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                                        <div class="mdl-tabs__tab-bar">
+                                            <a href="#incorrect-panel" class="mdl-tabs__tab is-active">Falsch beantwortet</a>
+                                            <a href="#not-answered-panel" class="mdl-tabs__tab">Nicht beantwortet</a>
+                                            <a href="#all-questions-panel" class="mdl-tabs__tab">Alle Fragen</a>
+                                        </div>
+                                        <div class="mdl-tabs__panel is-active" id="incorrect-panel">
+                                            <div class="stats-actions">
+                                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="practice-incorrect">
+                                                    <i class="material-icons">school</i> Falsche Fragen üben
+                                                </button>
+                                            </div>
+                                            <div id="incorrect-questions-list" class="stats-questions-list">
+                                                <!-- Hier werden die falsch beantworteten Fragen dynamisch eingefügt -->
+                                            </div>
+                                        </div>
+                                        <div class="mdl-tabs__panel" id="not-answered-panel">
+                                            <div class="stats-actions">
+                                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="practice-not-answered">
+                                                    <i class="material-icons">school</i> Nicht beantwortete Fragen üben
+                                                </button>
+                                            </div>
+                                            <div id="not-answered-questions-list" class="stats-questions-list">
+                                                <!-- Hier werden die nicht beantworteten Fragen dynamisch eingefügt -->
+                                            </div>
+                                        </div>
+                                        <div class="mdl-tabs__panel" id="all-questions-panel">
+                                            <div class="stats-actions">
+                                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="reset-stats">
+                                                    <i class="material-icons">delete</i> Statistiken zurücksetzen
+                                                </button>
+                                            </div>
+                                            <div id="all-questions-stats" class="stats-questions-list">
+                                                <!-- Hier werden alle Fragen mit Status dynamisch eingefügt -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ergebnisse -->
+                    <div id="results" class="screen">
+                        <div class="mdl-card mdl-shadow--4dp flipchart">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Prüfungsergebnis</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="nav-buttons">
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" id="home-results" title="Startseite">
+                                        <i class="material-icons">home</i>
+                                    </button>
+                                </div>
+                                <div class="results-summary">
+                                    <div class="mdl-grid">
+                                        <div class="mdl-cell mdl-cell--12-col">
+                                            <div class="result-card mdl-card mdl-shadow--2dp">
+                                                <div class="mdl-card__title">
+                                                    <h2 class="mdl-card__title-text">Ihr Ergebnis</h2>
+                                                </div>
+                                                <div class="mdl-card__supporting-text">
+                                                    <div class="result-score">
+                                                        <span id="score">0</span>/50 Fragen richtig (<span id="percentage">0</span>%)
+                                                    </div>
+                                                    <div id="pass-fail" class="pass-fail">Nicht bestanden</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="results-actions">
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="retry-exam">
+                                        <i class="material-icons">replay</i> Neue Prüfung starten
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised" id="review-answers">
+                                        <i class="material-icons">list</i> Antworten überprüfen
+                                    </button>
+                                </div>
+                                <div id="exam-review-container" class="exam-review">
+                                    <h3>Detaillierte Übersicht</h3>
+                                    <div id="exam-questions-review">
+                                        <!-- Hier werden die Prüfungsfragen mit Antworten dynamisch eingefügt -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Snackbar für Benachrichtigungen -->
+    <div id="snackbar-container" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

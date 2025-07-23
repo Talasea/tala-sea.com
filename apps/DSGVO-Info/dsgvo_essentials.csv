@@ -1,0 +1,15 @@
+Kategorie,Key Point,DSGVO Artikel,Beschreibung,Praktische Umsetzung
+Grundprinzipien,Rechtmäßigkeit der Verarbeitung,Art. 5 & 6,Jede Datenverarbeitung benötigt eine Rechtsgrundlage,Prüfung der Rechtsgrundlage vor jeder Verarbeitung
+Grundprinzipien,Zweckbindung,Art. 5 Abs. 1 lit. b,"Daten nur für festgelegte, eindeutige Zwecke",Klare Zweckdefinition bei Datenerhebung
+Grundprinzipien,Datenminimierung,Art. 5 Abs. 1 lit. c,Nur erforderliche Daten verarbeiten,Regelmäßige Prüfung der Datennotwendigkeit
+Betroffenenrechte,Auskunftsrecht,Art. 15,Recht auf Auskunft über verarbeitete Daten,Verfahren für Auskunftsersuchen etablieren
+Betroffenenrechte,Recht auf Löschung,Art. 17,Recht auf Vergessenwerden unter bestimmten Umständen,Löschkonzept und automatisierte Löschprozesse
+Betroffenenrechte,Datenportabilität,Art. 20,Übertragung von Daten an anderen Verantwortlichen,Technische Exportmöglichkeiten bereitstellen
+Organisatorisches,Datenschutzbeauftragter,Art. 37-39,Benennung bei bestimmten Verarbeitungstätigkeiten,Qualifikation und Unabhängigkeit sicherstellen
+Organisatorisches,Verzeichnis der Verarbeitungstätigkeiten,Art. 30,Dokumentation aller Verarbeitungsprozesse,Strukturierte Erfassung und regelmäßige Updates
+Organisatorisches,Datenschutz-Folgenabschätzung,Art. 35,Bewertung bei risikoreichen Verarbeitungen,Schwellwertanalyse und DSFA-Prozess
+Technische Maßnahmen,Privacy by Design,Art. 25 Abs. 1,Datenschutz bereits bei der Systemplanung,Datenschutz in Entwicklungsprozesse integrieren
+Technische Maßnahmen,Privacy by Default,Art. 25 Abs. 2,Datenschutzfreundliche Grundeinstellungen,Minimale Datenverarbeitung als Standard
+Sicherheit,Technische und organisatorische Maßnahmen,Art. 32,Angemessene Sicherheit der Verarbeitung,Risikobewertung und Schutzmaßnahmen
+Sicherheit,Meldung von Datenschutzverletzungen,Art. 33 & 34,Meldung an Aufsichtsbehörde und Betroffene,Incident Response Prozess etablieren
+Sanktionen,Bußgelder,Art. 83,Bis zu 20 Mio. EUR oder 4% des Jahresumsatzes,Compliance-Management zur Risikominimierung

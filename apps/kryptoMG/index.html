@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krypto-Messenger</title>
+
+    <!-- Einbindung der Schriften und Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Einbindung deiner eigenen CSS-Datei -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 md:p-8">
+
+<div class="max-w-7xl mx-auto">
+    <header class="text-center mb-8">
+        <h1 class="text-4xl md:text-6xl font-display text-green-400">Krypto-Messenger</h1>
+        <p class="text-lg text-gray-400">Spielerisch historische Verschlüsselungen verstehen</p>
+    </header>
+
+    <!-- Steuerungsleiste -->
+    <div class="bg-gray-800 p-4 rounded-lg mb-8 shadow-lg">
+        <div class="flex flex-col md:flex-row items-center gap-4">
+            <div class="w-full md:w-1/3">
+                <label for="cipher-select" class="block mb-2 text-sm font-bold text-gray-300">Verschlüsselungsmethode</label>
+                <select id="cipher-select" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                    <option value="caesar">Caesar</option>
+                    <option value="atbash">Atbash</option>
+                    <option value="vigenere">Vigenère</option>
+                    <option value="railfence">Zick-Zack (Rail Fence)</option>
+                    <option value="enigma">Enigma</option>
+                </select>
+            </div>
+            <div id="settings-container" class="w-full md:w-2/3">
+                <!-- Einstellungen werden hier dynamisch per JavaScript geladen -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat-Bereich -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Person A (Alice) -->
+        <div id="person-a" class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col h-[60vh]">
+            <h2 class="text-2xl font-display text-cyan-400 mb-4 text-center">Du (Alice)</h2>
+            <div id="chat-a" class="flex-grow overflow-y-auto pr-2 space-y-4"></div>
+            <div class="mt-4 flex gap-2">
+                <input type="text" id="input-a" class="flex-grow bg-gray-700 border border-gray-600 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Nachricht an Bob...">
+                <button id="send-a" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">Senden</button>
+            </div>
+        </div>
+
+        <!-- Person B (Bob) -->
+        <div id="person-b" class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col h-[60vh]">
+            <h2 class="text-2xl font-display text-orange-400 mb-4 text-center">Dein Partner (Bob)</h2>
+            <div id="chat-b" class="flex-grow overflow-y-auto pr-2 space-y-4"></div>
+            <div class="mt-4 flex gap-2">
+                <input type="text" id="input-b" class="flex-grow bg-gray-700 border border-gray-600 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Nachricht an Alice...">
+                <button id="send-b" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">Senden</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Informationsbereich -->
+    <div id="info-box" class="mt-8 bg-gray-800 p-6 rounded-lg shadow-lg">
+        <!-- Info-Text wird hier dynamisch per JavaScript geladen -->
+    </div>
+</div>
+
+<!-- Einbindung deiner eigenen JavaScript-Datei -->
+<script src="script.js"></script>
+</body>
+</html>

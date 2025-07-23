@@ -1,0 +1,648 @@
+/* ========== style.css vollständig ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Roboto", Arial, sans-serif;
+    background: #f5f5f5;
+  }
+  
+  .mdl-layout__content {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  
+  .page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .screen {
+    display: none;
+    width: 100%;
+  }
+  
+  .screen.active {
+    display: block;
+  }
+  
+  .flipchart {
+    width: 100%;
+    margin: 0 auto;
+    overflow: visible;
+  }
+  
+  .flipchart .mdl-card {
+    width: 100%;
+    min-height: 0; /* Reset MDL min-height */
+  }
+  
+  .mdl-card__title {
+    background: #3f51b5;
+    color: #fff;
+  }
+  
+  .mdl-card__title-text {
+    font-size: 24px;
+  }
+  
+  /* Frage Container & Frage Text */
+  .question-container {
+    max-width: 95%;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question {
+    position: relative;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  
+  .question:before {
+    content: "\e8af";
+    font-family: "Material Icons";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+    color: #3f51b5;
+  }
+  
+  /* Antworten (Vertikal & Nummeriert) */
+  .answers {
+    list-style: none; /* Entfernt Standard-Listenpunkte */
+    padding-left: 0; /* Entfernt Standard-Einrückung */
+    counter-reset: answer-counter; /* Startet den Zähler für Antworten */
+    margin-top: 20px;
+    max-width: 1000px; /* Behält max-width bei */
+    margin: 0 auto; /* Behält Zentrierung bei */
+  }
+  
+  .answer {
+    display: flex; /* Behält Flexbox für interne Ausrichtung bei */
+    align-items: center;
+    background: #fafafa;
+    padding: 15px;
+    padding-left: 50px; /* Mehr Platz links für die Nummer */
+    border-left: 4px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 12px; /* Abstand zwischen den Antworten */
+    position: relative; /* Für die Positionierung der Nummer */
+    counter-increment: answer-counter; /* Erhöht den Zähler */
+    transition: background 0.2s, border-color 0.2s;
+  }
+  
+  .answer::before {
+    content: counter(answer-counter) "."; /* Zeigt die Nummer an (z.B. "1.") */
+    position: absolute;
+    left: 15px; /* Position der Nummer */
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #3f51b5; /* Farbe der Nummer */
+    width: 25px; /* Breite für Ausrichtung */
+    text-align: right;
+  }
+  
+  .answer:hover {
+    background: #f0f0f0;
+  }
+  
+  /* Anpassung für MDL Checkbox Label innerhalb von .answer */
+  .answer .mdl-checkbox {
+    /* Nimmt volle Breite ein */
+    width: 100%;
+    margin: 0; /* Reset margin if necessary */
+    display: flex;
+    align-items: center;
+  }
+  
+  .answer .mdl-checkbox__input {
+    /* Checkbox selbst */
+    transform: scale(1.3);
+    margin-right: 15px; /* Abstand zum Text */
+  }
+  
+  .answer .mdl-checkbox__label {
+    /* Label Text Container */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Schiebt Feedback nach rechts */
+    width: 100%;
+  }
+  
+  .answer-text {
+    /* Der eigentliche Antworttext */
+    font-size: 18px;
+    line-height: 1.4;
+    flex-grow: 1; /* Nimmt verfügbaren Platz ein */
+    margin-right: 10px; /* Abstand zum Feedback-Icon */
+  }
+  
+  /* Feedback Icons (innerhalb des Labels) */
+  .feedback {
+    font-size: 1.3em; /* Größere Icons */
+    font-weight: bold;
+    /* margin-left: auto; wird durch justify-content: space-between im Label ersetzt */
+  }
+  
+  /* Zustände für Antworten */
+  .answer.correct {
+    background: #e8f5e9;
+    border-left-color: #28a745;
+  }
+  
+  .answer.correct .feedback {
+    color: #28a745;
+  }
+  
+  .answer.incorrect {
+    background: #ffebee;
+    border-left-color: #dc3545;
+  }
+  
+  .answer.incorrect .feedback {
+    color: #dc3545;
+  }
+  
+  .answer.missed {
+    background: #fff8e1;
+    border-left-color: #ffca28;
+  }
+  
+  .answer.missed .feedback {
+    color: #ffca28;
+  }
+  
+  /* Antwort-Zusammenfassung */
+  .answer-summary {
+    max-width: 1000px; /* Behält max-width bei */
+    margin: 20px auto; /* Behält Zentrierung bei */
+    padding: 15px;
+    background: #fffde7;
+    border-left: 4px solid #ffca28;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 25px; /* Mehr Abstand nach oben */
+  }
+  
+  .answer-summary strong {
+    font-size: 1.1em;
+  }
+  
+  /* Aktionen / Buttons */
+  .mdl-card__actions {
+    display: flex;
+    gap: 10px;
+    padding: 15px 30px; /* Mehr Padding */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Trennlinie oben */
+    justify-content: flex-start; /* Buttons linksbündig */
+  }
+  
+  /* Responsiv */
+  @media (max-width: 768px) {
+    /* Keine Änderung für .answers nötig, da es jetzt vertikal ist */
+    .question-container {
+      padding: 20px;
+    }
+  
+    .answer {
+      padding: 12px;
+      padding-left: 45px;
+    }
+    /* Etwas weniger Padding auf Mobilgeräten */
+    .answer-text {
+      font-size: 16px;
+    }
+  
+    .mdl-card__title-text {
+      font-size: 20px;
+    }
+    /* Kleinere Überschrift */
+    .question {
+      font-size: 18px;
+      padding-left: 30px;
+    }
+    /* Kleinere Frage */
+    .question::before {
+      font-size: 20px;
+    }
+  
+    .mdl-card__actions {
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+    /* Buttons umbrechen lassen */
+  }
+  
+  /* --- Zusätzliche Stile für Statistik, Katalog, Übersicht etc. (Beispiele) --- */
+  
+  /* Statistik Seite */
+  #statistics {
+    padding: 20px;
+  }
+  
+  .stats-summary,
+  .stats-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats-summary h3,
+  .stats-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+    color: #3f51b5;
+  }
+  
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  .stat-label {
+    font-weight: bold;
+  }
+  
+  .stat-value span {
+    margin-left: 5px;
+    color: #757575;
+  }
+  
+  .stat-question-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .stat-question-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .stat-question-item:last-child {
+    border-bottom: none;
+  }
+  
+  .stat-question-id {
+    font-weight: bold;
+    margin-right: 15px;
+    color: #757575;
+    min-width: 50px;
+  }
+  
+  .stat-question-text {
+    flex-grow: 1;
+    margin-right: 15px;
+  }
+  
+  .stat-question-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  .stat-question-status i {
+    font-size: 1.2em;
+  }
+  
+  .stat-question-status.correct i {
+    color: #28a745;
+  }
+  
+  .stat-question-status.incorrect i {
+    color: #dc3545;
+  }
+  
+  .stat-question-status.not-answered i {
+    color: #ffca28;
+  }
+  
+  .empty-list-message {
+    color: #757575;
+    padding: 10px;
+  }
+  
+  .stats-actions button {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Katalog Seite */
+  #catalog {
+    padding: 20px;
+  }
+  
+  .catalog-search-container {
+    margin-bottom: 20px;
+  }
+  
+  .catalog-category-header {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #3f51b5;
+    font-size: 1.3em;
+    color: #3f51b5;
+  }
+  
+  .catalog-item {
+    /* Bereits als Button gestyled, ggf. spezifische Anpassungen */
+    display: flex; /* Flexbox für interne Ausrichtung */
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    justify-content: flex-start; /* Inhalt linksbündig */
+    border-left: 4px solid transparent; /* Platzhalter für Status */
+    text-transform: none; /* Normaler Text */
+    height: auto; /* Automatische Höhe */
+    line-height: 1.4;
+  }
+  
+  .catalog-item-id {
+    font-weight: bold;
+    color: #666;
+    margin-right: 10px;
+    min-width: 50px;
+  }
+  
+  .catalog-item-text {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+  }
+  
+  .catalog-item-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: auto;
+  }
+  
+  .catalog-item.answered-correct {
+    border-left-color: #28a745;
+    background-color: #e8f5e9;
+  }
+  
+  .catalog-item.answered-incorrect {
+    border-left-color: #dc3545;
+    background-color: #ffebee;
+  }
+  
+  .catalog-item.not-answered {
+    border-left-color: #ffca28;
+    background-color: #fff8e1;
+  }
+  
+  /* Übersicht Seite */
+  #overview {
+    padding: 20px;
+  }
+  
+  .overview-search-container {
+    margin-bottom: 20px;
+  }
+  
+  .overview-item {
+    margin-bottom: 25px; /* Abstand zwischen den Frage-Cards */
+  }
+  
+  .overview-item .mdl-card__title {
+    padding: 16px;
+  }
+  
+  .overview-item .mdl-card__title-text {
+    font-size: 1.1em;
+    line-height: 1.4;
+  }
+  
+  .overview-item .mdl-card__supporting-text {
+    font-size: 0.95em;
+  }
+  
+  .overview-answer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .overview-answer i {
+    margin-right: 8px;
+    font-size: 1.1em;
+  }
+  
+  .overview-answer.correct {
+    color: #28a745;
+  }
+  
+  .overview-answer.incorrect {
+    color: #757575;
+  }
+  /* Falsche Antworten normal darstellen, nur Icon färben */
+  .overview-answer.incorrect i {
+    color: #dc3545;
+  }
+  
+  .overview-answer.correct i {
+    color: #28a745;
+  }
+  
+  .overview-item .mdl-card__actions {
+    justify-content: flex-end;
+  }
+  
+  /* Ergebnis Seite */
+  #results {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .results-summary {
+    background: #fff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: inline-block; /* Zentriert sich besser */
+    text-align: left;
+  }
+  
+  .results-summary h2 {
+    margin-top: 0;
+    color: #3f51b5;
+    text-align: center;
+  }
+  
+  .results-summary p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .results-summary .pass-fail {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .results-summary .pass {
+    color: #fff;
+    background-color: #28a745;
+  }
+  
+  .results-summary .fail {
+    color: #fff;
+    background-color: #dc3545;
+  }
+  
+  .results-actions {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .results-actions button {
+    margin: 0 10px;
+  }
+  
+  #exam-review-container {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .exam-review-question {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid;
+  }
+  
+  .exam-review-question.correct {
+    border-left-color: #28a745;
+  }
+  
+  .exam-review-question.incorrect {
+    border-left-color: #dc3545;
+  }
+  
+  .exam-question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .exam-question-number {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .exam-question-result {
+    font-weight: bold;
+  }
+  
+  .exam-question-result.correct {
+    color: #28a745;
+  }
+  
+  .exam-question-result.incorrect {
+    color: #dc3545;
+  }
+  
+  .exam-question-text {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .exam-answers {
+    margin-left: 10px;
+  }
+  
+  .exam-answer {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 0.95em;
+  }
+  
+  .exam-answer-text {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .exam-answer-feedback {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .exam-answer-feedback i {
+    margin-left: 5px;
+    font-size: 1.2em;
+  }
+  
+  .exam-answer.correct .correct-answer-indicator {
+    color: #28a745;
+  }
+  /* Korrekte Antwort */
+  .exam-answer.incorrect .user-checked {
+    color: #dc3545;
+  }
+  /* Falsch vom Nutzer gewählt */
+  .exam-answer.missed .correct-answer-indicator {
+    color: #ffca28;
+  }
+  /* Richtige verpasst */
+  .exam-answer .user-unchecked {
+    color: #ccc;
+  }
+  /* Nicht vom Nutzer gewählt */
+  
+  /* Hilfsklassen & Allgemeine Elemente */
+  .material-icons.tiny {
+    font-size: 1.1em;
+    vertical-align: middle;
+  }
+  
+  input[type="search"].mdl-textfield__input {
+    background: #fff;
+    padding: 0 10px;
+    border-radius: 4px;
+  }
+  
+  .mdl-snackbar {
+    /* Sicherstellen, dass Snackbar sichtbar ist */
+    background-color: #323232;
+    color: white;
+  }
+  

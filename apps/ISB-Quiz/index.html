@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSGVO Datenschutzbeauftragter Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <h1 class="logo">
+            <span class="shield-icon">🛡️</span>
+            Informationssicherheits-Beauftragte Quiz
+        </h1>
+        <p class="subtitle">Informationssicherheits-Beauftragte/-r (ISB/ISO) - Prüfungsvorbereitung</p>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Mode Selection -->
+        <section id="mode-selection" class="mode-selection">
+            <div class="welcome-section">
+                <h2>Willkommen zum Informationssicherheits-Beauftragte Quiz </h2>
+                <p class="welcome-text">
+                    Bereiten Sie sich optimal auf die Prüfung zum Informationssicherheits-Beauftragten vor.
+                    Wählen Sie aus vier verschiedenen Quiz-Modi den für Sie passenden aus.
+                </p>
+            </div>
+
+            <div class="modes-grid">
+                <div class="mode-card" onclick="startQuiz('random')">
+                    <div class="mode-icon">🎲</div>
+                    <h3>Zufalls-Quiz</h3>
+                    <p>10 zufällige Fragen für eine schnelle Übung</p>
+                    <div class="mode-features">
+                        <span class="feature">✓ 10 Fragen</span>
+                        <span class="feature">✓ Zufällige Auswahl</span>
+                        <span class="feature">✓ Schneller Test</span>
+                    </div>
+                    <button class="mode-btn">Starten</button>
+                </div>
+
+                <div class="mode-card" onclick="startQuiz('exam')">
+                    <div class="mode-icon">📋</div>
+                    <h3>Prüfungssimulation</h3>
+                    <p>Vollständige Prüfung mit allen 53 Fragen und detaillierter Auswertung</p>
+                    <div class="mode-features">
+                        <span class="feature">✓ Alle 53 Fragen</span>
+                        <span class="feature">✓ Zeiterfassung</span>
+                        <span class="feature">✓ Detailauswertung</span>
+                    </div>
+                    <button class="mode-btn">Prüfung beginnen</button>
+                </div>
+
+                <div class="mode-card" onclick="startQuiz('learning')">
+                    <div class="mode-icon">📚</div>
+                    <h3>Lern-Modus</h3>
+                    <p>Alle Fragen in derselben Reihenfolge zum systematischen Lernen</p>
+                    <div class="mode-features">
+                        <span class="feature">✓ Strukturiert</span>
+                        <span class="feature">✓ Reihenfolge beibehalten</span>
+                        <span class="feature">✓ Zum Lernen</span>
+                    </div>
+                    <button class="mode-btn">Lernen</button>
+                </div>
+
+                <div class="mode-card" onclick="showCatalog()">
+                    <div class="mode-icon">📖</div>
+                    <h3>Fragenkatalog</h3>
+                    <p>Alle Fragen mit Antworten zur Übersicht und Wiederholung</p>
+                    <div class="mode-features">
+                        <span class="feature">✓ Alle Fragen</span>
+                        <span class="feature">✓ Mit Lösungen</span>
+                        <span class="feature">✓ Übersicht</span>
+                    </div>
+                    <button class="mode-btn">Katalog öffnen</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Interface -->
+        <section id="quiz-interface" class="quiz-interface hidden">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <div class="question-counter" id="question-counter">Frage 1 von 53</div>
+                    <div class="timer-container">
+                        <span class="timer-icon">⏱️</span>
+                        <span class="timer" id="timer">00:00</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Question Navigation -->
+            <div class="question-navigation">
+                <h4>Fragen-Navigation:</h4>
+                <div class="question-nav" id="question-nav">
+                    <!-- Navigation buttons will be generated here -->
+                </div>
+            </div>
+
+            <!-- Question Content -->
+            <div class="question-container">
+                <div class="question-header">
+                    <h3 class="question-text" id="question-text">
+                        Hier erscheint die Frage...
+                    </h3>
+                </div>
+
+                <div class="answers-container" id="answers-container">
+                    <!-- Answer options will be generated here -->
+                </div>
+            </div>
+
+            <!-- Quiz Controls -->
+            <div class="quiz-controls">
+                <div class="control-group">
+                    <button class="control-btn secondary" onclick="previousQuestion()" id="prev-btn">
+                        ← Zurück
+                    </button>
+                    <button class="control-btn secondary" onclick="skipQuestion()" id="skip-btn">
+                        Überspringen
+                    </button>
+                </div>
+
+                <div class="control-group">
+                    <button class="control-btn primary" onclick="nextQuestion()" id="next-btn">
+                        Weiter →
+                    </button>
+                    <button class="control-btn finish" onclick="finishQuiz()" id="finish-btn">
+                        Quiz beenden
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Navigation to Unanswered -->
+            <div class="unanswered-section" id="unanswered-section">
+                <h4>Offene Fragen:</h4>
+                <div class="unanswered-list" id="unanswered-list">
+                    <!-- Unanswered questions will be shown here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog View -->
+        <section id="catalog-view" class="catalog-view hidden">
+            <div class="catalog-header">
+                <h2>Fragenkatalog - Alle Fragen mit Antworten</h2>
+                <p class="catalog-description">
+                    Hier finden Sie alle 53 Prüfungsfragen mit den korrekten Antworten markiert.
+                    Richtige Antworten sind grün hervorgehoben.
+                </p>
+                <button class="back-btn" onclick="showModeSelection()">← Zurück zur Auswahl</button>
+            </div>
+
+            <div class="catalog-content" id="catalog-content">
+                <!-- Catalog questions will be generated here -->
+            </div>
+        </section>
+
+        <!-- Results View -->
+        <section id="results-view" class="results-view hidden">
+            <div class="results-header">
+                <h2>Quiz-Ergebnisse</h2>
+                <div class="score-container">
+                    <div class="score-circle">
+                        <div class="score-percentage" id="score-percentage">0%</div>
+                        <div class="score-text">Erreicht</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-details">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-label">Richtige Antworten:</div>
+                        <div class="result-value" id="correct-answers">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Falsche Antworten:</div>
+                        <div class="result-value" id="wrong-answers">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Benötigte Zeit:</div>
+                        <div class="result-value" id="total-time">00:00</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Übersprungene Fragen:</div>
+                        <div class="result-value" id="skipped-count">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-feedback" id="results-feedback">
+                <!-- Feedback based on score will be generated here -->
+            </div>
+
+            <div class="detailed-results" id="detailed-results">
+                <h3>Detaillierte Auswertung</h3>
+                <div class="results-breakdown" id="results-breakdown">
+                    <!-- Detailed question-by-question results -->
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button class="control-btn secondary" onclick="showModeSelection()">
+                    Neues Quiz starten
+                </button>
+                <button class="control-btn primary" onclick="retryQuiz()">
+                    Quiz wiederholen
+                </button>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 DSGVO Datenschutzbeauftragter Quiz. Alle Rechte vorbehalten.</p>
+        <p class="footer-note">
+            Basierend auf dem BSI IT-Grundschutz und ISO 27001 Standards für
+            Informationssicherheits-Beauftragte (ISB/ISO)
+        </p>
+    </div>
+</footer>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loading-spinner"></div>
+    <p>Quiz wird geladen...</p>
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

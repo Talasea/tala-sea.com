@@ -1,0 +1,50 @@
+Kategorie,Unterkategorie,Fehlender_Inhalt,Priorität,Aufwand_Stunden,Beschreibung,Status
+Cloud,Kubernetes,Cluster Deployment,Hoch,35,K8s-basierte Bereitstellung,Fehlt komplett
+Cloud,AWS,ECS Container Deploy,Hoch,25,Container-basierte Bereitstellung,Fehlt komplett
+Cloud,AWS,EC2 Installation,Hoch,20,"AMI-basierte Installation, Auto-Scaling",Fehlt komplett
+Automation,Terraform,Infrastructure Setup,Hoch,20,Cloud Infrastructure,Fehlt komplett
+Cloud,Google Cloud,Compute Engine Setup,Hoch,18,GCE VM-Installation,Fehlt komplett
+Cloud,Azure,Virtual Machine Setup,Hoch,18,Azure VM-Installation,Fehlt komplett
+Automation,CI/CD,Jenkins Integration,Hoch,18,Continuous Integration,Fehlt komplett
+Linux,Security,SELinux Configuration,Hoch,15,Konfiguration für gehärtete Systeme,Fehlt komplett
+Automation,Ansible,Playbook Installation,Hoch,15,Infrastructure as Code,Fehlt komplett
+Automation,CI/CD,GitHub Actions,Hoch,15,Automated Testing/Deployment,Fehlt komplett
+Windows,WSL Support,Windows Subsystem for Linux,Hoch,12,Installation in WSL1 und WSL2 Umgebung,Fehlt komplett
+Windows,Silent Installation,Unattended Installation,Hoch,10,Vollautomatische Installation für Unternehmen,Nur PowerShell-Beispiel
+Linux,Container,Podman Installation,Hoch,10,Docker-Alternative für rootless Container,Fehlt komplett
+Windows,Package Manager,Chocolatey Installation,Hoch,8,choco install metasploit-framework Anleitung,Fehlt komplett
+Windows,Corporate Environment,Proxy-Configuration,Hoch,8,Installation hinter Corporate Firewall,Fehlt komplett
+Database,SQLite,Portable Database,Hoch,8,Datenbanklose/portable Installation,Fehlt komplett
+Database,Database,Backup/Recovery,Hoch,8,Datenbank-Backup-Strategien,Fehlt komplett
+Cloud,AWS,Lambda Integration,Mittel,30,Serverless Metasploit Functions,Fehlt komplett
+Cloud,Kubernetes,Helm Chart,Mittel,25,Package Manager für Kubernetes,Fehlt komplett
+Cloud,Google Cloud,Cloud Run Deploy,Mittel,22,Container-basierte Bereitstellung,Fehlt komplett
+Cloud,Azure,Container Instances,Mittel,20,ACI-basierte Bereitstellung,Fehlt komplett
+Database,Database,Multi-Database Setup,Mittel,20,Mehrere Datenbankverbindungen,Fehlt komplett
+Mobile,Android,Chroot Environment,Mittel,18,Vollständige Linux-Umgebung,Fehlt komplett
+Windows,Container,Windows Container Support,Mittel,15,"Docker auf Windows, Hyper-V Container",Fehlt komplett
+Mobile,Android,Non-Termux Installation,Mittel,15,Native Android-Installation,Fehlt komplett
+Automation,CI/CD,GitLab CI,Mittel,15,GitLab Pipeline Integration,Fehlt komplett
+Linux,Container,LXC/LXD Container,Mittel,12,System Container für Metasploit,Fehlt komplett
+Database,Redis,Caching Layer,Mittel,12,Performance-Optimierung,Fehlt komplett
+Automation,Puppet,Manifest Installation,Mittel,12,Configuration Management,Fehlt komplett
+Automation,Chef,Cookbook Installation,Mittel,12,Configuration Management,Fehlt komplett
+Embedded,Raspberry Pi,Pi OS Optimization,Mittel,12,ARM-optimierte Installation,Teilweise vorhanden
+Linux,Security,AppArmor Configuration,Mittel,10,Ubuntu/Debian Security Framework,Fehlt komplett
+Database,MySQL,MariaDB Setup,Mittel,10,Alternative zu PostgreSQL,Fehlt komplett
+Windows,Package Manager,Scoop Installation,Mittel,6,scoop install metasploit-framework Anleitung,Fehlt komplett
+Linux,Distribution,Arch Linux Installation,Mittel,6,AUR Package Installation,Fehlt komplett
+Linux,Package Manager,Snap Package,Mittel,6,snap install metasploit-framework,Fehlt komplett
+Linux,Distribution,Alpine Linux Installation,Mittel,4,APK Package Installation,Fehlt komplett
+Mobile,Android,Magisk Module,Niedrig,25,Root-basierte Installation,Fehlt komplett
+Database,Database,Clustering Setup,Niedrig,25,Hochverfügbare Datenbank,Fehlt komplett
+Embedded,Arduino,Microcontroller,Niedrig,25,Stark eingeschränkte Umgebung,Fehlt komplett
+Mobile,iOS,Jailbreak Installation,Niedrig,20,Installation auf gejailbreakten iOS-Geräten,Fehlt komplett
+Embedded,Router,OpenWrt Installation,Niedrig,20,Router-Firmware-basierte Installation,Fehlt komplett
+Database,MongoDB,NoSQL Integration,Niedrig,15,Dokumenten-basierte Datenbank,Fehlt komplett
+Embedded,NVIDIA Jetson,GPU-Accelerated,Niedrig,15,GPU-beschleunigte Installation,Fehlt komplett
+Mobile,iOS,iSH Shell Installation,Niedrig,12,Alpine Linux auf iOS,Fehlt komplett
+Embedded,BeagleBone,ARM Installation,Niedrig,10,BeagleBone-spezifische Anpassungen,Fehlt komplett
+Linux,Distribution,Gentoo Installation,Niedrig,8,Emerge Package Installation,Fehlt komplett
+Linux,Package Manager,Flatpak Package,Niedrig,6,flatpak install metasploit-framework,Fehlt komplett
+Linux,Distribution,OpenSUSE Installation,Niedrig,5,Zypper Package Installation,Fehlt komplett

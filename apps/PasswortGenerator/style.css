@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap'); /* Monospace Font */
+
+:root {
+    --matrix-green: #00FF41;
+    --dark-bg: #000000;
+    --darker-bg: #0a0a0a;
+    --light-grey: #cccccc;
+    --dark-grey: #333333;
+    --glow-color: rgba(0, 255, 65, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--matrix-green);
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Verhindert Scrollbalken durch Canvas */
+    position: relative; /* Für Canvas Positionierung */
+}
+
+#matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Hinter den Inhalt legen */
+    opacity: 0.7; /* Etwas dezenter machen */
+}
+
+.container {
+    background-color: rgba(10, 10, 10, 0.85); /* Dunkler, halbtransparenter Hintergrund */
+    padding: 30px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--matrix-green);
+    box-shadow: 0 0 15px var(--glow-color);
+    width: 90%;
+    max-width: 550px;
+    z-index: 1; /* Vor dem Canvas */
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px var(--glow-color);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.result-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-grey);
+    border: 1px solid var(--matrix-green);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#password-display {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: var(--matrix-green);
+    font-size: 1.1em;
+    padding: 10px;
+    font-family: 'Roboto Mono', monospace;
+    outline: none;
+    letter-spacing: 1px; /* Etwas mehr Abstand */
+}
+
+#password-display::placeholder {
+    color: rgba(0, 255, 65, 0.5);
+}
+
+#copy-btn {
+    background: none;
+    border: none;
+    color: var(--matrix-green);
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.2em; /* Icon Größe */
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex; /* Zentriert das SVG */
+    justify-content: center;
+    align-items: center;
+}
+
+#copy-btn:hover {
+    color: white;
+    transform: scale(1.1);
+}
+#copy-btn:active {
+    transform: scale(0.95);
+}
+#copy-btn svg {
+    fill: currentColor; /* Nimmt die Farbe des Buttons an */
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Abstand zwischen den Einstellungsblöcken */
+    margin-bottom: 25px;
+}
+
+.setting {
+    background-color: rgba(30, 30, 30, 0.6); /* Etwas hellerer Hintergrund für Settings */
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid var(--dark-grey);
+    text-align: left;
+}
+
+.setting label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* --- Slider Styling --- */
+#length-slider {
+    width: 100%;
+    cursor: pointer;
+    appearance: none; /* Standard-Aussehen entfernen */
+    height: 8px;
+    background: var(--dark-grey);
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--matrix-green);
+}
+
+/* Thumb (der Regler) */
+#length-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--matrix-green);
+    border-radius: 50%;
+    border: 2px solid var(--dark-bg);
+    box-shadow: 0 0 5px var(--glow-color);
+    cursor: pointer;
+}
+
+#length-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--matrix-green);
+    border-radius: 50%;
+    border: 2px solid var(--dark-bg);
+    box-shadow: 0 0 5px var(--glow-color);
+    cursor: pointer;
+}
+
+#length-value {
+    font-weight: bold;
+    display: inline-block;
+    min-width: 25px; /* Damit die Breite stabil bleibt */
+    text-align: center;
+    background-color: var(--dark-grey);
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+
+/* --- Checkbox Styling --- */
+.checkbox-group {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--matrix-green);
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--dark-grey);
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--matrix-green);
+    box-shadow: 0 0 5px var(--glow-color);
+}
+
+/* Haken für die Checkbox */
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--dark-bg); /* Hakenfarbe */
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-group label {
+    cursor: pointer;
+    margin-bottom: 0; /* Überschreibt Standard Label Margin */
+    flex-grow: 1; /* Nimmt verfügbaren Platz ein */
+}
+
+/* --- Button Styling --- */
+#generate-btn {
+    background-color: var(--matrix-green);
+    color: var(--dark-bg);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+#generate-btn:hover {
+    background-color: #33ff77; /* Helleres Grün */
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+#generate-btn:active {
+    transform: scale(0.98);
+}
+
+.security-note {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: var(--light-grey);
+    opacity: 0.7;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    #password-display {
+        font-size: 1em;
+    }
+    .setting {
+        padding: 10px;
+    }
+    #generate-btn {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="498f5113-092b-4780-81b3-6891de5ab1ea" name="Tala-sea.com" url="https://tala-sea.com">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="69.62.117.89" port="22" sshConfigId="27212722-0886-434b-a95d-f3ba74509617" sshConfig="root@69.62.117.89:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

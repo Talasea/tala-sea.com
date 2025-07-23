@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSI Threat Modeling Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="asset-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>BSI Threat Modeling Tool</h1>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn" id="newProjectBtn">
+                    <i class="fas fa-plus"></i>
+                    Neues Projekt
+                </button>
+                <button class="nav-btn" id="saveProjectBtn">
+                    <i class="fas fa-save"></i>
+                    Speichern
+                </button>
+                <button class="nav-btn" id="loadProjectBtn">
+                    <i class="fas fa-folder-open"></i>
+                    Laden
+                </button>
+                <button class="nav-btn" id="exportBtn">
+                    <i class="fas fa-download"></i>
+                    Export
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Bausteine</h2>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Bausteine suchen...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <!-- Component Categories -->
+            <div class="component-categories">
+                <div class="category" data-category="bsi-systems">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <span>BSI System-Bausteine</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="category-content">
+                        <div class="component-item" draggable="true" data-type="system" data-bsi-id="SYS.1.1">
+                            <i class="fas fa-server"></i>
+                            <span>Allgemeiner Server</span>
+                        </div>
+                        <div class="component-item" draggable="true" data-type="system" data-bsi-id="SYS.1.2">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows Server</span>
+                        </div>
+                        <div class="component-item" draggable="true" data-type="system" data-bsi-id="SYS.1.3">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux/Unix Server</span>
+                        </div>
+                        <div class="component-item" draggable="true" data-type="system" data-bsi-id="APP.3.2">
+                            <i class="fas fa-globe"></i>
+                            <span>Webserver</span>
+                        </div>
+                        <div class="component-item" draggable="true" data-type="system" data-bsi-id="APP.4.3">
+                            <i class="fas fa-database"></i>
+                            <span>Relationale Datenbank</span>
+                        </div>
+                        <div class="component-item" draggable="true" data-type="system" data-bsi-id="NET.3.2">
+                            <i class="fas fa-fire"></i>
+                            <span>Firewall</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category" data-category="stride-threats">
+                    <div class="category-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>STRIDE Bedrohungen</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="category-content">
+                        <div class="component-item threat-item" draggable="true" data-type="threat" data-stride="spoofing">
+                            <i class="fas fa-mask"></i>
+                            <span>Spoofing</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="threat" data-stride="tampering">
+                            <i class="fas fa-edit"></i>
+                            <span>Tampering</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="threat" data-stride="repudiation">
+                            <i class="fas fa-user-times"></i>
+                            <span>Repudiation</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="threat" data-stride="information-disclosure">
+                            <i class="fas fa-eye"></i>
+                            <span>Information Disclosure</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="threat" data-stride="denial-of-service">
+                            <i class="fas fa-ban"></i>
+                            <span>Denial of Service</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="threat" data-stride="elevation-of-privilege">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Elevation of Privilege</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category" data-category="bsi-threats">
+                    <div class="category-header">
+                        <i class="fas fa-warning"></i>
+                        <span>BSI Elementare Gefährdungen</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="category-content">
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.14">
+                            <i class="fas fa-search"></i>
+                            <span>G 0.14 Ausspähen von Informationen</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.15">
+                            <i class="fas fa-microphone"></i>
+                            <span>G 0.15 Abhören</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.16">
+                            <i class="fas fa-user-secret"></i>
+                            <span>G 0.16 Diebstahl von Geräten</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.19">
+                            <i class="fas fa-eye"></i>
+                            <span>G 0.19 Offenlegung von Informationen</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.21">
+                            <i class="fas fa-tools"></i>
+                            <span>G 0.21 Manipulation von Hard-/Software</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.22">
+                            <i class="fas fa-edit"></i>
+                            <span>G 0.22 Manipulation von Informationen</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.23">
+                            <i class="fas fa-user-ninja"></i>
+                            <span>G 0.23 Unbefugtes Eindringen</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.25">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>G 0.25 Ausfall von Systemen</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.28">
+                            <i class="fas fa-bug"></i>
+                            <span>G 0.28 Software-Schwachstellen</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.39">
+                            <i class="fas fa-virus"></i>
+                            <span>G 0.39 Schadprogramme</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.40">
+                            <i class="fas fa-ban"></i>
+                            <span>G 0.40 Denial of Service</span>
+                        </div>
+                        <div class="component-item threat-item" draggable="true" data-type="bsi-threat" data-bsi-threat="G.0.42">
+                            <i class="fas fa-comments"></i>
+                            <span>G 0.42 Social Engineering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category" data-category="mitigations">
+                    <div class="category-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Schutzmaßnahmen</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="category-content">
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="encryption">
+                            <i class="fas fa-key"></i>
+                            <span>Verschlüsselung</span>
+                        </div>
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="authentication">
+                            <i class="fas fa-user-check"></i>
+                            <span>Authentifizierung</span>
+                        </div>
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="access-control">
+                            <i class="fas fa-lock"></i>
+                            <span>Zugriffskontrolle</span>
+                        </div>
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="logging">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Protokollierung</span>
+                        </div>
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="backup">
+                            <i class="fas fa-save"></i>
+                            <span>Datensicherung</span>
+                        </div>
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="training">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Schulungen</span>
+                        </div>
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="incident-response">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Incident Response</span>
+                        </div>
+                        <div class="component-item mitigation-item" draggable="true" data-type="mitigation" data-mitigation="physical-security">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Physische Sicherheit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category" data-category="custom">
+                    <div class="category-header">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Benutzerdefiniert</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="category-content">
+                        <button class="add-custom-btn" id="addCustomComponentBtn">
+                            <i class="fas fa-plus"></i>
+                            Eigenen Baustein hinzufügen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Canvas Area -->
+        <section class="canvas-area">
+            <div class="canvas-header">
+                <div class="project-info">
+                    <h2 id="projectTitle">Neues Bedrohungsmodell</h2>
+                    <span id="projectStatus">Nicht gespeichert</span>
+                </div>
+                <div class="canvas-controls">
+                    <button class="control-btn" id="zoomInBtn">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="control-btn" id="zoomOutBtn">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button class="control-btn" id="resetZoomBtn">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </button>
+                    <button class="control-btn" id="clearCanvasBtn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="canvas-container">
+                <svg id="canvas" class="canvas">
+                    <!-- Grid pattern -->
+                    <defs>
+                        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                    
+                    <!-- Connection lines will be drawn here -->
+                    <g id="connections"></g>
+                    
+                    <!-- Components will be placed here -->
+                    <g id="components"></g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Properties Panel -->
+        <aside class="properties-panel" id="propertiesPanel">
+            <div class="properties-header">
+                <h3>Eigenschaften</h3>
+                <button class="close-btn" id="closePropertiesBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="properties-content" id="propertiesContent">
+                <p class="no-selection">Wählen Sie einen Baustein aus, um dessen Eigenschaften zu bearbeiten.</p>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Analysis Panel -->
+    <section class="analysis-panel" id="analysisPanel">
+        <div class="analysis-header">
+            <h3>Bedrohungsanalyse</h3>
+            <div class="analysis-controls">
+                <button class="analysis-btn" id="runAnalysisBtn">
+                    <i class="fas fa-play"></i>
+                    Analyse starten
+                </button>
+                <button class="close-btn" id="closeAnalysisBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="analysis-content" id="analysisContent">
+            <div class="analysis-placeholder">
+                <i class="fas fa-chart-line"></i>
+                <p>Klicken Sie auf "Analyse starten", um eine Bedrohungsanalyse durchzuführen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal" id="customComponentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Benutzerdefinierten Baustein hinzufügen</h3>
+                <button class="close-btn" id="closeCustomModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="customComponentForm">
+                    <div class="form-group">
+                        <label for="customName">Name:</label>
+                        <input type="text" id="customName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customType">Typ:</label>
+                        <select id="customType" required>
+                            <option value="system">System</option>
+                            <option value="threat">Bedrohung</option>
+                            <option value="mitigation">Schutzmaßnahme</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customDescription">Beschreibung:</label>
+                        <textarea id="customDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customIcon">Icon (Font Awesome Klasse):</label>
+                        <input type="text" id="customIcon" placeholder="z.B. fas fa-cog">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancelCustomBtn">Abbrechen</button>
+                        <button type="submit" class="btn-primary">Hinzufügen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 BSI Threat Modeling Tool. Entwickelt für mittelständische Unternehmen und IT-Firmen.</p>
+            <div class="footer-links">
+                <a href="#" id="aboutBtn">Über das Tool</a>
+                <a href="#" id="helpBtn">Hilfe</a>
+                <a href="#" id="legalBtn">Rechtliche Hinweise</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bsi-components.js"></script>
+    <script src="visualization.js"></script>
+    <script src="compliance.js"></script>
+    <script src="advanced-analysis.js"></script>
+    <script src="auto-risk-matrix.js"></script>
+    <script src="dfd-visualization-simple.js"></script>
+    <script src="auto-layout-engine.js"></script>
+    <script src="comprehensive-report-generator.js"></script>
+    <script src="production-optimizer.js"></script>
+    <script src="asset-data.js"></script>
+    <script src="asset-management.js"></script>
+    <script src="asset-threat-integration.js"></script>
+    <script src="asset-production-compliance.js"></script>
+    <script src="production-deployment.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

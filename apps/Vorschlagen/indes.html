@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wunsch Matrix Pinwand - Tala-Sea</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+<canvas id="matrix-canvas"></canvas> <div class="main-container">
+    <div class="wish-container">
+        <h1>// WUNSCH_MATRIX //</h1>
+        <p class="prompt">> Teile deinen anonymen Wunsch mit der Welt:</p>
+        <textarea id="wish-input" rows="4" placeholder="> Dein anonymer Wunsch hier..."></textarea>
+        <button id="submit-wish">> Wunsch an Pinwand senden_</button>
+        <p id="feedback-message" class="feedback"></p>
+    </div>
+
+    <div class="pinwall-container">
+        <h2>// ÖFFENTLICHE WÜNSCHE //</h2>
+        <div id="pinwall">
+            <p class="loading-message">> Lade Wünsche aus der Matrix...</p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

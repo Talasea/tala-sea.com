@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix OSINT Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<canvas id="matrix-canvas"></canvas>
+<div class="container">
+    <header class="header">
+        <h1><i class="fas fa-search"></i> Matrix OSINT Research Tool</h1>
+        <p>Recherche mit Google Dorks, DuckDuckGo & freien OSINT-Quellen</p>
+    </header>
+
+    <div class="search-section">
+        <div class="search-tabs">
+            <button class="tab-button active" data-tab="email">E-Mail Suche</button>
+            <button class="tab-button" data-tab="person">Personen Suche</button>
+            <button class="tab-button" data-tab="documents">Dokumente</button>
+            <button class="tab-button" data-tab="social">Social Media</button>
+            <button class="tab-button" data-tab="custom">Custom Dorks</button>
+            <button class="tab-button" data-tab="advanced">Erweiterte Suche</button>
+        </div>
+
+        <!-- E-Mail Suche Tab -->
+        <div class="tab-content active" id="email">
+            <div class="search-form">
+                <h3><i class="fas fa-envelope"></i> E-Mail Adressen finden</h3>
+                <div class="input-group">
+                    <input type="text" id="email-target" placeholder="Domain oder Organisation (z.B. company.com)">
+                    <select id="email-engine">
+                        <option value="google">Google</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                    </select>
+                </div>
+                <div class="search-options">
+                    <label><input type="checkbox" class="search-type" value="pdf"> PDF Dokumente</label>
+                    <label><input type="checkbox" class="search-type" value="xlsx"> Excel Dateien</label>
+                    <label><input type="checkbox" class="search-type" value="docx"> Word Dokumente</label>
+                    <label><input type="checkbox" class="search-type" value="contact"> Kontaktseiten</label>
+                </div>
+                <button onclick="searchEmails()" class="search-btn">
+                    <i class="fas fa-search"></i> E-Mails suchen
+                </button>
+            </div>
+        </div>
+
+        <!-- Personen Suche Tab -->
+        <div class="tab-content" id="person">
+            <div class="search-form">
+                <h3><i class="fas fa-user"></i> Personen Recherche</h3>
+                <div class="input-group">
+                    <input type="text" id="person-name" placeholder="Vollständiger Name (z.B. Max Mustermann)">
+                    <select id="person-engine">
+                        <option value="google">Google</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                    </select>
+                </div>
+                <div class="search-options">
+                    <label><input type="checkbox" class="person-type" value="linkedin"> LinkedIn Profile</label>
+                    <label><input type="checkbox" class="person-type" value="xing"> Xing Profile</label>
+                    <label><input type="checkbox" class="person-type" value="resume"> Lebenslauf/CV</label>
+                    <label><input type="checkbox" class="person-type" value="news"> Nachrichten</label>
+                </div>
+                <button onclick="searchPerson()" class="search-btn">
+                    <i class="fas fa-search"></i> Person suchen
+                </button>
+            </div>
+        </div>
+
+        <!-- Dokumente Tab -->
+        <div class="tab-content" id="documents">
+            <div class="search-form">
+                <h3><i class="fas fa-file-alt"></i> Dokumente & Dateien</h3>
+                <div class="input-group">
+                    <input type="text" id="doc-query" placeholder="Suchbegriff oder Domain">
+                    <select id="doc-engine">
+                        <option value="google">Google</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                    </select>
+                </div>
+                <div class="search-options">
+                    <label><input type="checkbox" class="doc-type" value="pdf"> PDF</label>
+                    <label><input type="checkbox" class="doc-type" value="docx"> Word</label>
+                    <label><input type="checkbox" class="doc-type" value="xlsx"> Excel</label>
+                    <label><input type="checkbox" class="doc-type" value="pptx"> PowerPoint</label>
+                    <label><input type="checkbox" class="doc-type" value="txt"> Text</label>
+                </div>
+                <button onclick="searchDocuments()" class="search-btn">
+                    <i class="fas fa-search"></i> Dokumente suchen
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Media Tab -->
+        <div class="tab-content" id="social">
+            <div class="search-form">
+                <h3><i class="fas fa-share-alt"></i> Social Media Recherche</h3>
+                <div class="input-group">
+                    <input type="text" id="social-query" placeholder="Name oder Suchbegriff">
+                    <select id="social-engine">
+                        <option value="google">Google</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                    </select>
+                </div>
+                <div class="search-options">
+                    <label><input type="checkbox" class="social-type" value="linkedin"> LinkedIn</label>
+                    <label><input type="checkbox" class="social-type" value="facebook"> Facebook</label>
+                    <label><input type="checkbox" class="social-type" value="twitter"> Twitter/X</label>
+                    <label><input type="checkbox" class="social-type" value="instagram"> Instagram</label>
+                    <label><input type="checkbox" class="social-type" value="xing"> Xing</label>
+                </div>
+                <button onclick="searchSocial()" class="search-btn">
+                    <i class="fas fa-search"></i> Social Media suchen
+                </button>
+            </div>
+        </div>
+
+        <!-- Custom Dorks Tab -->
+        <div class="tab-content" id="custom">
+            <div class="search-form">
+                <h3><i class="fas fa-code"></i> Custom Google Dorks</h3>
+                <div class="input-group">
+                    <textarea id="custom-dork" placeholder="Eigenen Google Dork eingeben (z.B. site:example.com filetype:pdf)" rows="3"></textarea>
+                    <select id="custom-engine">
+                        <option value="google">Google</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                    </select>
+                </div>
+                <div class="predefined-dorks">
+                    <h4>Vordefinierte Dorks:</h4>
+                    <button class="dork-btn" onclick="setDork('site:*.edu.in Hacked')">Gehackte Bildungsseiten</button>
+                    <button class="dork-btn" onclick="setDork('allintext:password filetype:log after:2019')">Login Credentials in Logs</button>
+                    <button class="dork-btn" onclick="setDork('intext:\"username\" and intext:\"password\"')">Login Seiten</button>
+                    <button class="dork-btn" onclick="setDork('\"Not for Public Release\" + \"Confidential\" ext:pdf')">Vertrauliche Dokumente</button>
+                </div>
+                <button onclick="searchCustom()" class="search-btn">
+                    <i class="fas fa-search"></i> Custom Suche
+                </button>
+            </div>
+        </div>
+
+        <!-- Erweiterte Suche Tab -->
+        <div class="tab-content" id="advanced">
+            <div class="search-form">
+                <h3><i class="fas fa-search-plus"></i> Erweiterte OSINT-Checks</h3>
+                <div class="input-group">
+                    <input type="text" id="domain-input" placeholder="Domain (z.B. example.com)">
+                    <button onclick="runAdvancedSearch()" class="search-btn">
+                        <i class="fas fa-bolt"></i> Vollscan starten
+                    </button>
+                </div>
+                <div class="predefined-dorks">
+                    <h4>Kombinierte Suchstrategien:</h4>
+                    <button class="dork-btn" onclick="setDomainDorks()">Domain-Analyse</button>
+                    <button class="dork-btn" onclick="setLeakSearch()">Datenlecks finden</button>
+                    <button class="dork-btn" onclick="setArchiveSearch()">Wayback Machine</button>
+                </div>
+                <div class="osint-links">
+                    <h4>Direkte OSINT-Checks:</h4>
+                    <input type="text" id="osint-query" placeholder="E-Mail oder Domain">
+                    <button onclick="openOsintLinks()" class="search-btn"><i class="fas fa-external-link-alt"></i> OSINT-Check</button>
+                    <ul id="osint-results"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="results-section">
+        <h3><i class="fas fa-list"></i> Suchergebnisse</h3>
+        <div id="search-results">
+            <p class="no-results">Keine Suche durchgeführt. Wählen Sie eine Suchkategorie und starten Sie Ihre OSINT-Recherche.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>Hinweis:</strong>
+            Dieses Tool ist nur für legale OSINT-Recherchen bestimmt. Es werden ausschließlich öffentliche Suchdienste genutzt. Bitte beachte die Nutzungsbedingungen der jeweiligen Dienste.
+        </p>
+        <p><i class="fas fa-terminal"></i> TIPP: Nutze Strg+Enter für schnelle Suchabfragen!</p>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

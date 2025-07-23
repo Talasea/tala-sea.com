@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSGVO-Checker - Professionelle Datenschutz-Compliance-Analyse</title>
+    <meta name="description" content="Führende DSGVO-Compliance-Analyse für Websites. Kostenlose Überprüfung von Cookies, Datenschutzerklärung, externen Diensten und Formularen mit detaillierten Handlungsempfehlungen.">
+    <meta name="keywords" content="DSGVO, Datenschutz, Compliance, Cookie-Analyse, Website-Check, Datenschutzerklärung">
+    <meta name="author" content="DSGVO-Checker Professional">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="DSGVO-Checker - Professionelle Compliance-Analyse">
+    <meta property="og:description" content="Kostenlose DSGVO-Analyse für Ihre Website mit detaillierten Empfehlungen">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Preload kritische Ressourcen -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+</head>
+<body>
+<div class="container">
+    <!-- Enhanced Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h1>DSGVO-Compliance Checker</h1>
+            <p class="subtitle">Professionelle Analyse Ihrer Website-Datenschutzkonformität mit detaillierten Handlungsempfehlungen</p>
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Kostenlos</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <span>60 Sekunden</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Detailliert</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>PDF-Export</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Enhanced Input Section -->
+    <section class="input-section">
+        <div class="input-container">
+            <div class="input-header">
+                <h2><i class="fas fa-globe"></i> Website analysieren</h2>
+                <p class="input-description">Geben Sie Ihre Website-URL ein und erhalten Sie eine umfassende DSGVO-Compliance-Analyse mit priorisierten Handlungsempfehlungen</p>
+            </div>
+
+            <form id="checkForm" class="url-form">
+                <div class="url-input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-link input-icon"></i>
+                        <input type="url" id="websiteUrl" placeholder="https://ihre-website.de" required
+                               aria-label="Website-URL eingeben" autocomplete="url">
+                        <div class="input-validation" id="urlValidation"></div>
+                    </div>
+                    <button type="submit" id="checkButton" class="check-btn" aria-label="DSGVO-Analyse starten">
+                        <i class="fas fa-search"></i>
+                        <span>Prüfen starten</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="input-features">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-cookie-bite"></i>
+                        <span>Cookie-Analyse</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Datenschutzerklärung</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Externe Dienste</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-wpforms"></i>
+                        <span>Formular-Check</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="security-note">
+                <i class="fas fa-lock"></i>
+                <span>Ihre Daten werden sicher verarbeitet, nicht gespeichert und DSGVO-konform behandelt</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Loading Section -->
+    <section id="loadingSection" class="loading-section" style="display: none;">
+        <div class="loading-content">
+            <div class="spinner-container">
+                <div class="advanced-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-inner">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+                <div class="loading-text">
+                    <h3>Website wird analysiert...</h3>
+                    <p id="loadingStatus">Initialisiere DSGVO-Compliance-Scan...</p>
+                    <div class="loading-progress">
+                        <div class="progress-bar" id="loadingProgressBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-steps">
+                <div class="step" data-step="cookies">
+                    <div class="step-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <div class="step-content">
+                        <span class="step-title">Cookies analysieren</span>
+                        <span class="step-description">Prüfe Cookie-Banner und Einwilligungen</span>
+                    </div>
+                </div>
+                <div class="step" data-step="privacy">
+                    <div class="step-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="step-content">
+                        <span class="step-title">Datenschutzerklärung</span>
+                        <span class="step-description">Analysiere DSGVO-Konformität</span>
+                    </div>
+                </div>
+                <div class="step" data-step="services">
+                    <div class="step-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <div class="step-content">
+                        <span class="step-title">Externe Dienste</span>
+                        <span class="step-description">Erkenne Tracking und Drittanbieter</span>
+                    </div>
+                </div>
+                <div class="step" data-step="forms">
+                    <div class="step-icon">
+                        <i class="fas fa-wpforms"></i>
+                    </div>
+                    <div class="step-content">
+                        <span class="step-title">Formulare prüfen</span>
+                        <span class="step-description">Validiere Einwilligungen</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-info">
+                <p><i class="fas fa-info-circle"></i> Die Analyse dauert in der Regel 30-60 Sekunden. Bei großen Websites kann es etwas länger dauern.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Results Section -->
+    <section id="resultsSection" class="results-section" style="display: none;">
+
+        <!-- Results Header with Enhanced Metrics -->
+        <div class="results-header">
+            <div class="results-title">
+                <h2><i class="fas fa-chart-line"></i> DSGVO-Compliance Analyse-Ergebnisse</h2>
+                <p class="analysis-info">
+                    <span class="analysis-date">Analysiert am: <span id="analysisDate"></span></span>
+                    <span class="analysis-url" id="analyzedUrl"></span>
+                </p>
+            </div>
+
+            <div class="overall-score-container">
+                <div class="overall-score" id="overallScore">
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <div class="score-inner">
+                                <span class="score-value">0</span>
+                                <span class="score-total">/100</span>
+                            </div>
+                        </div>
+                        <div class="score-info">
+                            <div class="score-label">DSGVO-Compliance-Score</div>
+                            <div class="compliance-level" id="complianceLevel">
+                                <span class="level-text">Wird berechnet...</span>
+                                <span class="risk-indicator" id="riskIndicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Metrics Dashboard -->
+                <div class="quick-metrics">
+                    <div class="metric-card critical">
+                        <div class="metric-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="metric-content">
+                            <span class="metric-value" id="criticalIssues">0</span>
+                            <span class="metric-label">Kritische Probleme</span>
+                        </div>
+                    </div>
+                    <div class="metric-card warning">
+                        <div class="metric-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="metric-content">
+                            <span class="metric-value" id="mediumIssues">0</span>
+                            <span class="metric-label">Verbesserungen</span>
+                        </div>
+                    </div>
+                    <div class="metric-card success">
+                        <div class="metric-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="metric-content">
+                            <span class="metric-value" id="conformAreas">0</span>
+                            <span class="metric-label">Konforme Bereiche</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Results Grid -->
+        <div class="results-grid">
+
+            <!-- Cookie Management Card -->
+            <div class="result-card enhanced" id="cookiesCheck">
+                <div class="card-header">
+                    <div class="header-left">
+                        <i class="fas fa-cookie-bite"></i>
+                        <div class="header-text">
+                            <h3>Cookie-Verwaltung</h3>
+                            <span class="card-subtitle">DSGVO Art. 7 Compliance</span>
+                        </div>
+                    </div>
+                    <span class="status-badge">Prüfung läuft...</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="score-section">
+                        <div class="score-bar">
+                            <div class="score-progress" data-score="0"></div>
+                            <span class="score-text">
+                                    <span class="score-number">0</span>/100
+                                </span>
+                        </div>
+                        <p class="result-text">Cookie-Analyse wird durchgeführt...</p>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Gefundene Cookies:
+                                </span>
+                            <span class="detail-value" id="foundCookies">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Kritische Cookies:
+                                </span>
+                            <span class="detail-value warning" id="criticalCookies">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-banner"></i>
+                                    Cookie-Banner:
+                                </span>
+                            <span class="detail-value" id="cookieBanner">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-cogs"></i>
+                                    Consent Manager:
+                                </span>
+                            <span class="detail-value" id="consentManager">-</span>
+                        </div>
+                    </div>
+
+                    <div class="recommendations-section">
+                        <h4><i class="fas fa-lightbulb"></i> Sofortige Handlungsempfehlungen</h4>
+                        <ul class="recommendations" id="cookieRecommendations">
+                            <li class="loading-placeholder">Empfehlungen werden generiert...</li>
+                        </ul>
+                    </div>
+
+                    <!-- Expandable Detailed Explanation -->
+                    <div class="explanation-section">
+                        <div class="explanation-header">
+                            <h4><i class="fas fa-info-circle"></i> Detaillierte Erklärung</h4>
+                            <button class="expand-details" data-target="cookies" aria-label="Details ein-/ausklappen">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="explanation-content" id="cookiesExplanationContent" style="display: none;">
+                            <!-- Dynamically filled by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Policy Card -->
+            <div class="result-card enhanced" id="privacyPolicyCheck">
+                <div class="card-header">
+                    <div class="header-left">
+                        <i class="fas fa-user-shield"></i>
+                        <div class="header-text">
+                            <h3>Datenschutzerklärung</h3>
+                            <span class="card-subtitle">DSGVO Art. 13/14 Compliance</span>
+                        </div>
+                    </div>
+                    <span class="status-badge">Prüfung läuft...</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="score-section">
+                        <div class="score-bar">
+                            <div class="score-progress" data-score="0"></div>
+                            <span class="score-text">
+                                    <span class="score-number">0</span>/100
+                                </span>
+                        </div>
+                        <p class="result-text">Datenschutzerklärung wird analysiert...</p>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-file-text"></i>
+                                    Verfügbarkeit:
+                                </span>
+                            <span class="detail-value" id="policyAvailability">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-balance-scale"></i>
+                                    DSGVO-Rechte:
+                                </span>
+                            <span class="detail-value" id="gdprRights">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-envelope"></i>
+                                    Kontaktdaten:
+                                </span>
+                            <span class="detail-value" id="contactInfo">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-file-word"></i>
+                                    Wortanzahl:
+                                </span>
+                            <span class="detail-value" id="wordCount">-</span>
+                        </div>
+                    </div>
+
+                    <div class="recommendations-section">
+                        <h4><i class="fas fa-lightbulb"></i> Verbesserungsvorschläge</h4>
+                        <ul class="recommendations" id="privacyRecommendations">
+                            <li class="loading-placeholder">Empfehlungen werden generiert...</li>
+                        </ul>
+                    </div>
+
+                    <div class="explanation-section">
+                        <div class="explanation-header">
+                            <h4><i class="fas fa-info-circle"></i> Detaillierte Analyse</h4>
+                            <button class="expand-details" data-target="privacyPolicy" aria-label="Details ein-/ausklappen">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="explanation-content" id="privacyPolicyExplanationContent" style="display: none;">
+                            <!-- Dynamically filled by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- External Services Card -->
+            <div class="result-card enhanced" id="externalServicesCheck">
+                <div class="card-header">
+                    <div class="header-left">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div class="header-text">
+                            <h3>Externe Dienste</h3>
+                            <span class="card-subtitle">DSGVO Art. 28 Compliance</span>
+                        </div>
+                    </div>
+                    <span class="status-badge">Prüfung läuft...</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="score-section">
+                        <div class="score-bar">
+                            <div class="score-progress" data-score="0"></div>
+                            <span class="score-text">
+                                    <span class="score-number">0</span>/100
+                                </span>
+                        </div>
+                        <p class="result-text">Externe Dienste werden geprüft...</p>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-server"></i>
+                                    Erkannte Dienste:
+                                </span>
+                            <span class="detail-value" id="serviceCount">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Kritische Dienste:
+                                </span>
+                            <span class="detail-value warning" id="criticalServices">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-chart-line"></i>
+                                    Tracking-Services:
+                                </span>
+                            <span class="detail-value" id="trackingServices">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Risikobewertung:
+                                </span>
+                            <span class="detail-value" id="riskAssessment">-</span>
+                        </div>
+                    </div>
+
+                    <div class="recommendations-section">
+                        <h4><i class="fas fa-lightbulb"></i> Rechtliche Absicherung</h4>
+                        <ul class="recommendations" id="servicesRecommendations">
+                            <li class="loading-placeholder">Empfehlungen werden generiert...</li>
+                        </ul>
+                    </div>
+
+                    <div class="explanation-section">
+                        <div class="explanation-header">
+                            <h4><i class="fas fa-info-circle"></i> Service-Analyse</h4>
+                            <button class="expand-details" data-target="externalServices" aria-label="Details ein-/ausklappen">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="explanation-content" id="externalServicesExplanationContent" style="display: none;">
+                            <!-- Dynamically filled by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forms and Consent Card -->
+            <div class="result-card enhanced" id="formsCheck">
+                <div class="card-header">
+                    <div class="header-left">
+                        <i class="fas fa-wpforms"></i>
+                        <div class="header-text">
+                            <h3>Formulare & Einwilligungen</h3>
+                            <span class="card-subtitle">DSGVO Art. 7 Compliance</span>
+                        </div>
+                    </div>
+                    <span class="status-badge">Prüfung läuft...</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="score-section">
+                        <div class="score-bar">
+                            <div class="score-progress" data-score="0"></div>
+                            <span class="score-text">
+                                    <span class="score-number">0</span>/100
+                                </span>
+                        </div>
+                        <p class="result-text">Formulare werden analysiert...</p>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-list"></i>
+                                    Gefundene Formulare:
+                                </span>
+                            <span class="detail-value" id="totalForms">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-check-square"></i>
+                                    Mit Einwilligung:
+                                </span>
+                            <span class="detail-value" id="formsWithConsent">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-link"></i>
+                                    Datenschutz-Links:
+                                </span>
+                            <span class="detail-value" id="privacyLinks">-</span>
+                        </div>
+                        <div class="detail-item">
+                                <span class="detail-label">
+                                    <i class="fas fa-user-check"></i>
+                                    Double-Opt-In:
+                                </span>
+                            <span class="detail-value" id="doubleOptIn">-</span>
+                        </div>
+                    </div>
+
+                    <div class="recommendations-section">
+                        <h4><i class="fas fa-lightbulb"></i> Formular-Optimierung</h4>
+                        <ul class="recommendations" id="formsRecommendations">
+                            <li class="loading-placeholder">Empfehlungen werden generiert...</li>
+                        </ul>
+                    </div>
+
+                    <div class="explanation-section">
+                        <div class="explanation-header">
+                            <h4><i class="fas fa-info-circle"></i> Formular-Details</h4>
+                            <button class="expand-details" data-target="forms" aria-label="Details ein-/ausklappen">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="explanation-content" id="formsExplanationContent" style="display: none;">
+                            <!-- Dynamically filled by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Priority Actions Section -->
+        <div class="action-section">
+            <div class="section-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Priorisierte Handlungsempfehlungen</h3>
+                <p class="section-description">Die wichtigsten Maßnahmen zur Verbesserung Ihrer DSGVO-Compliance, sortiert nach Dringlichkeit und Impact.</p>
+            </div>
+            <div id="priorityActions" class="priority-actions">
+                <div class="loading-placeholder-action">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Prioritäten werden berechnet...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Compliance Summary -->
+        <div class="compliance-summary">
+            <div class="summary-card">
+                <div class="summary-header">
+                    <h3><i class="fas fa-clipboard-check"></i> Compliance-Zusammenfassung</h3>
+                    <p>Übersicht über den aktuellen DSGVO-Compliance-Status Ihrer Website</p>
+                </div>
+                <div class="summary-content">
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="summary-icon success">
+                                <i class="fas fa-cookie-bite"></i>
+                            </div>
+                            <div class="summary-details">
+                                <span class="summary-label">Cookies konform:</span>
+                                <span class="summary-value" id="cookiesConformity">-</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon info">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="summary-details">
+                                <span class="summary-label">Datenschutz vollständig:</span>
+                                <span class="summary-value" id="privacyPolicyConformity">-</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon warning">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                            <div class="summary-details">
+                                <span class="summary-label">Externe Dienste sicher:</span>
+                                <span class="summary-value" id="externalServicesConformity">-</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon primary">
+                                <i class="fas fa-wpforms"></i>
+                            </div>
+                            <div class="summary-details">
+                                <span class="summary-label">Formulare rechtskonform:</span>
+                                <span class="summary-value" id="formsConformity">-</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon danger">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="summary-details">
+                                <span class="summary-label">Bußgeldrisiko:</span>
+                                <span class="summary-value" id="fineRiskIndicator">-</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon secondary">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="summary-details">
+                                <span class="summary-label">Umsetzungsaufwand:</span>
+                                <span class="summary-value" id="implementationEffort">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Assessment Visualization -->
+                    <div class="risk-assessment">
+                        <h4><i class="fas fa-chart-pie"></i> Risikobewertung</h4>
+                        <div class="risk-bars">
+                            <div class="risk-bar">
+                                <span class="risk-label">Datenschutzrisiko</span>
+                                <div class="risk-progress">
+                                    <div class="risk-fill" id="privacyRiskBar" style="--risk-percentage: 0%"></div>
+                                </div>
+                                <span class="risk-value" id="privacyRiskValue">-</span>
+                            </div>
+                            <div class="risk-bar">
+                                <span class="risk-label">Bußgeldrisiko</span>
+                                <div class="risk-progress">
+                                    <div class="risk-fill" id="fineRiskBar" style="--risk-percentage: 0%"></div>
+                                </div>
+                                <span class="risk-value" id="fineRiskValue">-</span>
+                            </div>
+                            <div class="risk-bar">
+                                <span class="risk-label">Reputationsrisiko</span>
+                                <div class="risk-progress">
+                                    <div class="risk-fill" id="reputationRiskBar" style="--risk-percentage: 0%"></div>
+                                </div>
+                                <span class="risk-value" id="reputationRiskValue">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Export Section -->
+        <div class="export-section">
+            <div class="export-header">
+                <h3><i class="fas fa-download"></i> Bericht exportieren & weiterverarbeiten</h3>
+                <p>Laden Sie Ihre Analyse-Ergebnisse in verschiedenen Formaten herunter oder teilen Sie diese mit Ihrem Team.</p>
+            </div>
+
+            <div class="export-options">
+                <div class="export-buttons">
+                    <button id="exportPdf" class="export-btn pdf-btn" aria-label="PDF-Bericht herunterladen">
+                        <div class="btn-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="btn-content">
+                            <span class="btn-title">Detaillierter PDF-Bericht</span>
+                            <span class="btn-description">Vollständige Analyse mit Empfehlungen</span>
+                        </div>
+                    </button>
+
+                    <button id="exportJson" class="export-btn json-btn" aria-label="JSON-Daten herunterladen">
+                        <div class="btn-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="btn-content">
+                            <span class="btn-title">Strukturierte JSON-Daten</span>
+                            <span class="btn-description">Rohdaten für weitere Verarbeitung</span>
+                        </div>
+                    </button>
+
+                    <button id="shareResults" class="export-btn share-btn" aria-label="Ergebnisse teilen">
+                        <div class="btn-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="btn-content">
+                            <span class="btn-title">Ergebnisse teilen</span>
+                            <span class="btn-description">Link für Team-Sharing generieren</span>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="export-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Exportierte Berichte enthalten alle Analyseergebnisse und Handlungsempfehlungen</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Berichte bleiben 30 Tage für erneuten Download verfügbar</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <span>Perfekt geeignet für die Zusammenarbeit mit Entwicklern und Datenschutzbeauftragten</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Resources Section -->
+        <div class="resources-section">
+            <div class="resources-header">
+                <h3><i class="fas fa-book-open"></i> Weiterführende Ressourcen</h3>
+                <p>Hilfreiche Links und Tools zur DSGVO-Umsetzung</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h4>DSGVO-Gesetzestext</h4>
+                    <p>Vollständiger Text der Datenschutz-Grundverordnung</p>
+                    <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener">
+                        Zum Gesetzestext <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>Häufige Fragen</h4>
+                    <p>Antworten auf die wichtigsten DSGVO-Fragen</p>
+                    <a href="#faq" onclick="toggleFaq()">
+                        FAQ öffnen <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-tools"></i>
+                    <h4>Umsetzungs-Tools</h4>
+                    <p>Praktische Hilfsmittel für die DSGVO-Umsetzung</p>
+                    <a href="#tools" onclick="toggleTools()">
+                        Tools anzeigen <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Initially Hidden) -->
+    <section id="faqSection" class="faq-section" style="display: none;">
+        <div class="faq-content">
+            <h3><i class="fas fa-question-circle"></i> Häufig gestellte Fragen</h3>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Was passiert bei DSGVO-Verstößen?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>DSGVO-Verstöße können mit Bußgeldern von bis zu 20 Millionen Euro oder 4% des weltweiten Jahresumsatzes geahndet werden. Zusätzlich drohen Abmahnungen und Reputationsschäden.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Wie oft sollte ich meine Website prüfen?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Eine DSGVO-Compliance-Prüfung sollte mindestens vierteljährlich durchgeführt werden, sowie nach jeder größeren Website-Änderung oder neuen Service-Integration.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Sind alle gefundenen Probleme kritisch?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nein, unser Tool kategorisiert Probleme nach Schweregrad. Kritische Probleme erfordern sofortige Maßnahmen, während andere Empfehlungen mittelfristig umgesetzt werden können.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Enhanced Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h4><i class="fas fa-shield-alt"></i> DSGVO-Checker Professional</h4>
+                <p>Professionelle DSGVO-Compliance-Analyse für moderne Websites. Entwickelt von Datenschutz-Experten für maximale Rechtssicherheit.</p>
+                <div class="footer-stats">
+                    <div class="stat">
+                        <span class="stat-number">50.000+</span>
+                        <span class="stat-label">Websites geprüft</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.2%</span>
+                        <span class="stat-label">Genauigkeit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Rechtliches</h4>
+                <ul class="footer-links">
+                    <li><a href="#privacy"><i class="fas fa-user-shield"></i> Datenschutzerklärung</a></li>
+                    <li><a href="#imprint"><i class="fas fa-gavel"></i> Impressum</a></li>
+                    <li><a href="#terms"><i class="fas fa-file-contract"></i> Nutzungsbedingungen</a></li>
+                    <li><a href="#disclaimer"><i class="fas fa-info-circle"></i> Haftungsausschluss</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support & Hilfe</h4>
+                <ul class="footer-links">
+                    <li><a href="#help"><i class="fas fa-question-circle"></i> Hilfe-Center</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
+                    <li><a href="#feedback"><i class="fas fa-comment"></i> Feedback</a></li>
+                    <li><a href="#updates"><i class="fas fa-bell"></i> Updates</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Tools & Ressourcen</h4>
+                <ul class="footer-links">
+                    <li><a href="#cookie-scanner"><i class="fas fa-cookie-bite"></i> Cookie-Scanner</a></li>
+                    <li><a href="#privacy-generator"><i class="fas fa-file-alt"></i> Datenschutzerklärung-Generator</a></li>
+                    <li><a href="#consent-manager"><i class="fas fa-cogs"></i> Consent Manager</a></li>
+                    <li><a href="#api"><i class="fas fa-code"></i> API-Zugang</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 DSGVO-Checker Professional. Alle Rechte vorbehalten.</p>
+                <div class="footer-bottom-links">
+                    <span>Entwickelt in Deutschland</span>
+                    <span>•</span>
+                    <span>DSGVO-konform</span>
+                    <span>•</span>
+                    <span>Version 2.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Notification Container -->
+<div id="notificationContainer" class="notification-container"></div>
+
+<!-- Loading Overlay for Async Operations -->
+<div id="globalLoadingOverlay" class="global-loading-overlay" style="display: none;">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <p id="globalLoadingText">Vorgang wird ausgeführt...</p>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+
+<!-- Enhanced Error Handling -->
+<script>
+    // Global Error Handler
+    window.addEventListener('error', function(e) {
+        console.error('JavaScript Fehler:', e.error);
+        if (window.dsgvoChecker) {
+            window.dsgvoChecker.showNotification('Ein unerwarteter Fehler ist aufgetreten. Bitte laden Sie die Seite neu.', 'error');
+        }
+    });
+
+    // Unhandled Promise Rejection Handler
+    window.addEventListener('unhandledrejection', function(e) {
+        console.error('Unbehandelte Promise-Verwerfung:', e.reason);
+        if (window.dsgvoChecker) {
+            window.dsgvoChecker.showNotification('Ein Analysefehler ist aufgetreten. Bitte versuchen Sie es erneut.', 'warning');
+        }
+    });
+
+    // Simple FAQ Toggle Function
+    function toggleFaq() {
+        const faqSection = document.getElementById('faqSection');
+        faqSection.style.display = faqSection.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // FAQ Accordion Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DSGVO-Checker Professional",
+        "description": "Professionelle DSGVO-Compliance-Analyse für Websites mit detaillierten Handlungsempfehlungen",
+        "url": "https://example.com",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "DSGVO-Checker Professional"
+        }
+    }
+</script>
+</body>
+</html>

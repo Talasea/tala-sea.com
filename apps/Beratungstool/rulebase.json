@@ -1,0 +1,630 @@
+{
+  "job_profiles": {
+    "helpdesk_analyst": {
+      "title": "Helpdesk Analyst",
+      "level": "einsteiger",
+      "experience_required": {
+        "general": 0,
+        "it": 0
+      },
+      "education_min": "realschule",
+      "salary_range": {
+        "min": 25000,
+        "max": 35000
+      },
+      "hard_skills": {
+        "windows-server": 2,
+        "ms365": 3,
+        "active-directory": 2,
+        "tcpip": 2,
+        "html-css": 1
+      },
+      "soft_skills": {
+        "kommunikation": 4,
+        "teamarbeit": 3,
+        "stressresistenz": 3,
+        "lernbereitschaft": 4,
+        "organisation": 3
+      },
+      "languages": {
+        "deutsch": 4,
+        "englisch": 2
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 0,
+          "max": 25
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit",
+          "teilzeit"
+        ]
+      },
+      "description": "Erste Anlaufstelle für IT-Support und Benutzerbetreuung",
+      "requirements": [
+        "Grundkenntnisse Windows",
+        "Kommunikationsstärke",
+        "Lernbereitschaft"
+      ]
+    },
+    "junior_it_administrator": {
+      "title": "Junior IT Administrator",
+      "level": "einsteiger",
+      "experience_required": {
+        "general": 0,
+        "it": 1
+      },
+      "education_min": "ausbildung",
+      "salary_range": {
+        "min": 30000,
+        "max": 42000
+      },
+      "hard_skills": {
+        "linux": 3,
+        "windows-server": 3,
+        "active-directory": 3,
+        "powershell": 2,
+        "tcpip": 3,
+        "firewall": 2,
+        "vmware": 2
+      },
+      "soft_skills": {
+        "kommunikation": 3,
+        "teamarbeit": 4,
+        "organisation": 4,
+        "lernbereitschaft": 4,
+        "stressresistenz": 3
+      },
+      "languages": {
+        "deutsch": 4,
+        "englisch": 3
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 0,
+          "max": 50
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit"
+        ]
+      },
+      "description": "Systemadministration und Betreuung der IT-Infrastruktur",
+      "requirements": [
+        "Linux/Windows Kenntnisse",
+        "Netzwerk Grundlagen",
+        "Teamfähigkeit"
+      ]
+    },
+    "systemadministrator": {
+      "title": "Systemadministrator",
+      "level": "fortgeschritten",
+      "experience_required": {
+        "general": 2,
+        "it": 2
+      },
+      "education_min": "ausbildung",
+      "salary_range": {
+        "min": 40000,
+        "max": 60000
+      },
+      "hard_skills": {
+        "linux": 4,
+        "windows-server": 4,
+        "active-directory": 4,
+        "powershell": 3,
+        "unix": 3,
+        "tcpip": 4,
+        "firewall": 3,
+        "vmware": 4,
+        "hyper-v": 3,
+        "ms-server": 4
+      },
+      "soft_skills": {
+        "kommunikation": 4,
+        "teamarbeit": 4,
+        "organisation": 4,
+        "lernbereitschaft": 4,
+        "stressresistenz": 4,
+        "projektmanagement": 3
+      },
+      "languages": {
+        "deutsch": 5,
+        "englisch": 3
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 0,
+          "max": 75
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit"
+        ]
+      },
+      "description": "Verantwortung für komplexe IT-Systeme und Infrastruktur",
+      "requirements": [
+        "Mehrjährige Erfahrung",
+        "Tiefe Systemkenntnisse",
+        "Projektverantwortung"
+      ]
+    },
+    "python_programmer": {
+      "title": "Python Programmer",
+      "level": "fortgeschritten",
+      "experience_required": {
+        "general": 1,
+        "it": 2
+      },
+      "education_min": "bachelor",
+      "salary_range": {
+        "min": 45000,
+        "max": 70000
+      },
+      "hard_skills": {
+        "python": 4,
+        "git": 3,
+        "sql": 3,
+        "linux": 3,
+        "javascript": 2,
+        "html-css": 2,
+        "postgresql": 3,
+        "mongodb": 2
+      },
+      "soft_skills": {
+        "kommunikation": 3,
+        "teamarbeit": 4,
+        "kreativitaet": 4,
+        "lernbereitschaft": 5,
+        "organisation": 3,
+        "projektmanagement": 3
+      },
+      "languages": {
+        "deutsch": 4,
+        "englisch": 4
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 0,
+          "max": 25
+        },
+        "work_location": [
+          "remote",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit",
+          "flexible"
+        ]
+      },
+      "description": "Entwicklung von Python-Anwendungen und Automatisierung",
+      "requirements": [
+        "Solide Python-Kenntnisse",
+        "Datenbank-Erfahrung",
+        "Agile Methoden"
+      ]
+    },
+    "security_analyst": {
+      "title": "Security Analyst",
+      "level": "fortgeschritten",
+      "experience_required": {
+        "general": 2,
+        "it": 3
+      },
+      "education_min": "bachelor",
+      "salary_range": {
+        "min": 50000,
+        "max": 75000
+      },
+      "hard_skills": {
+        "firewall": 4,
+        "penetration-testing": 3,
+        "incident-response": 4,
+        "risk-assessment": 4,
+        "dsgvo": 4,
+        "iso27001": 3,
+        "linux": 3,
+        "windows-server": 3,
+        "tcpip": 4
+      },
+      "soft_skills": {
+        "kommunikation": 4,
+        "teamarbeit": 3,
+        "stressresistenz": 5,
+        "lernbereitschaft": 4,
+        "organisation": 4,
+        "durchsetzung": 4
+      },
+      "languages": {
+        "deutsch": 5,
+        "englisch": 4
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 0,
+          "max": 50
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit"
+        ]
+      },
+      "description": "Überwachung und Analyse von IT-Sicherheitsbedrohungen",
+      "requirements": [
+        "IT-Security Kenntnisse",
+        "Incident Response",
+        "Compliance"
+      ]
+    },
+    "penetration_tester": {
+      "title": "Penetration Tester",
+      "level": "senior",
+      "experience_required": {
+        "general": 3,
+        "it": 5
+      },
+      "education_min": "bachelor",
+      "salary_range": {
+        "min": 60000,
+        "max": 90000
+      },
+      "hard_skills": {
+        "penetration-testing": 5,
+        "linux": 4,
+        "python": 4,
+        "tcpip": 5,
+        "firewall": 4,
+        "incident-response": 3,
+        "risk-assessment": 4,
+        "cisco": 3
+      },
+      "soft_skills": {
+        "kommunikation": 4,
+        "teamarbeit": 3,
+        "kreativitaet": 5,
+        "lernbereitschaft": 5,
+        "stressresistenz": 4,
+        "durchsetzung": 4
+      },
+      "languages": {
+        "deutsch": 4,
+        "englisch": 5
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 25,
+          "max": 100
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid",
+          "remote"
+        ],
+        "work_time": [
+          "vollzeit",
+          "flexible"
+        ]
+      },
+      "description": "Ethisches Hacking und Sicherheitstests von IT-Systemen",
+      "requirements": [
+        "Experten-Level Security",
+        "Ethical Hacking",
+        "Zertifizierungen"
+      ]
+    },
+    "datenschutzbeauftragter": {
+      "title": "Datenschutzbeauftragter",
+      "level": "senior",
+      "experience_required": {
+        "general": 5,
+        "it": 3
+      },
+      "education_min": "bachelor",
+      "salary_range": {
+        "min": 55000,
+        "max": 85000
+      },
+      "hard_skills": {
+        "dsgvo": 5,
+        "iso27001": 4,
+        "risk-assessment": 5,
+        "incident-response": 3,
+        "windows-server": 2,
+        "linux": 2
+      },
+      "soft_skills": {
+        "kommunikation": 5,
+        "teamarbeit": 4,
+        "fuehrung": 4,
+        "organisation": 5,
+        "durchsetzung": 5,
+        "verhandlung": 4,
+        "lernbereitschaft": 4
+      },
+      "languages": {
+        "deutsch": 5,
+        "englisch": 4
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 0,
+          "max": 50
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit"
+        ]
+      },
+      "description": "Verantwortung für Datenschutz und Compliance im Unternehmen",
+      "requirements": [
+        "DSGVO Expertise",
+        "Rechtskenntnisse",
+        "Führungsqualitäten"
+      ]
+    },
+    "ki_beauftragter": {
+      "title": "KI-Beauftragter",
+      "level": "senior",
+      "experience_required": {
+        "general": 3,
+        "it": 5
+      },
+      "education_min": "master",
+      "salary_range": {
+        "min": 70000,
+        "max": 120000
+      },
+      "hard_skills": {
+        "python": 4,
+        "sql": 4,
+        "aws": 3,
+        "azure": 3,
+        "dsgvo": 4,
+        "risk-assessment": 4,
+        "postgresql": 3,
+        "mongodb": 3
+      },
+      "soft_skills": {
+        "kommunikation": 5,
+        "teamarbeit": 4,
+        "fuehrung": 4,
+        "kreativitaet": 5,
+        "lernbereitschaft": 5,
+        "projektmanagement": 4,
+        "durchsetzung": 4
+      },
+      "languages": {
+        "deutsch": 5,
+        "englisch": 5
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 0,
+          "max": 75
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid",
+          "remote"
+        ],
+        "work_time": [
+          "vollzeit",
+          "flexible"
+        ]
+      },
+      "description": "Strategische Entwicklung und Implementierung von KI-Lösungen",
+      "requirements": [
+        "KI/ML Expertise",
+        "Strategisches Denken",
+        "Technische Führung"
+      ]
+    },
+    "cloud_architect": {
+      "title": "Cloud Architect",
+      "level": "senior",
+      "experience_required": {
+        "general": 5,
+        "it": 7
+      },
+      "education_min": "bachelor",
+      "salary_range": {
+        "min": 75000,
+        "max": 110000
+      },
+      "hard_skills": {
+        "aws": 5,
+        "azure": 4,
+        "docker": 4,
+        "kubernetes": 4,
+        "linux": 4,
+        "python": 3,
+        "terraform": 4,
+        "tcpip": 4
+      },
+      "soft_skills": {
+        "kommunikation": 4,
+        "teamarbeit": 4,
+        "fuehrung": 4,
+        "projektmanagement": 5,
+        "lernbereitschaft": 5,
+        "kreativitaet": 4
+      },
+      "languages": {
+        "deutsch": 4,
+        "englisch": 5
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 25,
+          "max": 75
+        },
+        "work_location": [
+          "remote",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit",
+          "flexible"
+        ]
+      },
+      "description": "Design und Implementierung von Cloud-Infrastrukturen",
+      "requirements": [
+        "Cloud-Expertise",
+        "Architektur-Erfahrung",
+        "DevOps-Kenntnisse"
+      ]
+    },
+    "it_project_manager": {
+      "title": "IT Project Manager",
+      "level": "senior",
+      "experience_required": {
+        "general": 5,
+        "it": 5
+      },
+      "education_min": "bachelor",
+      "salary_range": {
+        "min": 60000,
+        "max": 90000
+      },
+      "hard_skills": {
+        "windows-server": 2,
+        "linux": 2,
+        "sql": 2,
+        "ms365": 3
+      },
+      "soft_skills": {
+        "kommunikation": 5,
+        "teamarbeit": 5,
+        "fuehrung": 5,
+        "projektmanagement": 5,
+        "organisation": 5,
+        "durchsetzung": 4,
+        "verhandlung": 5,
+        "zeitmanagement": 5
+      },
+      "languages": {
+        "deutsch": 5,
+        "englisch": 4
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 25,
+          "max": 75
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit"
+        ]
+      },
+      "description": "Leitung und Koordination von IT-Projekten",
+      "requirements": [
+        "Projektmanagement-Zertifizierung",
+        "Führungserfahrung",
+        "IT-Verständnis"
+      ]
+    },
+    "cto": {
+      "title": "Chief Technology Officer (CTO)",
+      "level": "experte",
+      "experience_required": {
+        "general": 10,
+        "it": 10
+      },
+      "education_min": "master",
+      "salary_range": {
+        "min": 100000,
+        "max": 200000
+      },
+      "hard_skills": {
+        "aws": 4,
+        "azure": 4,
+        "python": 3,
+        "java": 3,
+        "sql": 4,
+        "docker": 3,
+        "kubernetes": 3
+      },
+      "soft_skills": {
+        "kommunikation": 5,
+        "teamarbeit": 5,
+        "fuehrung": 5,
+        "projektmanagement": 5,
+        "kreativitaet": 5,
+        "durchsetzung": 5,
+        "verhandlung": 5,
+        "zeitmanagement": 5
+      },
+      "languages": {
+        "deutsch": 5,
+        "englisch": 5
+      },
+      "work_preferences": {
+        "travel_willingness": {
+          "min": 50,
+          "max": 100
+        },
+        "work_location": [
+          "vor-ort",
+          "hybrid"
+        ],
+        "work_time": [
+          "vollzeit",
+          "flexible"
+        ]
+      },
+      "description": "Strategische technische Führung und Technologie-Vision",
+      "requirements": [
+        "Umfassende IT-Erfahrung",
+        "Strategisches Denken",
+        "Führungsqualitäten"
+      ]
+    }
+  },
+  "scoring_weights": {
+    "hard_skills": 0.4,
+    "soft_skills": 0.25,
+    "languages": 0.15,
+    "experience": 0.15,
+    "education": 0.05
+  },
+  "education_levels": {
+    "hauptschule": 1,
+    "realschule": 2,
+    "abitur": 3,
+    "ausbildung": 4,
+    "bachelor": 5,
+    "master": 6,
+    "promotion": 7
+  },
+  "language_requirements": {
+    "international_roles": [
+      "englisch"
+    ],
+    "local_roles": [
+      "deutsch"
+    ],
+    "specialized_roles": [
+      "englisch",
+      "deutsch"
+    ]
+  }
+}

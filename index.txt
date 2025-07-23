@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALA-SEA Project</title>
+    <style>
+        :root {
+            --matrix-green: #00ff41;
+            --matrix-dark: #0d0208;
+            --matrix-light: #003b00;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+            background-color: var(--matrix-dark);
+            color: var(--matrix-green);
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            z-index: 1;
+            position: relative;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--matrix-green);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 0.5rem;
+            text-shadow: 0 0 10px var(--matrix-green);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem; /* Add margin to separate from footer */
+        }
+
+        .card {
+            background-color: rgba(0, 20, 0, 0.7);
+            border: 1px solid var(--matrix-green);
+            padding: 1.5rem;
+            border-radius: 5px;
+            flex: 1 1 300px;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+            transition: all 0.3s ease;
+            display: flex; /* Ensure cards align content properly */
+            flex-direction: column; /* Stack content vertically */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+        }
+
+        .card h2 {
+            border-bottom: 1px solid var(--matrix-green);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .card p {
+            flex-grow: 1; /* Allow paragraph to take available space */
+            margin-bottom: 1.5rem; /* Space before button */
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--matrix-light);
+            color: var(--matrix-green);
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--matrix-green);
+            border-radius: 3px;
+            text-decoration: none;
+            margin-top: auto; /* Push button to the bottom */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            align-self: flex-start; /* Align button to the start */
+        }
+
+        .button:hover {
+            background-color: var(--matrix-green);
+            color: var(--matrix-dark);
+            box-shadow: 0 0 15px var(--matrix-green);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem 0;
+            border-top: 1px solid var(--matrix-green);
+            font-size: 0.9rem;
+        }
+
+        /* Matrix rain effect */
+        canvas {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
+<div class="container">
+    <header>
+        <h1>TALA-SEA</h1>
+        <div class="subtitle">[ ADVANCED SYSTEMS PROJECT ]</div>
+    </header>
+
+    <div class="content">
+        <div class="card">
+            <h2>Über das Projekt</h2>
+            <p>Das TALA-SEA Projekt ist eine innovative Plattform zur Entwicklung fortschrittlicher Systeme und Technologien. Unser Ziel ist es, die Grenzen des Möglichen zu erweitern.</p>
+            <a href="#about" class="button">Mehr erfahren</a>
+        </div>
+
+        <div class="card">
+            <h2>Funktionen</h2>
+            <p>Unsere Kernfunktionen umfassen hochmoderne Sicherheit, skalierbare Infrastruktur und eine intuitive Benutzeroberfläche für maximale Effizienz und Leistung.</p>
+            <a href="#features" class="button">Entdecken</a>
+        </div>
+
+        <div class="card">
+            <h2>App-Hub</h2>
+            <p>Entdecken Sie unsere Sammlung von Tools und Anwendungen im zentralen App-Hub. Hier finden Sie nützliche Programme und Quizze.</p>
+            <a href="App-Hub.html" class="button">Zum App-Hub</a>
+        </div>
+
+        <div class="card">
+            <h2>Kontakt</h2>
+            <p>Haben Sie Fragen ? Sprechen sie mich gerne an .</p>
+            <a href="#contact" class="button">Kontaktieren</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 TALA-SEA Project | Alle Rechte vorbehalten
+    </footer>
+</div>
+
+<script>
+    // Matrix rain effect
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Characters to display
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%"\'#&_();:,.<>[]{}|';
+
+    // Font size and columns
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+
+    // Array to track y position of each column
+    const drops = [];
+    for (let i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * canvas.height);
+    }
+
+    // Draw matrix rain effect
+    function draw() {
+        // Semi-transparent black to create fade effect
+        ctx.fillStyle = 'rgba(0, 2, 8, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#00ff41';
+        ctx.font = `${fontSize}px monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+            // Random character
+            const text = characters.charAt(Math.floor(Math.random() * characters.length));
+
+            // Draw character
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            // Move drops down
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+
+            drops[i]++;
+        }
+    }
+
+    // Resize canvas when window is resized
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // Recalculate columns and reset drops on resize might be needed for better visual consistency
+        // const columns = Math.floor(canvas.width / fontSize);
+        // drops = [];
+        // for (let i = 0; i < columns; i++) {
+        //     drops[i] = Math.floor(Math.random() * canvas.height);
+        // }
+    });
+
+    // Run animation
+    setInterval(draw, 33);
+</script>
+</body>
+</html>
